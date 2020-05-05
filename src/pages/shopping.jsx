@@ -14,7 +14,8 @@ class Shopping extends Component {
   render() {
     return (
        <React.Fragment>
-        <Header />
+        <Header menuActive={this.props.location.pathname}/>
+        <div className="header-white-space"></div>
         <ProductListWithImage />
         <ProductListWithImage />
       </React.Fragment>
