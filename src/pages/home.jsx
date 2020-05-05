@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store";
 import Header from "../components/header";
+import Footer from "../components/footer";
 
 class Home extends Component {
   
@@ -14,7 +15,10 @@ class Home extends Component {
     return (
        <React.Fragment>
         <Header />
-        Halo
+        <div className="container">
+          halo
+        </div>
+        <Footer />
       </React.Fragment>
     );
   }
