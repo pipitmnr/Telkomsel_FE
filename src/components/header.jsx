@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store";
 import "../styles/bootstrap.min.css";
 import "../styles/header.css";
 
 class Header extends Component {
-  
-  componentDidMount = async () => {
-    
-  };
 
   render() {
     return (
@@ -17,12 +13,26 @@ class Header extends Component {
            <div className="container-fluid">
                 <div className="row align-items-center header">
                     <div className="col-md-6">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telkomsel_Logo.svg" className="headerLogo" alt=""/>
+                        <img src={require("../images/Telkomsel_Logo.svg")} className="header-logo" alt=""/>
                     </div>
                     <div className="col-md-6">
-                        <div className="header-menu">
-
-                        </div>
+                      <ul className="header-menu">
+                        {this.props.menuActive === "/" ?
+                          <li className="header-menu-active"><Link to={`/`}>Home</Link></li>
+                          :
+                          <li><Link to={`/`}>Home</Link></li>
+                        }
+                        {this.props.menuActive === "/belanja" ?
+                          <li className="header-menu-active"><Link to={`/belanja`}>Belanja</Link></li>
+                          :
+                          <li><Link to={`/belanja`}>Belanja</Link></li>
+                        }
+                        {this.props.menuActive === "/info-produk" ?
+                          <li className="header-menu-active"><Link to={`/info-produk`}>Info Produk Telkomsel</Link></li>
+                          :
+                          <li><Link to={`/info-produk`}>Info Produk Telkomsel</Link></li>
+                        }
+                      </ul>
                     </div>
                 </div>
            </div>
