@@ -17,6 +17,7 @@
 .header-menu{
     white-space: nowrap;
     text-align: right;
+    margin: auto;
 }
 .header-menu li{
     font-size: 15px;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store";
 import "../styles/bootstrap.min.css";
@@ -18,19 +18,19 @@ class Header extends Component {
                     <div className="col-md-6">
                       <ul className="header-menu">
                         {this.props.menuActive === "/" ?
-                          <li className="header-menu-active"> <a href="/"> Home </a></li>
+                          <li className="header-menu-active"><Link to={`/`}>Home</Link></li>
                           :
-                          <li> <a href="/"> Home </a></li>
+                          <li><Link to={`/`}>Home</Link></li>
                         }
                         {this.props.menuActive === "/belanja" ?
-                          <li className="header-menu-active"> <a href="/"> Belanja </a></li>
+                          <li className="header-menu-active"><Link to={`/belanja`}>Belanja</Link></li>
                           :
-                          <li> <a href="/belanja"> Belanja </a></li>
+                          <li><Link to={`/belanja`}>Belanja</Link></li>
                         }
                         {this.props.menuActive === "/info-produk" ?
-                          <li className="header-menu-active"> <a href="/"> Info Produk Telkomsel </a></li>
+                          <li className="header-menu-active"><Link to={`/info-produk`}>Info Produk Telkomsel</Link></li>
                           :
-                          <li> <a href="/info-produk"> Info Produk Telkomsel </a></li>
+                          <li><Link to={`/info-produk`}>Info Produk Telkomsel</Link></li>
                         }
                       </ul>
                     </div>
