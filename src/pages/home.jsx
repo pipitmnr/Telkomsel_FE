@@ -8,13 +8,13 @@ import Footer from "../components/footer";
 class Home extends Component {
   
   componentDidMount = async () => {
-    
   };
 
   render() {
     return (
        <React.Fragment>
-        <Header />
+        <Header menuActive={this.props.location.pathname}/>
+        <div className="header-white-space"></div>
         <div className="container">
           halo
         </div>
