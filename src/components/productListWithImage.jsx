@@ -28,7 +28,7 @@ class ProductListWithImage extends Component {
                        <img src={voucherTelkomsel} alt="Voucher Telkomsel" className="product-list-with-image-image"/>
                        <div className="product-list-with-image-line" />
                        <div className="product-list-with-image-product-info">
-                            <span className="prouct-list-with-image-span-name">Nama Produk</span><br />
+                            <span className="prouct-list-with-image-span-name">Perdana Paket Data</span><br />
                             <span className="prouct-list-with-image-span-price">Rp 15.000</span>
                        </div>
                    </div>
@@ -36,7 +36,7 @@ class ProductListWithImage extends Component {
                        <img src={voucherTelkomsel} alt="Voucher Telkomsel" className="product-list-with-image-image"/>
                        <div className="product-list-with-image-line" />
                        <div className="product-list-with-image-product-info">
-                            <span className="prouct-list-with-image-span-name">Nama Produk</span><br />
+                            <span className="prouct-list-with-image-span-name">Voucher Data</span><br />
                             <span className="prouct-list-with-image-span-price">Rp 15.000</span>
                        </div>
                    </div>
@@ -44,7 +44,7 @@ class ProductListWithImage extends Component {
                        <img src={voucherTelkomsel} alt="Voucher Telkomsel" className="product-list-with-image-image"/>
                        <div className="product-list-with-image-line" />
                        <div className="product-list-with-image-product-info">
-                            <span className="prouct-list-with-image-span-name">Nama Produk</span><br />
+                            <span className="prouct-list-with-image-span-name">Voucher Data</span><br />
                             <span className="prouct-list-with-image-span-price">Rp 15.000</span>
                        </div>
                    </div>

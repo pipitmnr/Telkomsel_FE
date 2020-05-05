@@ -4,11 +4,12 @@
 }
 
 .product-list-with-image-product-container {
-    padding: 0 0% 0 0%;
+    padding: 0;
+    text-align: center;
 }
 
 .product-list-with-image-image {
-    width: 100%;
+    width: 85%;
 }
 
 .product-list-with-image-line {
@@ -21,9 +22,10 @@
 
 .product-list-with-image-product-info {
     position: absolute;
-    bottom: 11%;
-    left: 16.8%;
+    bottom: 7%;
+    left: 21.4%;
     font-family: "muli";
+    text-align: left;
 }
 
 .prouct-list-with-image-span-name {
