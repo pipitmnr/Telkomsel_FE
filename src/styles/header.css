@@ -1,8 +1,37 @@
 .header{
     height: 109px;
+    width: 100vw;
+    position: fixed;
+    background-color: white;
+    /* box shadow */
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.15);
+    z-index: 100;
 }
-.headerLogo{
+.header-logo{
     height: 66px;
     padding-left: 28px;
     padding-right: 28px;
+}
+.header-menu{
+    white-space: nowrap;
+    text-align: right;
+}
+.header-menu li{
+    font-size: 15px;
+    font-weight: bold;
+    list-style: none;
+    display: inline;
+    padding: 0 38px;
+}
+.header-menu li a{
+    text-decoration: none;
+    color: #857B7B;
+}
+.header-menu-active a{
+    color: #D32026 !important;
+}
+.header-white-space{
+    height: 110px;
 }

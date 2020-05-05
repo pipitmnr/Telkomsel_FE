@@ -6,10 +6,6 @@ import "../styles/bootstrap.min.css";
 import "../styles/header.css";
 
 class Header extends Component {
-  
-  componentDidMount = async () => {
-    
-  };
 
   render() {
     return (
@@ -17,12 +13,26 @@ class Header extends Component {
            <div className="container-fluid">
                 <div className="row align-items-center header">
                     <div className="col-md-6">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telkomsel_Logo.svg" className="headerLogo" alt=""/>
+                        <img src={require("../images/Telkomsel_Logo.svg")} className="header-logo" alt=""/>
                     </div>
                     <div className="col-md-6">
-                        <div className="header-menu">
-
-                        </div>
+                      <ul className="header-menu">
+                        {this.props.menuActive === "/" ?
+                          <li className="header-menu-active"> <a href="/"> Home </a></li>
+                          :
+                          <li> <a href="/"> Home </a></li>
+                        }
+                        {this.props.menuActive === "/belanja" ?
+                          <li className="header-menu-active"> <a href="/"> Belanja </a></li>
+                          :
+                          <li> <a href="/belanja"> Belanja </a></li>
+                        }
+                        {this.props.menuActive === "/info-produk" ?
+                          <li className="header-menu-active"> <a href="/"> Info Produk Telkomsel </a></li>
+                          :
+                          <li> <a href="/info-produk"> Info Produk Telkomsel </a></li>
+                        }
+                      </ul>
                     </div>
                 </div>
            </div>
