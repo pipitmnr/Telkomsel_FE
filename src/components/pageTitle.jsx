@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store";
 import "../styles/bootstrap.min.css";
@@ -22,7 +22,7 @@ class PageTitle extends Component {
                             <div className="col-md-5 text-center">
                                 <div className="page-title-box">
                                     <div className="page-title-box-entry">
-                                        Belanjaan Kamu <FaShoppingCart/>
+                                        <Link to="/checkout"> Belanjaan Kamu <FaShoppingCart/> </Link>
                                     </div>
                                 </div>
                             </div>

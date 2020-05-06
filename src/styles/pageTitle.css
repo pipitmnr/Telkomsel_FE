@@ -17,3 +17,7 @@
 .page-title-box-entry{
     padding: 18px 0;
 }
+.page-title-box-entry a{
+    text-decoration: none;
+    color: rgb(53, 52, 52);
+}
