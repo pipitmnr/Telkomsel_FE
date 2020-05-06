@@ -4,6 +4,8 @@ import { connect } from 'unistore/react';
 import { actions } from '../store';
 import Header from '../components/header';
 import Footer from "../components/footer";
+import ProductListWithImage from "../components/productListWithImage";
+import "../styles/home.css";
 
 class Home extends Component {
   componentDidMount = async () => {};
@@ -13,9 +15,10 @@ class Home extends Component {
       <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
-        <div className="container">
-          halo
+        <div className="container carousel">
+          carousel
         </div>
+        <ProductListWithImage/>
         <Footer />
       </React.Fragment>
     );
