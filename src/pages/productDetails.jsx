@@ -4,8 +4,9 @@ import { connect } from 'unistore/react';
 import { actions } from '../store';
 import Header from '../components/header';
 import Footer from "../components/footer";
+import PageTitle from "../components/pageTitle";
 import "../styles/productDetails.css";
-import ProductListWithImage from "../components/productListWithImage"
+import ProductListWithImage from "../components/productListWithImage";
 
 class ProductDetails extends Component {
   componentDidMount = async () => {};
@@ -20,6 +21,7 @@ class ProductDetails extends Component {
       <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
+        <PageTitle />
         <div className="container">
           <div className="row mt-4">
             <div className="col-md-6 text-center">
