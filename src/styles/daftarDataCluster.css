@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,500,600,700,800,900&display=swap');
+
+
+.ui[class*="very basic"].table:not(.sortable):not(.striped) thead tr:first-child th {
+    padding-top: 10px;
+}
+
+.pagination-cluster .ui.pagination.menu {
+    margin: auto;
+}
