@@ -8,3 +8,15 @@
 .pagination-cluster .ui.pagination.menu {
     margin: auto;
 }
+
+.ui.selection.dropdown.dropdown-table {
+    min-width: 1px;
+}
+
+.ui[class*="very basic"].table:not(.sortable):not(.striped) thead tr:first-child th.head-dropdown-table {
+    padding-left: 0px;
+}
+
+.ui.selection.dropdown.dropdown-table {
+    min-width: 1px;
+}

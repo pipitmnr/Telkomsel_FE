@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
-import {
-	Button,
-	Dropdown,
-	Table,
-	Checkbox,
-	Pagination,
-} from 'semantic-ui-react';
+import { Button, Dropdown, Table, Checkbox } from 'semantic-ui-react';
 import { actions } from '../store';
 import '../styles/sidebar.css';
 import '../styles/daftarDataCluster.css';
 import Sidebar from '../components/sidebar';
 import TitlePage from '../components/titleAdmin';
+import PaginationMenu from '../components/pagination';
+import Footer from '../components/footer';
 
 const totalList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -31,12 +27,14 @@ const optionsCluster = [
 	{ key: 2, text: 'Cluster A', value: 'Cluster A' },
 	{ key: 3, text: 'Cluster B', value: 'Cluster B' },
 ];
+const optionsTable = [{ key: 1, text: 'No SKU', value: 'No SKU' }];
 class DaftarCluster extends Component {
 	componentDidMount = async () => {};
 	state = {
 		valueItem: 'Semua Item',
 		valueJenis: 'Semua Jenis',
 		valueCluster: 'Semua Cluster',
+		valueTable: 'No SKU',
 	};
 
 	handleChangeItem = (e, { value }) => {
@@ -46,6 +44,7 @@ class DaftarCluster extends Component {
 	handleChangeJenis = (e, { value }) => this.setState({ valueJenis: value });
 	handleChangeCluster = (e, { value }) =>
 		this.setState({ valueCluster: value });
+	handleChangeTable = (e, { value }) => this.setState({ valueTable: value });
 
 	render() {
 		return (
@@ -104,7 +103,16 @@ class DaftarCluster extends Component {
 										<Table.Header>
 											<Table.Row className='thead-col'>
 												<Table.HeaderCell>
-													<Checkbox label={<label>No SKU</label>} />
+													<Checkbox />
+												</Table.HeaderCell>
+												<Table.HeaderCell className='head-dropdown-table'>
+													<Dropdown
+														className='dropdown-table'
+														onChange={this.handleChangeTable}
+														options={optionsTable}
+														selection
+														value={this.state.valueTable}
+													/>
 												</Table.HeaderCell>
 												<Table.HeaderCell>Nama Produk</Table.HeaderCell>
 												<Table.HeaderCell>Tipe Produk</Table.HeaderCell>
@@ -121,8 +129,9 @@ class DaftarCluster extends Component {
 												return (
 													<Table.Row>
 														<Table.Cell>
-															<Checkbox label={<label>7881218218</label>} />
+															<Checkbox />
 														</Table.Cell>
+														<Table.Cell>7881218218</Table.Cell>
 														<Table.Cell>Perdana Segel No Cantik</Table.Cell>
 														<Table.Cell>Perdana Segel</Table.Cell>
 														<Table.Cell>Rp 15.000</Table.Cell>
@@ -139,8 +148,11 @@ class DaftarCluster extends Component {
 							</div>
 							<div className='container pagination-cluster'>
 								<div className='row'>
-									<Pagination defaultActivePage={5} totalPages={10} />
+									<PaginationMenu />
 								</div>
+							</div>
+							<div style={{ position: 'absolute', bottom: '0', width: '100%' }}>
+								<Footer />
 							</div>
 						</div>
 					</div>
