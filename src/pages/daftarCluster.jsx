@@ -54,7 +54,7 @@ class DaftarCluster extends Component {
 						<div className='col-md-3 col-sidebar'>
 							<Sidebar />
 						</div>
-						<div className='col-md-9'>
+						<div className='col-md-9' style={{ paddingLeft: '0px' }}>
 							<div className='container'>
 								<div className='row'>
 									<TitlePage title={'Daftar Data Item'} />
