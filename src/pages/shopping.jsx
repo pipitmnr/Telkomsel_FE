@@ -5,6 +5,7 @@ import { actions } from "../store";
 import Header from "../components/header";
 import ProductListWithImage from "../components/productListWithImage";
 import CheckboxFilter from "../components/checkboxFilter";
+import ChooseRegion from "../components/chooseRegion";
 import "../styles/bootstrap.min.css";
 import "../styles/shopping.css";
 
@@ -25,8 +26,11 @@ class Shopping extends Component {
               <CheckboxFilter />
             </div>
             <div className="col-12 col-md-10 shopping-product-list">
-              <ProductListWithImage />
-              <ProductListWithImage />
+              <ChooseRegion />
+              <div className="shopping-product-list-box">
+                <ProductListWithImage />
+                <ProductListWithImage />
+              </div>
             </div>
           </div>
         </div>
