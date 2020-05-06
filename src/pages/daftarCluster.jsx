@@ -6,7 +6,7 @@ import { actions } from '../store';
 import '../styles/sidebar.css';
 import '../styles/titleAdmin.css';
 import Sidebar from '../components/sidebar';
-import Searchbar from '../components/searchbar';
+import TitlePage from '../components/titleAdmin';
 
 const optionsItem = [
 	{ key: 1, text: 'Semua Item', value: 'Semua Item' },
@@ -50,12 +50,7 @@ class DaftarCluster extends Component {
 						<div className='col-md-9'>
 							<div className='container'>
 								<div className='row'>
-									<div className='col-md-7 col-title-admin'>
-										<h1>Daftar Data Item</h1>
-									</div>
-									<div className='col-md-4 col-searchbar-admin'>
-										<Searchbar />
-									</div>
+									<TitlePage title={'Daftar Data Item'} />
 								</div>
 								<div className='row'>
 									<div className='col-md-12 admin-filter'>
