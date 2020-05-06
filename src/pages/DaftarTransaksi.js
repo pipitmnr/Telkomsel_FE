@@ -5,10 +5,7 @@ import './transaksi.css';
 
 
 class Transactions extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {filter_payment:"Semua Jenis", filter_kluster:"Semua Kluster"};
-    }
+   
     render(){
         return <React.Fragment>
     <Container fluid>
@@ -21,18 +18,18 @@ class Transactions extends React.Component{
      <Navbar expand="lg" id="filter_one">
                 <Navbar.Collapse>     
             <b>Filter</b> : &nbsp; <Dropdown>
-            <DropdownButton id='bayar' className="d-inline-block align-center" title={this.state.filter_payment}>
-                    <Dropdown.Item  as="button" onClick={()=>this.setState({filter_payment:"Terbayar"})}>Terbayar</Dropdown.Item>
-                    <Dropdown.Item as="button" onClick={()=>this.setState({filter_payment:"Gagal"})}>Gagal</Dropdown.Item>
-                    <Dropdown.Item  as="button" onClick={()=>this.setState({filter_payment:"Terkirim"})}>Terkirim</Dropdown.Item>
-                    <Dropdown.Item  as="button" onClick={()=>this.setState({filter_payment:"Menunggu Bayar"})}>Menunggu Bayar</Dropdown.Item>
+            <DropdownButton id='bayar' className="d-inline-block align-center" title={this.props.filter_payment}>
+                    <Dropdown.Item  as="button" onClick={()=>store.setState({filter_payment:"Terbayar"})}>Terbayar</Dropdown.Item>
+                    <Dropdown.Item as="button" onClick={()=>store.setState({filter_payment:"Gagal"})}>Gagal</Dropdown.Item>
+                    <Dropdown.Item  as="button" onClick={()=>store.setState({filter_payment:"Terkirim"})}>Terkirim</Dropdown.Item>
+                    <Dropdown.Item  as="button" onClick={()=>store.setState({filter_payment:"Menunggu Bayar"})}>Menunggu Bayar</Dropdown.Item>
                 </DropdownButton>
                 &nbsp;
-                <DropdownButton className="d-inline-block align-center" title={this.state.filter_kluster} variant="danger">
-                    <Dropdown.Item href="" onClick={()=>this.setState({filter_kluster:"Kluster 1"})}>Kluster 1</Dropdown.Item>
-                    <Dropdown.Item href=""onClick={()=>this.setState({filter_kluster:"Kluster 2"})}>Kluster 2</Dropdown.Item>
-                    <Dropdown.Item href=""onClick={()=>this.setState({filter_kluster:"Kluster 3"})}>Kluster 3</Dropdown.Item>
-                    <Dropdown.Item href=""onClick={()=>this.setState({filter_kluster:"Kluster 4"})}>Kluster 4</Dropdown.Item>
+                <DropdownButton className="d-inline-block align-center" title={this.props.filter_kluster} variant="danger">
+                    <Dropdown.Item href="" onClick={()=>store.setState({filter_kluster:"Kluster 1"})}>Kluster 1</Dropdown.Item>
+                    <Dropdown.Item href=""onClick={()=>store.setState({filter_kluster:"Kluster 2"})}>Kluster 2</Dropdown.Item>
+                    <Dropdown.Item href=""onClick={()=>store.setState({filter_kluster:"Kluster 3"})}>Kluster 3</Dropdown.Item>
+                    <Dropdown.Item href=""onClick={()=>store.setState({filter_kluster:"Kluster 4"})}>Kluster 4</Dropdown.Item>
                 </DropdownButton>
             </Dropdown>
             </Navbar.Collapse>   
@@ -65,4 +62,4 @@ class Transactions extends React.Component{
     
 };
 
-export default Transactions;
+export default connect("filter_payment, filter_kluster",actions)(withRouter(Transactions));
