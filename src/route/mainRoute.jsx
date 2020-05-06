@@ -5,7 +5,7 @@ import { store } from "../store";
 import Home from "../pages/home";
 import Shopping from "../pages/shopping";
 import DaftarCluster from '../pages/daftarCluster';
-import ProductDetails from "../pages/productDetails"
+import ProductDetails from "../pages/productDetails";
 
 const MainRoute = () => {
   return (
