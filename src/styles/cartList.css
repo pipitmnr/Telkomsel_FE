@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+
+.cart-list-container {
+    font-family: "muli";
+    margin-top: 10px;
+    margin-bottom: 3.5%;
+}
+
+.cart-list-title {
+    color: #D32026;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.cart-list-product-container {
+    padding: 0;
+}
+
+.cart-list-product-image-container {
+    padding: 0;
+}
+
+.cart-list-product-image {
+    width: 100%;
+}
+
+.cart-list-product-name-and-price {
+    padding: 3.5% 0 0 0;
+}
+
+.cart-list-product-name {
+    color: #D32026;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.cart-list-product-name:hover {
+    text-decoration: none;
+}
+
+.cart-list-no-underline:hover {
+    text-decoration: none;
+}
+
+.cart-list-product-price {
+    color: #D32026;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.cart-list-product-total-item-container {
+    padding: 0;
+    text-align: center;
+    padding: 3.5% 0 0 0;
+}
+
+.cart-list-product-total-item-title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.cart-list-product-total-item {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.cart-list-underline {
+    width: 40%;
+    height: 0;
+    border: 0.3px solid #000000;
+    margin: 0 auto;
+}
+
+.cart-list-underline-type-2 {
+    width: 60%;
+    height: 0;
+    border: 0.3px solid #000000;
+    margin: 0 auto;
+}
