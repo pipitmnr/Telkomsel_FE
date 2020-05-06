@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,500,600,700,800,900&display=swap');
+
+.col-title-admin {
+  padding: 30px;
+}
+
+.col-title-admin h1 {
+  margin: 0px;
+  font-family: 'Muli', sans-serif;
+  font-size: 48px;
+  color: #8A8D93;
+}
+
+.col-searchbar-admin {
+  margin: auto;
+}
+
+.col-searchbar-admin .ui.input {
+  font-size: 1em;
+  width: -webkit-fill-available;
+}
+
+.admin-filter {
+  padding-left: 0px;
+}
+
+.admin-filter ul {
+  padding-left: 30px;
+  display: flex;
+  list-style: none;
+}
+
+.admin-filter ul li {
+  text-decoration: none;
+  padding-right: 10px;
+}
+
+.admin-filter .ui.button {
+  background-color: #1B355F;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  height: 38px;
+}
+
+.admin-filter .ui.dropdown {
+  background-color: #1B355F;
+  color: white !important;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+  min-width: 1px;
+}
+
+.admin-filter .cluster {
+  background-color: #D4312C !important;
+  color: white !important;
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+  min-width: 1px;
+}
