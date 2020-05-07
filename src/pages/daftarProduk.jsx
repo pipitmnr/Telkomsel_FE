@@ -28,7 +28,7 @@ const optionsCluster = [
 	{ key: 3, text: 'Cluster B', value: 'Cluster B' },
 ];
 const optionsTable = [{ key: 1, text: 'No SKU', value: 'No SKU' }];
-class DaftarCluster extends Component {
+class DaftarProduk extends Component {
 	componentDidMount = async () => {};
 	state = {
 		valueItem: 'Semua Item',
@@ -170,4 +170,4 @@ class DaftarCluster extends Component {
 	}
 }
 
-export default connect('', actions)(withRouter(DaftarCluster));
+export default connect('', actions)(withRouter(DaftarProduk));
