@@ -16,13 +16,13 @@
 }
 
 .row-password {
-    padding-left: 0.8%;
-    padding-top: 3%;
-    padding-bottom: 2%;
+    padding-left: 0.7%;
+    /* padding-top: 3%; */
+    /* padding-bottom: 2%; */
 }
 
 .row-submit {
-    margin-left: 25.5%;
+    margin-left: 22.1%;
 }
 
 .row-submit button {
@@ -37,4 +37,16 @@
 .ui.form .field .ui.input input,
 .ui.form .fields .field .ui.input input {
     height: 6vh;
+}
+
+.forget-password {
+    font-size: 15px;
+    padding-top: 2%;
+    padding-left: 2%;
+    width: fit-content;
+}
+
+.forget-password a {
+    text-decoration: none;
+    color: white;
 }

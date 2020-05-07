@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import { actions, store } from '../store';
-import { Grid, Image, Form, Input, Button } from 'semantic-ui-react';
+import { Grid, Image, Form, Input, Button, Item } from 'semantic-ui-react';
 import Footer from '../components/footer';
 import LoginLogo from '../images/Telkomsel_Logo.svg';
 import '../styles/loginAdmin.css';
@@ -16,7 +16,7 @@ class LoginAdmin extends Component {
 	};
 
 	handleSubmit = () => {
-		this.props.history.push('/');
+		this.props.history.push('/daftar-cluster');
 	};
 
 	render() {
@@ -32,8 +32,8 @@ class LoginAdmin extends Component {
 				<Grid verticalAlign='middle' columns={3} centered>
 					<Grid.Row className='row-form-login' color='red' key='red'>
 						<Grid.Column width={5}></Grid.Column>
-						<Grid.Column width={7}>
-							<Form size='massive'>
+						<Grid.Column width={8}>
+							<Form onSubmit={this.handleSubmit} size='massive'>
 								<br />
 								<Grid.Row className='row-username'>
 									<Form.Group unstackable>
@@ -75,11 +75,17 @@ class LoginAdmin extends Component {
 									<Button style={{ fontSize: '18px' }} secondary type='submit'>
 										Login
 									</Button>
+									<Item.Content
+										className='forget-password'
+										verticalAlign='middle'
+									>
+										<Link to='#'>I forgot my password</Link>
+									</Item.Content>
 								</Grid.Row>
 								<br />
 							</Form>
 						</Grid.Column>
-						<Grid.Column width={4}></Grid.Column>
+						<Grid.Column width={3}></Grid.Column>
 					</Grid.Row>
 				</Grid>
 				<Grid>
