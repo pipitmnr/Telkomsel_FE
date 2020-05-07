@@ -1,7 +1,10 @@
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'unistore/react';
+import { actions } from '../store';
+import { Search } from 'semantic-ui-react';
 import _ from 'lodash';
 import faker from 'faker';
-import React, { Component } from 'react';
-import { Search } from 'semantic-ui-react';
 
 const source = _.times(5, () => ({
 	title: faker.company.companyName(),
@@ -12,7 +15,7 @@ const source = _.times(5, () => ({
 
 const initialState = { isLoading: false, results: [], value: '' };
 
-export default class SearchExampleStandard extends Component {
+class SearchExampleStandard extends Component {
 	state = initialState;
 
 	handleResultSelect = (e, { result }) =>
@@ -55,3 +58,5 @@ export default class SearchExampleStandard extends Component {
 		);
 	}
 }
+
+export default connect('', actions)(withRouter(SearchExampleStandard));

@@ -107,6 +107,7 @@ class DaftarCluster extends Component {
 												</Table.HeaderCell>
 												<Table.HeaderCell className='head-dropdown-table'>
 													<Dropdown
+														style={{ color: '#1B355F' }}
 														className='dropdown-table'
 														onChange={this.handleChangeTable}
 														options={optionsTable}
@@ -114,11 +115,21 @@ class DaftarCluster extends Component {
 														value={this.state.valueTable}
 													/>
 												</Table.HeaderCell>
-												<Table.HeaderCell>Nama Produk</Table.HeaderCell>
-												<Table.HeaderCell>Tipe Produk</Table.HeaderCell>
-												<Table.HeaderCell>Harga Produk</Table.HeaderCell>
-												<Table.HeaderCell>Sisa Stok</Table.HeaderCell>
-												<Table.HeaderCell>User</Table.HeaderCell>
+												<Table.HeaderCell style={{ color: '#1B355F' }}>
+													Nama Produk
+												</Table.HeaderCell>
+												<Table.HeaderCell style={{ color: '#1B355F' }}>
+													Tipe Produk
+												</Table.HeaderCell>
+												<Table.HeaderCell style={{ color: '#1B355F' }}>
+													Harga Produk
+												</Table.HeaderCell>
+												<Table.HeaderCell style={{ color: '#1B355F' }}>
+													Sisa Stok
+												</Table.HeaderCell>
+												<Table.HeaderCell style={{ color: '#1B355F' }}>
+													User
+												</Table.HeaderCell>
 												<Table.HeaderCell></Table.HeaderCell>
 												<Table.HeaderCell></Table.HeaderCell>
 											</Table.Row>

@@ -6,7 +6,7 @@
 }
 
 .pagination-cluster .ui.pagination.menu {
-    margin: auto;
+    margin-left: 30px;
 }
 
 .ui.selection.dropdown.dropdown-table {
