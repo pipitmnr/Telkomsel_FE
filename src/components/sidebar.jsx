@@ -26,6 +26,21 @@ class Sidebar extends Component {
 				>
 					<a
 						className={
+							this.props.location.pathname === '/daftar-produk'
+								? 'nav-link active'
+								: 'nav-link'
+						}
+						id='daftar-produk'
+						data-toggle='pill'
+						href='/daftar-produk'
+						role='tab'
+						aria-controls='v-pills-home'
+						aria-selected='true'
+					>
+						Master Produk
+					</a>
+					<a
+						className={
 							this.props.location.pathname === '/daftar-cluster'
 								? 'nav-link active'
 								: 'nav-link'

@@ -1,0 +1,24 @@
+.shopping-filter-container {
+    padding: 0 0 0 1%;
+}
+
+.shopping-product-list {
+    padding: 0;
+}
+
+.shopping-product-z-10 {
+    z-index: 10;
+}
+
+.shopping-absolute-position {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+}
+
+.shopping-product-list-box {
+    position: absolute;
+    left: -4%;
+    top: 42%;
+    z-index: 1;
+}

@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+
+
+.checkbox-filter-container {
+    padding-top: 11px;
+}
+
+.checkbox-filter-title {
+    font-family: "muli";
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.checkbox-filter-box {
+    width: 100%;
+    background-color: #F9F9F9;
+    padding: 10% 7% 10% 7%;
+    font-family: "muli";
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.checkbox-filter-product-type {
+    margin-bottom: 5%;
+}
+
+.checkbox-filter-format {
+    background-color: #EBE6E6;
+    margin-right: 8px;
+}

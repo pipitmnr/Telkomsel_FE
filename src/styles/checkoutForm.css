@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+
+.checkout-form-container {
+    padding-top: 7%;
+    font-family: "muli";
+}
+
+.checkout-form-title {
+    color: #D32026;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.checkout-form-type-1 {
+    padding: 1% 0 0 0;
+}
+
+.checkout-form-type-1 .form-group {
+    margin-bottom: 0 !important;
+    padding-right: 15px;
+}
+
+.checkout-form-label {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+
+.checkout-input-type-1 {
+    width: 100%;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    padding: 3px 5px 3px 5px;
+    border-radius: 5px;
+}
+
+.checkout-phone-example {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;   
+}
+
+.checkout-input-type-2 {
+    width: 132%;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    padding: 3px 5px 3px 5px;
+    border-radius: 5px;
+}
+
+.checkout-readonly {
+    background-color: #E9ECEF;
+}
+
+.checkout-input-type-3 {
+    width: 250%;
+    height: 70px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    padding: 3px 5px 3px 5px;
+    border-radius: 5px;
+    resize: none;
+}
