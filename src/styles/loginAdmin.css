@@ -1,0 +1,52 @@
+.Logo-Admin {
+    padding: 8% 30% 0% 30%;
+}
+
+.ui.form {
+    font-family: 'Muli', sans-serif;
+}
+
+.row-form-login {
+    height: 46vh;
+    padding-bottom: 48.5vh !important;
+}
+
+.row-username label {
+    font-size: 20px;
+}
+
+.row-password {
+    padding-left: 0.7%;
+    /* padding-top: 3%; */
+    /* padding-bottom: 2%; */
+}
+
+.row-submit {
+    margin-left: 22.1%;
+}
+
+.row-submit button {
+    width: 25%;
+    font-family: 'Muli', sans-serif !important;
+}
+
+.row-footer {
+    padding: 0px !important;
+}
+
+.ui.form .field .ui.input input,
+.ui.form .fields .field .ui.input input {
+    height: 6vh;
+}
+
+.forget-password {
+    font-size: 15px;
+    padding-top: 2%;
+    padding-left: 2%;
+    width: fit-content;
+}
+
+.forget-password a {
+    text-decoration: none;
+    color: white;
+}
