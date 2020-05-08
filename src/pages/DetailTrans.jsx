@@ -1,6 +1,5 @@
 import React from "react"
 import {Container,Row,Col, Table, Form, FormGroup, Button} from "react-bootstrap"
-import "./transaksi.css"
 import {connect} from "unistore/react"
 import {store,actions} from "../store"
 import {withRouter} from "react-router-dom"
