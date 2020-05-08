@@ -24,17 +24,16 @@ const MainRoute = () => {
           <Route exact path='/daftar-transaksi' component={DaftarTransaksi}/>
           <Route exact path='/checkout' component={Checkout} />
           <Route exact path='/login-admin' component={LoginAdmin} />
-	  <Route exact path='/daftar-produk' component={DaftarProduk} />
+	        <Route exact path='/daftar-produk' component={DaftarProduk} />
           <Route exact path="/detail-produk" component={ProductDetails} />
           <Route exact path="/laporan-jual" component={LaporanPenjualan} />
-         <Route exact path="/detail-trans" component={TransactionDetail} />
+          <Route exact path="/detail-trans" component={TransactionDetail} />
 					{/* <Route exact path="/login" component={Login} /> */}
 					{/* <Route component={NotMatch} /> */}
 				</Switch>
 			</BrowserRouter>
 		</Provider>
 	);
-
 };
 
 export default MainRoute;
