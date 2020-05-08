@@ -80,7 +80,8 @@ class Sidebar extends Component {
 					</a>
 					<a
 						className={
-							this.props.location.pathname === '/laporan-penjualan'
+							this.props.location.pathname === '/laporan-penjualan' ||
+							this.props.location.pathname === '/detail-transaksi'
 								? 'nav-link active'
 								: 'nav-link'
 						}

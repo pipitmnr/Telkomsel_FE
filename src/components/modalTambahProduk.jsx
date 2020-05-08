@@ -10,7 +10,9 @@ class ModalTambahProduk extends Component {
 		return (
 			<React.Fragment>
 				<Modal size='tiny' trigger={<Button>Tambah Item</Button>}>
-					<Modal.Header style={{ fontSize: '24px' }}>
+					<Modal.Header
+						style={{ fontSize: '24px', position: 'relative', height: 'auto' }}
+					>
 						Tambah Produk
 					</Modal.Header>
 					<Modal.Content>

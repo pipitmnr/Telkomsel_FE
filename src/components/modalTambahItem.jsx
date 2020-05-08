@@ -22,7 +22,11 @@ class ModalTambahItem extends Component {
 		return (
 			<React.Fragment>
 				<Modal size='tiny' trigger={<Button>Tambah Item</Button>}>
-					<Modal.Header style={{ fontSize: '24px' }}>Tambah Item</Modal.Header>
+					<Modal.Header
+						style={{ fontSize: '24px', position: 'relative', height: 'auto' }}
+					>
+						Tambah Item
+					</Modal.Header>
 					<Modal.Content>
 						<Form size='large'>
 							<Grid.Row className='row-modal'>
