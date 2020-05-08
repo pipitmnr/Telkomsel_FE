@@ -18,7 +18,7 @@ class ProductListWithImage extends Component {
            <div className="container-fluid">
                <div className="row">
                    <div className="col-md-3 col-12 product-list-with-image-product-container">
-                       <img src={voucherTelkomsel} alt="Voucher Telkomsel" className="product-list-with-image-image"/>
+                       <Link to={`/detail-produk`}><img src={voucherTelkomsel} alt="Voucher Telkomsel" className="product-list-with-image-image"/></Link>
                        <div className="product-list-with-image-product-info">
                             <Link to={'/detail-produk'} className="product-list-with-image-formatting-link">
                                 <span className="prouct-list-with-image-span-name">Nama Produk</span>

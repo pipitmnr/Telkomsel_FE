@@ -8,6 +8,7 @@ import DaftarCluster from '../pages/daftarCluster';
 import LoginAdmin from '../pages/loginAdmin';
 import DaftarProduk from '../pages/daftarProduk';
 import Checkout from '../pages/checkout';
+import ProductDetails from "../pages/productDetails";
 
 const MainRoute = () => {
   return (
@@ -21,11 +22,13 @@ const MainRoute = () => {
           <Route exact path='/checkout' component={Checkout} />
           <Route exact path='/login-admin' component={LoginAdmin} />
 					<Route exact path='/daftar-produk' component={DaftarProduk} />
-          {/* <Route exact path="/login" component={Login} /> */}
-          {/* <Route component={NotMatch} /> */}
-        </Switch>
-      </BrowserRouter>
-    </Provider>
-  );
+          <Route exact path="/detail-produk" component={ProductDetails} />
+					{/* <Route exact path="/login" component={Login} /> */}
+					{/* <Route component={NotMatch} /> */}
+				</Switch>
+			</BrowserRouter>
+		</Provider>
+	);
+};
 
 export default MainRoute;
