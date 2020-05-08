@@ -3,7 +3,7 @@ import {Table, Navbar, DropdownButton, Dropdown,Button, Row, Col, Container} fro
 import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import {store,actions} from "../store"
-import './transaksi.css';
+import '../styles/transaksi.css';
 
 
 class Transactions extends React.Component{
