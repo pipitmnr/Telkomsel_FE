@@ -28,10 +28,19 @@
     text-align: left;
 }
 
+.product-list-with-image-formatting-link:hover {
+    text-decoration: none;
+}
+
 .prouct-list-with-image-span-name {
+    color: #000000;
     font-size: 18px;
     font-weight: bold;
     font-style: normal;
+}
+
+.prouct-list-with-image-span-name:hover {
+    text-decoration: none;
 }
 
 .prouct-list-with-image-span-price {
