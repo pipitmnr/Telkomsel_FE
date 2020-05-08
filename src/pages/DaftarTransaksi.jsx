@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import {store,actions} from "../store"
 import '../styles/transaksi.css';
-
+import Sidebar from "../components/sidebar"
 
 class Transactions extends React.Component{
    
@@ -12,8 +12,8 @@ class Transactions extends React.Component{
         return <React.Fragment>
     <Container fluid>
     <Row>
-     <Col md="3" id="sidebar">
-     
+     <Col md="3">
+     <Sidebar/>
      </Col>
      <Col md= "8">
      <div id="transaksi">      
