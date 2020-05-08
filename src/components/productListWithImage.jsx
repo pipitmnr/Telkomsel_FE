@@ -13,53 +13,56 @@ class ProductListWithImage extends Component {
   };
 
   render() {
+    // Define an array that store information about the products
+    let products = [
+        {
+            "name": "Nama Produk",
+            "price": "Rp. 15.000",
+            "image": voucherTelkomsel
+        },
+        {
+            "name": "Perdana Paket Data",
+            "price": "Rp. 15.000",
+            "image": voucherTelkomsel
+        },
+        {
+            "name": "Voucher Data",
+            "price": "Rp. 15.000",
+            "image": voucherTelkomsel
+        },
+        {
+            "name": "Voucher Data",
+            "price": "Rp. 15.000",
+            "image": voucherTelkomsel
+        }
+    ];
+
+    // Define JSX variable to show all products
+    let productsList = products.map((product, index) => {
+        return (
+            <div className="col-md-3 col-12 product-list-with-image-product-container">
+                <img src={product.image} alt={product.name} className="product-list-with-image-image"/>
+                <div className="product-list-with-image-product-info">
+                    <Link to={'/detail-produk'} className="product-list-with-image-formatting-link">
+                        <span className="prouct-list-with-image-span-name">{product.name}</span>
+                    </Link>
+                    <br />
+                    <span className="prouct-list-with-image-span-price">{product.price}</span>
+                </div>
+                {
+                    index % 4 === 0 ?
+                    <span></span>:
+                    <div className="product-list-with-image-line"></div>
+                }
+            </div>
+        )
+    })
+
     return (
        <React.Fragment>
            <div className="container-fluid">
                <div className="row">
-                   <div className="col-md-3 col-12 product-list-with-image-product-container">
-                       <img src={voucherTelkomsel} alt="Voucher Telkomsel" className="product-list-with-image-image"/>
-                       <div className="product-list-with-image-product-info">
-                            <Link to={'/detail-produk'} className="product-list-with-image-formatting-link">
-                                <span className="prouct-list-with-image-span-name">Nama Produk</span>
-                            </Link>
-                            <br />
-                            <span className="prouct-list-with-image-span-price">Rp 15.000</span>
-                       </div>
-                   </div>
-                   <div className="col-md-3 col-12 product-list-with-image-product-container">
-                       <img src={voucherTelkomsel} alt="Voucher Telkomsel" className="product-list-with-image-image"/>
-                       <div className="product-list-with-image-line" />
-                       <div className="product-list-with-image-product-info">
-                            <Link to={'/detail-produk'} className="product-list-with-image-formatting-link">
-                                <span className="prouct-list-with-image-span-name">Perdana Paket Data</span>
-                            </Link>
-                            <br />
-                            <span className="prouct-list-with-image-span-price">Rp 15.000</span>
-                       </div>
-                   </div>
-                   <div className="col-md-3 col-12 product-list-with-image-product-container">
-                       <img src={voucherTelkomsel} alt="Voucher Telkomsel" className="product-list-with-image-image"/>
-                       <div className="product-list-with-image-line" />
-                       <div className="product-list-with-image-product-info">
-                            <Link to={'/detail-produk'} className="product-list-with-image-formatting-link">
-                                <span className="prouct-list-with-image-span-name">Voucher Data</span>
-                            </Link>
-                            <br />
-                            <span className="prouct-list-with-image-span-price">Rp 15.000</span>
-                       </div>
-                   </div>
-                   <div className="col-md-3 col-12 product-list-with-image-product-container">
-                       <img src={voucherTelkomsel} alt="Voucher Telkomsel" className="product-list-with-image-image"/>
-                       <div className="product-list-with-image-line" />
-                       <div className="product-list-with-image-product-info">
-                            <Link to={'/detail-produk'} className="product-list-with-image-formatting-link">
-                                <span className="prouct-list-with-image-span-name">Voucher Data</span>
-                            </Link>
-                            <br />
-                            <span className="prouct-list-with-image-span-price">Rp 15.000</span>
-                       </div>
-                   </div>
+                   {productsList}
                </div>
            </div>
       </React.Fragment>

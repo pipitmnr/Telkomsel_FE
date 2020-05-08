@@ -20,7 +20,7 @@ class ChooseRegion extends Component {
                         <form className="form-inline">
                             <div className="form-group choose-region-form-container">
                                 <label for="regionSearch"><span className="choose-region-label">Kota / Kecamatan</span></label>
-                                <input id="regionSearch" type="text" className="choose-region-input" placeholder="Jawa Timur, Kota Surabaya, Asemrowo"/>
+                                <input id="regionSearch" type="text" className="choose-region-input" placeholder="Contoh: Jawa Timur, Kota Surabaya, Asemrowo"/>
                             </div>
                         </form>
                     </div>
