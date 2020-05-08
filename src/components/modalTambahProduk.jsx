@@ -5,7 +5,7 @@ import { actions } from '../store';
 import { Modal, Input, Grid, Button, Form } from 'semantic-ui-react';
 import '../styles/modal.css';
 
-class ModalTambahItem extends Component {
+class ModalTambahProduk extends Component {
 	render() {
 		return (
 			<React.Fragment>
@@ -103,4 +103,4 @@ class ModalTambahItem extends Component {
 	}
 }
 
-export default connect('', actions)(withRouter(ModalTambahItem));
+export default connect('', actions)(withRouter(ModalTambahProduk));
