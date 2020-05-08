@@ -4,13 +4,17 @@ import {connect} from "unistore/react"
 import {store,actions} from "../store"
 import {withRouter} from "react-router-dom"
 import '../styles/transaksi.css';
+import Sidebar from "../components/sidebar"
 
 class TransactionDetail extends React.Component{
     render (){
         return <React.Fragment>
             <Container>
-                <Row className="big_detail">
-                    <Col>
+                <Row>
+                    <Col md="3">
+                    <Sidebar/>
+                    </Col>
+                    <Col className="big_detail">
                       <Form>
                           <FormGroup>
                             <Form.Label>Tanggal Transaksi</Form.Label>

@@ -4,6 +4,7 @@ import {connect} from "unistore/react"
 import {store, actions} from "../store"
 import {withRouter} from "react-router-dom"
 import '../styles/transaksi.css';
+import Sidebar from "../components/sidebar"
 
 class LaporanJual extends React.Component{
     constructor(props){
@@ -15,8 +16,11 @@ class LaporanJual extends React.Component{
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
           
            <Container>
-               <Row className="kluster">
-                   <Col md="9">
+               <Row>
+                   <Col md="3">
+                    <Sidebar/>
+                   </Col>
+                   <Col md="9" className="kluster">
                     <h1>Detail Transaksi</h1>
                     </Col>
                     <Col>
