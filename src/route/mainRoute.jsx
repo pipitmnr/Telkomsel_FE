@@ -7,18 +7,20 @@ import Shopping from '../pages/shopping';
 import DaftarCluster from '../pages/daftarCluster';
 import LoginAdmin from '../pages/loginAdmin';
 import DaftarProduk from '../pages/daftarProduk';
+import Checkout from '../pages/checkout';
 import ProductDetails from "../pages/productDetails";
 
 const MainRoute = () => {
-	return (
-		<Provider store={store}>
-			<BrowserRouter>
-				<Switch>
-					{/* PAGES ROUTING */}
-					<Route exact path='/' component={Home} />
-					<Route exact path='/belanja' component={Shopping} />
-					<Route exact path='/daftar-cluster' component={DaftarCluster} />
-					<Route exact path='/login-admin' component={LoginAdmin} />
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          {/* PAGES ROUTING */}
+          <Route exact path="/" component={Home} />
+          <Route exact path="/belanja" component={Shopping} />
+          <Route exact path='/daftar-cluster' component={DaftarCluster} />
+          <Route exact path='/checkout' component={Checkout} />
+          <Route exact path='/login-admin' component={LoginAdmin} />
 					<Route exact path='/daftar-produk' component={DaftarProduk} />
           <Route exact path="/detail-produk" component={ProductDetails} />
 					{/* <Route exact path="/login" component={Login} /> */}
