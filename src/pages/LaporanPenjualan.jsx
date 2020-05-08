@@ -3,7 +3,8 @@ import {ButtonGroup, Dropdown,DropdownButton,Container, Row, Col, Button, Table}
 import {connect} from "unistore/react"
 import {store, actions} from "../store"
 import {withRouter} from "react-router-dom"
-import './transaksi.css';
+import '../styles/transaksi.css';
+
 class LaporanJual extends React.Component{
     constructor(props){
         super(props);
