@@ -1,0 +1,90 @@
+#transaksi{
+    margin: 20% auto ;
+    /* width:1000px;
+    margin-right: 200px;
+    padding:50px; */
+    
+}
+
+.dots{
+    color:black;
+
+}
+.kluster{
+   margin-top:40px;
+} 
+.tabel-satu thead{
+    /* border: none; */
+    border-top: 5px solid grey;
+    border-right:4px solid grey;
+    border-left:4px solid grey;
+
+}
+
+.tabel-satu tr{
+    border-bottom:4px solid grey;
+    border-right:4px solid grey;
+    border-left:4px solid grey;
+}
+
+.tabel-satu thead{
+    /* border: none; */
+    border-top: 5px solid grey;
+    border-right:4px solid grey;
+    border-left:4px solid grey;
+
+}
+
+.tabel-trans-satu tr, .tabel-trans-dua tr{
+    border-bottom:4px solid grey;
+    border-right:4px solid grey;
+    border-left:4px solid grey;
+}
+
+.tabel-trans-satu thead, .tabel-trans-dua thead{
+    /* border: none; */
+    border-top: 5px solid grey;
+    border-right:4px solid grey;
+    border-left:4px solid grey;
+    border-bottom: 4px solid grey;
+
+}
+
+.two-button{
+    background-color: #d9dedb;
+    padding: 40px;
+    
+}
+.baris{
+    padding-bottom: 20px;
+    width: 97%;
+}
+.one-button-dropdown{
+    background-color:#d9dedb;
+    padding:40px;
+    margin-right:15px;
+    margin-left:15px;
+    
+}
+.one-button{
+    background-color:#6fbf84;
+    text-align: center;
+    padding: 40px;
+    padding-right:-70%;
+}
+.two-button,.one-button-dropdown,.one-button{
+    margin-top:20px;
+    border-radius: 15px;
+}
+
+.big_detail{
+    margin-top: 20%;
+    background-color: #d9dedb;
+}
+
+#sidebar{
+    margin-bottom: -20%;
+    /* height: 2000px; */
+    background-color: red;
+}
+
