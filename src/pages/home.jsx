@@ -17,7 +17,7 @@ class Home extends Component {
         <div className="header-white-space"></div>
         <div className="container-fluid">
           <div className="carousel">
-            <img src={require("../images/#dirumahterusbelajar.jpg")} alt=""/>
+            <img src="" alt=""/>
           </div>
           <div className="row align-items-center">
             <div className="col-md-12 product-details-key">
