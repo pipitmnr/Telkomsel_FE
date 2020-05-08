@@ -9,13 +9,16 @@ import Sidebar from "../components/sidebar"
 class TransactionDetail extends React.Component{
     render (){
         return <React.Fragment>
-            <Container>
+            <Container fluid>
                 <Row>
                     <Col md="3">
                     <Sidebar/>
                     </Col>
-                    <Col className="big_detail">
-                      <Form>
+                    <Col md="9">
+                    <Col md="10" className="big_detail">
+                       <Row>
+                        <Col>                      
+                        <Form>
                           <FormGroup>
                             <Form.Label>Tanggal Transaksi</Form.Label>
                             <Button block diabled variant="secondary">|</Button>
@@ -38,8 +41,8 @@ class TransactionDetail extends React.Component{
                               <Button block diabled variant="secondary">|</Button>
                           </FormGroup>
                       </Form>
-                      
                     </Col>
+                    
                     <Col>
                     <Form>
                           <FormGroup>
@@ -63,14 +66,12 @@ class TransactionDetail extends React.Component{
                               <Form.Label>Kode Pos</Form.Label>
                               <Button block diabled variant="secondary">|</Button>
                           </FormGroup>
-                      </Form>
+                      </Form> 
                     </Col>
-                </Row>
-                <br/>
-                <h3>Detail Item Pembelian</h3><br/>
+                    </Row> 
+                </Col>
                 <Row>
-                    
-                    <Col md="7">
+                <Col md="7">
                     <Table className="tabel-trans-satu" bordered>
                         <thead>
                             <th>Nama Item</th>
@@ -95,7 +96,6 @@ class TransactionDetail extends React.Component{
                     </Table>
                     <Button variant="primary">Kembali</Button>
                     </Col>
-                    
                     &nbsp; &nbsp;
                     <Col md= "3">
                     <Table className="tabel-trans-dua" bordered>
@@ -124,7 +124,8 @@ class TransactionDetail extends React.Component{
                     </Table>
                     </Col>
                 </Row>
-                
+                </Col>
+                </Row>
             </Container>
             
         </React.Fragment>

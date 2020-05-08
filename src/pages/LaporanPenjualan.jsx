@@ -15,24 +15,24 @@ class LaporanJual extends React.Component{
         return <React.Fragment>
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
           
-           <Container>
+           <Container fluid>
                <Row>
                    <Col md="3">
                     <Sidebar/>
                    </Col>
                    <Col md="9" className="kluster">
+                    
                     <h1>Detail Transaksi</h1>
-                    </Col>
-                    <Col>
+                   
+                    <Row>
                     <DropdownButton className="d-inline-block align-center" title={this.props.filter_kluster} variant="danger">
                         <Dropdown.Item href="" onClick={()=>store.setState({filter_kluster:"Kluster 1"})}>Kluster 1</Dropdown.Item>
                         <Dropdown.Item href=""onClick={()=>store.setState({filter_kluster:"Kluster 2"})}>Kluster 2</Dropdown.Item>
                         <Dropdown.Item href=""onClick={()=>store.setState({filter_kluster:"Kluster 3"})}>Kluster 3</Dropdown.Item>
                         <Dropdown.Item href=""onClick={()=>store.setState({filter_kluster:"Kluster 4"})}>Kluster 4</Dropdown.Item>
                     </DropdownButton>
-                    </Col>
-                </Row>     
-               <Row className="baris">
+                    </Row>
+                    <Row className="baris">
                 
                    <div className="two-button">
                    <p><b>Pilih Tanggal</b></p>
@@ -51,9 +51,7 @@ class LaporanJual extends React.Component{
                        </Dropdown>
                        </Col>
                     </div>
-                
-                   
-                   <div className="one-button-dropdown">
+                    <div className="one-button-dropdown">
                    <p><b>Status</b></p>
                    <Col md="2">
                        <Dropdown as={ButtonGroup}>
@@ -63,20 +61,17 @@ class LaporanJual extends React.Component{
                            <Dropdown.Item onClick={()=>store.setState({filter_payment:"Gagal"})}>Gagal</Dropdown.Item>
                            <Dropdown.Item onClick={()=>store.setState({filter_payment:"Menunggu Bayar"})}>Menunggu Bayar</Dropdown.Item>
                            </DropdownButton>
-                           
                        </Dropdown>
-                       
                    </Col>
                    </div>
                    <div className="one-button">
                        <Col>
                           <p>Total Transaksi</p>
-                          <h1>Rp. 1.500.000</h1>
+                          <h2>Rp. 1.500.000</h2>
                        </Col>
                    </div>
-                
-               </Row>
-               <Row className="baris">
+                     </Row>
+                     <Row className="baris">
                
                <Table className="tabel-satu" striped bordered hover variant="white" size="sm">
            
@@ -98,7 +93,9 @@ class LaporanJual extends React.Component{
                         </tr>
                     </tbody>
                 </Table>
-               </Row>
+               </Row>     
+                    </Col>
+                </Row> 
            </Container>
         </React.Fragment>
 

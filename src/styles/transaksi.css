@@ -70,8 +70,8 @@
 .one-button{
     background-color:#6fbf84;
     text-align: center;
-    padding: 40px;
-    padding-right:-70%;
+    padding: 30px;
+    padding-right:-9%;
 }
 .two-button,.one-button-dropdown,.one-button{
     margin-top:20px;
@@ -79,7 +79,8 @@
 }
 
 .big_detail{
-    margin-top: 20%;
+    margin-top: 10%;
+    margin-bottom: 2%;
     background-color: #d9dedb;
 }
 
