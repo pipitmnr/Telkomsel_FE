@@ -28,7 +28,7 @@ const optionsCluster = [
 	{ key: 3, text: 'Cluster B', value: 'Cluster B' },
 ];
 const optionsTable = [{ key: 1, text: 'No SKU', value: 'No SKU' }];
-class DaftarCluster extends Component {
+class DaftarProduk extends Component {
 	componentDidMount = async () => {};
 	state = {
 		valueItem: 'Semua Item',
@@ -57,7 +57,7 @@ class DaftarCluster extends Component {
 						<div className='col-md-9' style={{ paddingLeft: '0px' }}>
 							<div className='container'>
 								<div className='row'>
-									<TitlePage title={'Daftar Data Item'} />
+									<TitlePage title={'Daftar Produk'} />
 								</div>
 								<div className='row'>
 									<div className='col-md-12 admin-filter'>
@@ -122,10 +122,7 @@ class DaftarCluster extends Component {
 													Tipe Produk
 												</Table.HeaderCell>
 												<Table.HeaderCell style={{ color: '#1B355F' }}>
-													Harga Produk
-												</Table.HeaderCell>
-												<Table.HeaderCell style={{ color: '#1B355F' }}>
-													Sisa Stok
+													Status
 												</Table.HeaderCell>
 												<Table.HeaderCell style={{ color: '#1B355F' }}>
 													User
@@ -145,10 +142,10 @@ class DaftarCluster extends Component {
 														<Table.Cell>7881218218</Table.Cell>
 														<Table.Cell>Perdana Segel No Cantik</Table.Cell>
 														<Table.Cell>Perdana Segel</Table.Cell>
-														<Table.Cell>Rp 15.000</Table.Cell>
-														<Table.Cell>15</Table.Cell>
+														<Table.Cell>Aktif</Table.Cell>
 														<Table.Cell>Aditya</Table.Cell>
 														<Table.Cell>:</Table.Cell>
+														<Table.Cell></Table.Cell>
 														<Table.Cell></Table.Cell>
 													</Table.Row>
 												);
@@ -173,4 +170,4 @@ class DaftarCluster extends Component {
 	}
 }
 
-export default connect('', actions)(withRouter(DaftarCluster));
+export default connect('', actions)(withRouter(DaftarProduk));
