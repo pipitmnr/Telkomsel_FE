@@ -15,16 +15,18 @@ class Home extends Component {
       <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
-        <div className="container-fluid">
+        <div className="container-fluid px-0">
           <div className="carousel">
-            <img src="" alt=""/>
+            <img src="https://www.telkomsel.com/sites/default/files/banners/hero/desktop/BELAJAR-1200x480.jpg" alt=""/>
           </div>
-          <div className="row align-items-center">
-            <div className="col-md-12 product-details-key">
-                Produk Unggulan
-            </div>
-            <div className="col-md-12 mb-4">
-                <ProductListWithImage/>
+          <div className="container">
+            <div className="row align-items-center" style={{marginTop:"51px"}}>
+              <div className="col-md-12 product-details-key">
+                  Produk Unggulan
+              </div>
+              <div className="col-md-12 mb-4">
+                  <ProductListWithImage/>
+              </div>
             </div>
           </div>
         </div>

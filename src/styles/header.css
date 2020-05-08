@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
 .header{
     height: 109px;
     width: 100vw;
@@ -8,6 +12,7 @@
     -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.15);
     box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.15);
     z-index: 100;
+    font-family: "muli";
 }
 .header-logo{
     height: 66px;
@@ -20,7 +25,7 @@
     margin: auto;
 }
 .header-menu li{
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     list-style: none;
     display: inline;

@@ -22,7 +22,7 @@ class ProductDetails extends Component {
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
         <PageTitle />
-        <div className="container">
+        <div className="container font-muli">
           <div className="row mt-4">
             <div className="col-md-6 text-center">
                 <img className="product-details-image" src={require("../images/voucherTelkomsel.jpg")} alt=""/>

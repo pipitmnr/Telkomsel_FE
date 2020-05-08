@@ -1,7 +1,10 @@
 import createStore from "unistore";
 
+
 const initialState = {
-    username: "",
+  filter_payment:"Semua Jenis",
+  filter_kluster:"Semua Kluster",
+  username:""
 };
 
 export const store = createStore(initialState);
