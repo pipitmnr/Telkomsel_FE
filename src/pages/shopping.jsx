@@ -22,11 +22,13 @@ class Shopping extends Component {
         <div className="header-white-space"></div>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12 col-md-2 shopping-filter-container">
+            <div className="col-12 col-md-2 shopping-filter-container shopping-product-z-10">
               <CheckboxFilter />
             </div>
             <div className="col-12 col-md-10 shopping-product-list">
-              <ChooseRegion />
+              <div className="shopping-absolute-position">
+                <ChooseRegion />
+              </div>
               <div className="shopping-product-list-box">
                 <ProductListWithImage />
                 <ProductListWithImage />
