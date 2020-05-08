@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
-import { Button, Dropdown, Table, Checkbox } from 'semantic-ui-react';
+import { Dropdown, Table, Checkbox } from 'semantic-ui-react';
 import { actions } from '../store';
 import '../styles/sidebar.css';
 import '../styles/daftarDataCluster.css';
 import Sidebar from '../components/sidebar';
 import TitlePage from '../components/titleAdmin';
+import ModalItem from '../components/modalTambahItem';
 import PaginationMenu from '../components/pagination';
 import Footer from '../components/footer';
 
@@ -63,7 +64,7 @@ class DaftarCluster extends Component {
 									<div className='col-md-12 admin-filter'>
 										<ul>
 											<li>
-												<Button content='Tambah Item' />
+												<ModalItem />
 											</li>
 											<li>
 												<Dropdown
@@ -81,15 +82,19 @@ class DaftarCluster extends Component {
 													value={this.state.valueJenis}
 												/>
 											</li>
-											<li>
-												<Dropdown
-													className='cluster'
-													onChange={this.handleChangeCluster}
-													options={optionsCluster}
-													selection
-													value={this.state.valueCluster}
-												/>
-											</li>
+											{localStorage.getItem('username') === 'pusat' ? (
+												<li>
+													<Dropdown
+														className='cluster'
+														onChange={this.handleChangeCluster}
+														options={optionsCluster}
+														selection
+														value={this.state.valueCluster}
+													/>
+												</li>
+											) : (
+												<li></li>
+											)}
 										</ul>
 									</div>
 								</div>

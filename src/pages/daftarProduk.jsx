@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
-import { Button, Dropdown, Table, Checkbox } from 'semantic-ui-react';
+import { Dropdown, Table, Checkbox } from 'semantic-ui-react';
 import { actions } from '../store';
 import '../styles/sidebar.css';
 import '../styles/daftarDataCluster.css';
 import Sidebar from '../components/sidebar';
 import TitlePage from '../components/titleAdmin';
+import ModalProduk from '../components/modalTambahProduk';
 import PaginationMenu from '../components/pagination';
 import Footer from '../components/footer';
 
@@ -63,7 +64,7 @@ class DaftarProduk extends Component {
 									<div className='col-md-12 admin-filter'>
 										<ul>
 											<li>
-												<Button content='Tambah Item' />
+												<ModalProduk />
 											</li>
 											<li>
 												<Dropdown

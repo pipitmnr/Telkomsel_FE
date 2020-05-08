@@ -9,6 +9,10 @@ import TelkomselLogo from '../images/telkomsel-logo.png';
 class Sidebar extends Component {
 	componentDidMount = async () => {};
 
+	handleLogout = () => {
+		localStorage.removeItem('username');
+	};
+
 	render() {
 		return (
 			<React.Fragment>
@@ -24,21 +28,26 @@ class Sidebar extends Component {
 					role='tablist'
 					aria-orientation='vertical'
 				>
-					<a
-						className={
-							this.props.location.pathname === '/daftar-produk'
-								? 'nav-link active'
-								: 'nav-link'
-						}
-						id='daftar-produk'
-						data-toggle='pill'
-						href='/daftar-produk'
-						role='tab'
-						aria-controls='v-pills-home'
-						aria-selected='true'
-					>
-						Master Produk
-					</a>
+					{localStorage.getItem('username') === 'pusat' ? (
+						<a
+							className={
+								this.props.location.pathname === '/daftar-produk'
+									? 'nav-link active'
+									: 'nav-link'
+							}
+							id='daftar-produk'
+							data-toggle='pill'
+							href='/daftar-produk'
+							role='tab'
+							aria-controls='v-pills-home'
+							aria-selected='true'
+						>
+							Master Produk
+						</a>
+					) : (
+						<div></div>
+					)}
+
 					<a
 						className={
 							this.props.location.pathname === '/daftar-cluster'
@@ -83,6 +92,18 @@ class Sidebar extends Component {
 						aria-selected='false'
 					>
 						Laporan Penjualan
+					</a>
+					<a
+						className='nav-link'
+						id='laporan-penjualan'
+						data-toggle='pill'
+						href='/login-admin'
+						role='tab'
+						aria-controls='v-pills-profile'
+						aria-selected='false'
+						onClick={this.handleLogout}
+					>
+						Logout
 					</a>
 				</div>
 			</React.Fragment>
