@@ -3,7 +3,7 @@ import {Container,Row,Col, Table, Form, FormGroup, Button} from "react-bootstrap
 import "./transaksi.css"
 import {connect} from "unistore/react"
 import {store,actions} from "./store.js"
-import {withRouter} from "react-router-dom}
+import {withRouter} from "react-router-dom"
 
 class TransactionDetail extends React.Component{
     render (){
