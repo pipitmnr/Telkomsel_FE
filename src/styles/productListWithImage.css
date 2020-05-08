@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+
+.product-list-with-image-product-container {
+    padding: 0;
+    text-align: center;
+}
+
+.product-list-with-image-image {
+    width: 85%;
+}
+
+.product-list-with-image-line {
+    height: 43%;
+    width: 0px;
+    border: 0.3px solid #000000;
+    position: absolute;
+    bottom: 28.5%;
+}
+
+.product-list-with-image-product-info {
+    position: absolute;
+    bottom: 7%;
+    left: 21.4%;
+    font-family: "muli";
+    text-align: left;
+}
+
+.product-list-with-image-formatting-link:hover {
+    text-decoration: none;
+}
+
+.prouct-list-with-image-span-name {
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.prouct-list-with-image-span-name:hover {
+    text-decoration: none;
+}
+
+.prouct-list-with-image-span-price {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+}

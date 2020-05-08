@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+
+
+.choose-region-container {
+    padding-top: 11px;
+}
+
+.choose-region-title {
+    font-family: "muli";
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.choose-region-box {
+    margin-top: 1%;
+    font-family: "muli";
+    background-image: url("../images/redBackground.png");
+    padding: 20px 0 20px 5%;
+}
+
+.choose-region-form-container {
+    width: 100%;
+}
+
+.choose-region-label {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+.choose-region-input {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    color: #000000;
+    width: 30%;
+    margin-left: 2%;
+    padding: 0.3% 0 0.3% 0.5%;
+}
