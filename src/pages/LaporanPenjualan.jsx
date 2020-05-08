@@ -94,7 +94,7 @@ class LaporanJual extends React.Component{
                             <td>0000000001</td>
                             <td>Rp 150.000</td>
                             <td><Button variant="success">Terbayar</Button></td>
-                            <td><a className="dots" href=""><i class="fa fa-ellipsis-v"></i></a></td>
+                            <td><a className="dots" href="/detail-trans"><i class="fa fa-ellipsis-v"></i></a></td>
                         </tr>
                     </tbody>
                 </Table>
