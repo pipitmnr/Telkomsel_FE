@@ -1,6 +1,8 @@
 import React from "react";
 import {Table, Navbar, DropdownButton, Dropdown,Button, Row, Col, Container} from "react-bootstrap"
-
+import { withRouter } from 'react-router-dom';
+import { connect } from 'unistore/react';
+import {store,actions} from "../store"
 import './transaksi.css';
 
 
