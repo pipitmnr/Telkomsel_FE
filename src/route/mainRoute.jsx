@@ -5,6 +5,7 @@ import { store } from '../store';
 import Home from '../pages/home';
 import Shopping from '../pages/shopping';
 import DaftarCluster from '../pages/daftarCluster';
+import LoginAdmin from '../pages/loginAdmin';
 import DaftarProduk from '../pages/daftarProduk';
 
 const MainRoute = () => {
@@ -16,6 +17,7 @@ const MainRoute = () => {
 					<Route exact path='/' component={Home} />
 					<Route exact path='/belanja' component={Shopping} />
 					<Route exact path='/daftar-cluster' component={DaftarCluster} />
+					<Route exact path='/login-admin' component={LoginAdmin} />
 					<Route exact path='/daftar-produk' component={DaftarProduk} />
 					{/* <Route exact path="/login" component={Login} /> */}
 					{/* <Route component={NotMatch} /> */}
