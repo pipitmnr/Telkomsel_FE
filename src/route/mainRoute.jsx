@@ -5,10 +5,12 @@ import { store } from '../store';
 import Home from '../pages/home';
 import Shopping from '../pages/shopping';
 import DaftarCluster from '../pages/daftarCluster';
+import DaftarTransaksi from '../pages/DaftarTransaksi'
 import LoginAdmin from '../pages/loginAdmin';
 import DaftarProduk from '../pages/daftarProduk';
 import Checkout from '../pages/checkout';
 import ProductDetails from "../pages/productDetails";
+
 
 const MainRoute = () => {
   return (
@@ -19,6 +21,7 @@ const MainRoute = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/belanja" component={Shopping} />
           <Route exact path='/daftar-cluster' component={DaftarCluster} />
+          <Route exact path='/daftar-transaksi' component={DaftarTransaksi}/>
           <Route exact path='/checkout' component={Checkout} />
           <Route exact path='/login-admin' component={LoginAdmin} />
 					<Route exact path='/daftar-produk' component={DaftarProduk} />
@@ -29,6 +32,7 @@ const MainRoute = () => {
 			</BrowserRouter>
 		</Provider>
 	);
+
 };
 
 export default MainRoute;
