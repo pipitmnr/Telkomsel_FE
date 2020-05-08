@@ -30,18 +30,23 @@ class LaporanJual extends React.Component {
 
 				<Container fluid>
 					<Row>
-						<Col md='3' className='col-sidebar'>
+						<Col sm='3' className='col-sidebar'>
 							<Sidebar />
 						</Col>
-						<Col md='9' className='kluster'>
-							<h1>Detail Transaksi</h1>
+						
+						<Col sm='9' className='kluster'>
+						<Row>
 
-							<Row>
+							<Col md="8">
+							<h1>Laporan Penjualan</h1>
+                            </Col>
+						
 								<DropdownButton
 									className='d-inline-block align-center'
 									title={this.props.filter_kluster}
 									variant='danger'
 								>
+	
 									<Dropdown.Item
 										href=''
 										onClick={() =>
@@ -74,6 +79,12 @@ class LaporanJual extends React.Component {
 									>
 										Kluster 4
 									</Dropdown.Item>
+									<Dropdown.Item
+										href=''
+										onClick={() =>
+											store.setState({ filter_kluster: 'Semua Kluster' })
+										}
+									>Semua Kluster</Dropdown.Item>
 								</DropdownButton>
 							</Row>
 							<Row className='baris'>
@@ -81,7 +92,7 @@ class LaporanJual extends React.Component {
 									<p>
 										<b>Pilih Tanggal</b>
 									</p>
-									<Col md='2'>
+									<Col md='1'>
 										<Dropdown as={ButtonGroup}>
 											<DropdownButton
 												className='d-inline-block align-center'
@@ -116,7 +127,7 @@ class LaporanJual extends React.Component {
 									<p>
 										<b>Status</b>
 									</p>
-									<Col md='2'>
+									<Col md='1'>
 										<Dropdown as={ButtonGroup}>
 											<DropdownButton
 												className='d-inline-block align-center'
@@ -149,6 +160,13 @@ class LaporanJual extends React.Component {
 													}
 												>
 													Menunggu Bayar
+												</Dropdown.Item>
+												<Dropdown.Item
+													onClick={() =>
+														store.setState({ filter_payment: 'Semua Jenis' })
+													}
+												>
+													Semua Jenis
 												</Dropdown.Item>
 											</DropdownButton>
 										</Dropdown>

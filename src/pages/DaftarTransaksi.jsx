@@ -25,7 +25,10 @@ class Transactions extends React.Component {
 							<Sidebar />
 						</Col>
 						<Col md='8'>
+							
 							<div id='transaksi'>
+							<h1>Transaksi Anda</h1>
+							<br/>
 								<Navbar expand='lg' id='filter_one'>
 									<Navbar.Collapse>
 										<b>Filter</b> : &nbsp;{' '}
@@ -67,6 +70,15 @@ class Transactions extends React.Component {
 												>
 													Menunggu Bayar
 												</Dropdown.Item>
+												<Dropdown.Item
+													as='button'
+													onClick={() =>
+														store.setState({ filter_payment: 'Semua Jenis' })
+													}
+												>
+													Semua Jenis
+												</Dropdown.Item>
+												
 											</DropdownButton>
 											&nbsp;
 											<DropdownButton
@@ -105,6 +117,14 @@ class Transactions extends React.Component {
 													}
 												>
 													Kluster 4
+												</Dropdown.Item>
+												<Dropdown.Item
+													href=''
+													onClick={() =>
+														store.setState({ filter_kluster: 'Semua Kluster' })
+													}
+												>
+													Semua Kluster
 												</Dropdown.Item>
 											</DropdownButton>
 										</Dropdown>

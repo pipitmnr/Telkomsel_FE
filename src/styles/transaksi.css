@@ -1,5 +1,5 @@
 #transaksi{
-    margin: 20% auto ;
+    margin: 10% auto ;
     /* width:1000px;
     margin-right: 200px;
     padding:50px; */
@@ -13,6 +13,7 @@
 
 .kluster{
    margin-top:40px;
+   padding-left: 2.5%;
 } 
 .tabel-satu thead{
     /* border: none; */
@@ -58,7 +59,7 @@
 }
 .baris{
     padding-bottom: 20px;
-    width: 97%;
+    width: 89%;
 }
 .one-button-dropdown{
     background-color:#d9dedb;
