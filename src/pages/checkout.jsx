@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import { actions } from '../store';
 import Header from '../components/header';
+import PageTitleWithoutCart from "../components/pageTitleWithoutCart";
 import Footer from "../components/footer";
 import CheckoutForm from "../components/checkoutForm";
 import CartList from "../components/cartList";
@@ -16,6 +17,7 @@ class Checkout extends Component {
       <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
+        <PageTitleWithoutCart />
         <div className="container">
             <div className="row">
               <div className="col-12 col-md-7 checkout-left-part">
