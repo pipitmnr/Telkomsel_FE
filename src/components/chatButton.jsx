@@ -3,6 +3,8 @@ import { withRouter } from "react-router-dom";
 import { connect } from "unistore/react";
 import { actions } from "../store";
 import "../styles/bootstrap.min.css";
+import "../styles/chatButton.css";
+import { FaCommentAlt } from "react-icons/fa";
 
 class ChatButton extends Component {
 
@@ -12,7 +14,11 @@ class ChatButton extends Component {
            <div className="container-fluid">
                 <div className="row align-items-center">
                     <div className="col-md-12">
-                        Ini chat button
+                      <div className="chat-button">
+                        <div className="btn btn-danger chat-button-red">
+                          <div className="chat-button-icon"> <FaCommentAlt size={21}/> </div>
+                        </div>
+                      </div>
                     </div>
                 </div>
            </div>

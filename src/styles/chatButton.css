@@ -1,0 +1,23 @@
+.chat-button-red{
+    width: 60px;
+    height: 60px;
+    background-color: #de1d4d;
+
+    border-color: transparent #de1d4d transparent transparent;
+    border-radius: 34px 8px 34px 34px;
+    box-shadow: 0 5px 4px 0 rgba(0,0,0,.26);
+    display: table;
+}
+.chat-button{
+    width: 75px;
+    height: 75px;
+    display: table;
+    position: fixed;
+    z-index: 99;
+    left: 93vw;
+    top: 87vh;
+}
+.chat-button-icon{
+    display: table-cell;
+    vertical-align: middle;
+}
