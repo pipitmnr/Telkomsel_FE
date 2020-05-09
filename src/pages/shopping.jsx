@@ -10,6 +10,7 @@ import ChooseRegion from "../components/chooseRegion";
 import Footer from "../components/footer";
 import "../styles/bootstrap.min.css";
 import "../styles/shopping.css";
+import ChatButton from "../components/chatButton";
 
 class Shopping extends Component {
   
@@ -49,6 +50,7 @@ class Shopping extends Component {
             </div>
           </div>
         </div>
+        <ChatButton/>
       </React.Fragment>
     );
   }

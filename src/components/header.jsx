@@ -22,7 +22,8 @@ class Header extends Component {
                           :
                           <li><Link to={`/`}>Home</Link></li>
                         }
-                        {this.props.menuActive === "/belanja" || this.props.menuActive === "/detail-produk"?
+                        {this.props.menuActive === "/belanja" || this.props.menuActive === "/detail-produk"
+                          || this.props.menuActive === "/checkout"?
                           <li className="header-menu-active"><Link to={`/belanja`}>Belanja</Link></li>
                           :
                           <li><Link to={`/belanja`}>Belanja</Link></li>
