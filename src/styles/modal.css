@@ -24,7 +24,7 @@
 }
 
 .no-sku {
-    margin-left: 9.5%;
+    margin-left: 10%;
 }
 
 .jenis-produk {
@@ -51,9 +51,9 @@
 
 .pilihan-produk {
     height: 5vh;
-    margin-left: 5%;
+    margin-left: 5.5%;
     min-width: 1px !important;
-    width: 24.5vh !important;
+    width: 26vh !important;
 }
 
 .pilih-item {
@@ -81,4 +81,13 @@
     opacity: 0.99;
     background-color: #CACACA;
     border-radius: 5px;
+}
+
+.upload-gambar {
+    margin-bottom: 0px !important;
+}
+
+.modal-jenis-produk {
+    margin-left: 29px;
+    min-width: 203px !important;
 }

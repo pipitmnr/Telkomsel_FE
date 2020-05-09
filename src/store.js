@@ -2,10 +2,10 @@ import createStore from "unistore";
 
 
 const initialState = {
-  filter_payment:"Semua Jenis",
-  filter_kluster:"Semua Kluster",
-  username:"",
-
+  filter_payment: "Semua Jenis",
+  filter_kluster: "Semua Kluster",
+  username: "",
+  emailReset: "",
   // Prouct list related props
   productListWithImage: [],
   isPerdanaSegel: false,
