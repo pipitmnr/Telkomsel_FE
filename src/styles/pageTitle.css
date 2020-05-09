@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+.page-title{
+    height: 93px;
+    background: linear-gradient(180deg, #D71F27 0%, rgba(237, 83, 90, 0) 100%), #D32026;;
+}
+.page-title-entry{
+    color: white;
+    font-family: "muli";
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+}
+.page-title-box{
+    width: 232px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: auto;
+}
+.page-title-box-entry{
+    padding: 18px 0;
+}
+.page-title-box-entry a{
+    text-decoration: none;
+    color: rgb(53, 52, 52);
+    font-size: 18px;
+    font-family: "muli";
+}
+.page-title-box-entry a:hover{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}

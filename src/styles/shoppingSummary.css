@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+
+.shopping-summary-container {
+    margin-top: 11%;
+    padding: 15px 10px 10px 10px;
+    font-family: "muli";
+    background: linear-gradient(0deg, rgba(225, 225, 225, 0.5), rgba(225, 225, 225, 0.5)), linear-gradient(0deg, rgba(225, 225, 225, 0.5), rgba(225, 225, 225, 0.5)), rgba(225, 225, 225, 0.5);
+    border-radius: 10px;
+}
+
+.shopping-summary-title {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.shopping-summary-sent-by {
+    padding-right: 0;
+}
+
+.shopping-summary-sent-by div {
+    color: #D32026;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: left;
+    padding-top: 11.5px;
+    padding-bottom: 11.5px;
+}
+
+.shopping-summary-value {
+    padding-left: 0;
+}
+
+.shopping-summary-value div {
+    color: #000000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    padding-top: 11.5px;
+    padding-bottom: 11.5px;
+}
+
+.shopping-summary-red-font {
+    color: #D32026;
+}
+
+.shopping-summary-divider {
+    border-bottom: #000000 1px solid;
+}
+
+.shopping-summary-method-payment, .shopping-summary-submit-coupon {
+    background-color: #DA3333;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 5px;
+    margin: 20px 12px 30px 12px;
+    padding: 15px 0;
+}
+
+.shopping-summary-coupon-container {
+    margin-top: 4%;
+    padding: 15px 10px 10px 10px;
+    font-family: "muli";
+    background: linear-gradient(0deg, rgba(225, 225, 225, 0.5), rgba(225, 225, 225, 0.5)), linear-gradient(0deg, rgba(225, 225, 225, 0.5), rgba(225, 225, 225, 0.5)), rgba(225, 225, 225, 0.5);
+    border-radius: 10px;
+}

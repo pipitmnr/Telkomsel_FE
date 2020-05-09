@@ -1,3 +1,11 @@
-.carousel{
-    height: 400px;
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+.product-details-key{
+    font-family: "muli";
+}
+.carousel img{
+    height: 552px;
+    width: 100vw;
 }
