@@ -4,11 +4,15 @@ import { connect } from 'unistore/react';
 import { actions } from '../store';
 import Header from '../components/header';
 import Footer from "../components/footer";
+import ProductListWithImage from "../components/productListWithImage";
+import "../styles/home.css";
+import ChatButton from "../components/chatButton";
 import ProductListWithImage from '../components/productListWithImage';
 import '../styles/home.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ChatButton from "../components/chatButton";
 
 class Home extends Component {
   componentDidMount = async () => {};
@@ -46,6 +50,8 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        <ChatButton/>
+        <ProductListWithImage/>
         <Footer />
       </React.Fragment>
     );
