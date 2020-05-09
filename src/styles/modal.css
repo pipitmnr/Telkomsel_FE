@@ -1,0 +1,84 @@
+.modal {
+    height: auto;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+}
+
+.ui.tiny.modal {
+    width: 450px;
+}
+
+.row-modal {
+    margin-left: 7%;
+}
+
+.field-modal {
+    width: 80vh;
+}
+
+.input-modal.ui.form .field .ui.input input,
+.ui.form .fields .field .ui.input input {
+    height: 5vh !important;
+}
+
+.no-sku {
+    margin-left: 9.5%;
+}
+
+.jenis-produk {
+    margin-left: 4.8%;
+}
+
+.nama-produk {
+    margin-left: 3.5%;
+}
+
+.foto-produk {
+    margin-left: 5.2%;
+}
+
+.status-produk {
+    margin-left: 3%;
+}
+
+.row-submit-modal {
+    margin-top: 1%;
+    margin-left: 39.5%;
+    margin-bottom: 5%;
+}
+
+.pilihan-produk {
+    height: 5vh;
+    margin-left: 5%;
+    min-width: 1px !important;
+    width: 24.5vh !important;
+}
+
+.pilih-item {
+    margin-left: 4.8%;
+}
+
+.nama-item {
+    margin-left: 3.3%;
+}
+
+.jenis-item {
+    margin-left: 4.7%;
+}
+
+.harga-item {
+    margin-left: 3%;
+}
+
+.stok-item {
+    margin-left: 5%;
+}
+
+.ui.disabled.input,
+.ui.input:not(.disabled) input[disabled] {
+    opacity: 0.99;
+    background-color: #CACACA;
+    border-radius: 5px;
+}
