@@ -72,7 +72,7 @@ class Transactions extends React.Component {
               <Sidebar />
             </Col>
             <Col md='8'>
-              <div id='transaksi'>
+              <div id='transaksi' style={{marginTop:"40px", marginBottom:"0"}}>
                 <h1>Transaksi Anda</h1>
                 <br />
                 <Navbar expand='lg' id='filter_one'>
