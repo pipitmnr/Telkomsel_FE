@@ -5,11 +5,21 @@ const initialState = {
   filter_payment: "Semua Jenis",
   filter_kluster: "Semua Kluster",
   username: "",
-  emailReset: ""
+  emailReset: "",
+  // Prouct list related props
+  productListWithImage: [],
+  isPerdanaSegel: false,
+  isPerdanaPaketData: false,
+  isVoucherData: false
 };
 
 export const store = createStore(initialState);
 
 export const actions = store => ({
-
+  handleSetGlobal: (state, event) => {
+                
+    store.setState({ [event.target.name]: event.target.value })
+    
+  },
+ 
 });

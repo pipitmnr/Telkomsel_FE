@@ -42,3 +42,7 @@
     margin-left: 2%;
     padding: 0.3% 0 0.3% 0.5%;
 }
+
+.choose-region-input::-webkit-calendar-picker-indicator {
+    display: none;
+}

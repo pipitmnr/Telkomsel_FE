@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Nama Produk",
+        "price": "Rp. 15.000",
+        "image": "../images/voucherTelkomsel.jpg"
+    },
+    {
+        "name": "Perdana Paket Data",
+        "price": "Rp. 15.000",
+        "image": "../images/voucherTelkomsel.jpg"
+    },
+    {
+        "name": "Voucher Data",
+        "price": "Rp. 15.000",
+        "image": "../images/voucherTelkomsel.jpg"
+    },
+    {
+        "name": "Voucher Data",
+        "price": "Rp. 15.000",
+        "image": "../images/voucherTelkomsel.jpg"
+    },
+    {
+        "name": "Nama Produk",
+        "price": "Rp. 15.000",
+        "image": "../images/voucherTelkomsel.jpg"
+    },
+    {
+        "name": "Perdana Paket Data",
+        "price": "Rp. 15.000",
+        "image": "../images/voucherTelkomsel.jpg"
+    },
+    {
+        "name": "Voucher Data",
+        "price": "Rp. 15.000",
+        "image": "../images/voucherTelkomsel.jpg"
+    },
+    {
+        "name": "Voucher Data",
+        "price": "Rp. 15.000",
+        "image": "../images/voucherTelkomsel.jpg"
+    }
+]
