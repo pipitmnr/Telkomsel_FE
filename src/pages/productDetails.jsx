@@ -7,6 +7,7 @@ import Footer from "../components/footer";
 import PageTitle from "../components/pageTitle";
 import "../styles/productDetails.css";
 import ProductListWithImage from "../components/productListWithImage";
+import ChatButton from "../components/chatButton";
 
 class ProductDetails extends Component {
   componentDidMount = async () => {};
@@ -73,13 +74,13 @@ class ProductDetails extends Component {
                     </div>
                 </div>
                 <div className="row align-items-center my-4">
-                    <div className="col-md-6">
-                        <button type="button" className="btn-danger product-details-red-box" onClick={this.goToCheckout}>
+                    <div className="col-md-12">
+                        <button type="button" style={{marginRight:"10px"}}
+                        className="btn-danger product-details-red-box" onClick={this.goToCheckout}>
                             Beli Sekarang
                         </button>
-                    </div>
-                    <div className="col-md-6">
-                        <button type="button" className="btn-outline-danger product-details-white-box">
+                        <button type="button" style={{marginLeft:"10px"}}
+                        className="btn-outline-danger product-details-white-box">
                             Tambah Ke Keranjang
                         </button>
                     </div>
@@ -95,6 +96,7 @@ class ProductDetails extends Component {
             </div>
           </div>
         </div>
+        <ChatButton/>
         <Footer />
       </React.Fragment>
     );

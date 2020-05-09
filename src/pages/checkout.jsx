@@ -7,6 +7,7 @@ import Footer from "../components/footer";
 import CheckoutForm from "../components/checkoutForm";
 import CartList from "../components/cartList";
 import ShoppingSummary from "../components/shoppingSummary";
+import ChatButton from "../components/chatButton";
 
 class Checkout extends Component {
   componentDidMount = async () => {};
@@ -27,6 +28,7 @@ class Checkout extends Component {
               </div>
             </div>
         </div>
+        <ChatButton/>
         <Footer />
       </React.Fragment>
     );
