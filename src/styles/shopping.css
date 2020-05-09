@@ -19,8 +19,13 @@
 .shopping-product-list-box {
     position: absolute;
     left: -4%;
-    top: 42%;
+    top: 105px;
     z-index: 1;
+}
+
+.shopping-product-list {
+    min-height: 482px;
+    vertical-align: top;
 }
 
 .shopping-footer {

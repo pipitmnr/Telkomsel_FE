@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "unistore/react";
-import { actions } from "../store";
+import { actions, store } from "../store";
 import Header from "../components/header";
 import PageTitle from "../components/pageTitle";
 import FilterableProductList from "../components/filterableProductList.jsx";
@@ -14,7 +14,13 @@ import "../styles/shopping.css";
 class Shopping extends Component {
   
   componentDidMount = async () => {
-    
+    // Set some property to default
+    store.setState({
+      productListWithImage: [],
+      isPerdanaSegel: false,
+      isPerdanaPaketData: false,
+      isVoucherData: false
+    })
   };
 
   render() {
@@ -33,7 +39,9 @@ class Shopping extends Component {
                 <ChooseRegion />
               </div>
               <div className="shopping-product-list-box">
-                <FilterableProductList />
+                <div className="shopping-product-list">
+                  <FilterableProductList />
+                </div>
                 <div className="shopping-footer">
                   <Footer />
                 </div>
@@ -46,4 +54,4 @@ class Shopping extends Component {
   }
 }
 
-export default connect("", actions)(withRouter(Shopping));
+export default connect("productListWithImage, isPerdanaSegel, isPerdanaPaketData, isVoucherData", actions)(withRouter(Shopping));
