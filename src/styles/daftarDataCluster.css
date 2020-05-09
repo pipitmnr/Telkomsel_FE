@@ -20,3 +20,13 @@
 .ui.selection.dropdown.dropdown-table {
     min-width: 1px;
 }
+
+.ui.sortable.table thead th {
+    border-left: none !important;
+    border-top: none !important;
+}
+
+.vertical-ellipsis a {
+    text-decoration: none;
+    color: unset;
+}

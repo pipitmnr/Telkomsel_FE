@@ -68,10 +68,10 @@ class Transactions extends React.Component {
       <React.Fragment>
         <Container fluid>
           <Row>
-            <Col md='3' className='col-sidebar'>
+            <Col md='3' className='col-sidebar' style={{position: 'fixed'}}>
               <Sidebar />
             </Col>
-            <Col md='8'>
+            <Col md='8' style={{marginLeft: '27%'}}>
               <div id='transaksi'>
                 <h1>Transaksi Anda</h1>
                 <br />
