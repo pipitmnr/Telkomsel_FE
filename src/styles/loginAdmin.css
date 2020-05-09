@@ -1,5 +1,21 @@
+html,
+body {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px !important;
+    overflow-x: hidden;
+    background-color: white;
+}
+
 .Logo-Admin {
-    padding: 8% 30% 0% 30%;
+    padding: 14% 10% 0% 10%;
+}
+
+.logo-login svg {
+    width: 570px;
+    height: 249px;
 }
 
 .ui.form {
@@ -17,8 +33,6 @@
 
 .row-password {
     padding-left: 0.7%;
-    /* padding-top: 3%; */
-    /* padding-bottom: 2%; */
 }
 
 .row-submit {

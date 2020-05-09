@@ -1,0 +1,96 @@
+[
+    {
+      "id":1,
+      "tanggal_transaksi":"01/02/2020",
+      "nomor_pesanan":"PO XX/123/956",
+      "total_penjualan":150000,
+      "status_transaksi":"Terbayar",
+      "color":"success"
+        
+    },
+    {
+        "id":2,
+        "tanggal_transaksi":"02/02/2020",
+        "nomor_pesanan":"PO XX/123/156",
+        "total_penjualan":250000,
+        "status_transaksi":"Terkirim",
+        "color":"primary"
+          
+    },
+    {
+        "id":3,
+        "tanggal_transaksi":"03/02/2020",
+        "nomor_pesanan":"PO XX/123/356",
+        "total_penjualan":150000,
+        "status_transaksi":"Gagal",
+        "color":"danger"
+          
+    },
+    {
+        "id":4,
+        "tanggal_transaksi":"04/02/2020",
+        "nomor_pesanan":"PO XX/123/656",
+        "total_penjualan":150000,
+        "status_transaksi":"Terbayar",
+        "color":"success"
+          
+    },
+    {
+        "id":5,
+        "tanggal_transaksi":"05/02/2020",
+        "nomor_pesanan":"PO XX/123/676",
+        "total_penjualan":150000,
+        "status_transaksi":"Terbayar",
+        "color":"success"
+          
+    },
+    {
+        "id":6,
+        "tanggal_transaksi":"06/02/2020",
+        "nomor_pesanan":"PO XX/123/777",
+        "total_penjualan":150000,
+        "status_transaksi":"Menunggu Bayar",
+        "color":"warning"
+          
+     },
+     {
+        "id":7,
+        "tanggal_transaksi":"07/02/2020",
+        "nomor_pesanan":"PO XX/123/770",
+        "total_penjualan":150000,
+        "status_transaksi":"Terbayar",
+        "color":"success"
+          
+    },
+    {
+        "id":8,
+        "tanggal_transaksi":"10/02/2020",
+        "nomor_pesanan":"PO XX/123/890",
+        "total_penjualan":150000,
+        "status_transaksi":"Terbayar",
+        "color":"success"
+          
+    },
+    {
+        "id":9,
+        "tanggal_transaksi":"11/02/2020",
+        "nomor_pesanan":"PO XX/123/729",
+        "total_penjualan":150000,
+        "status_transaksi":"Terbayar",
+        "color":"success"
+          
+    },
+    {
+        "id":10,
+        "tanggal_transaksi":"12/02/2020",
+        "nomor_pesanan":"PO XX/123/730",
+        "total_penjualan":150000,
+        "status_transaksi":"Terbayar",
+        "color":"success"
+          
+    }
+
+
+
+
+]

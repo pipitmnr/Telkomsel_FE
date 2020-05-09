@@ -7,6 +7,7 @@ import Footer from "../components/footer";
 import PageTitle from "../components/pageTitle";
 import "../styles/productDetails.css";
 import ProductListWithImage from "../components/productListWithImage";
+import ChatButton from "../components/chatButton";
 
 class ProductDetails extends Component {
   componentDidMount = async () => {};
@@ -22,7 +23,7 @@ class ProductDetails extends Component {
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
         <PageTitle />
-        <div className="container">
+        <div className="container font-muli">
           <div className="row mt-4">
             <div className="col-md-6 text-center">
                 <img className="product-details-image" src={require("../images/voucherTelkomsel.jpg")} alt=""/>
@@ -73,13 +74,13 @@ class ProductDetails extends Component {
                     </div>
                 </div>
                 <div className="row align-items-center my-4">
-                    <div className="col-md-6">
-                        <button type="button" className="btn-danger product-details-red-box" onClick={this.goToCheckout}>
+                    <div className="col-md-12">
+                        <button type="button" style={{marginRight:"10px"}}
+                        className="btn-danger product-details-red-box" onClick={this.goToCheckout}>
                             Beli Sekarang
                         </button>
-                    </div>
-                    <div className="col-md-6">
-                        <button type="button" className="btn-outline-danger product-details-white-box">
+                        <button type="button" style={{marginLeft:"10px"}}
+                        className="btn-outline-danger product-details-white-box">
                             Tambah Ke Keranjang
                         </button>
                     </div>
@@ -95,6 +96,7 @@ class ProductDetails extends Component {
             </div>
           </div>
         </div>
+        <ChatButton/>
         <Footer />
       </React.Fragment>
     );

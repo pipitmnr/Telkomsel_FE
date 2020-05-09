@@ -1,5 +1,5 @@
 #transaksi{
-    margin: 20% auto ;
+    margin: 10% auto ;
     /* width:1000px;
     margin-right: 200px;
     padding:50px; */
@@ -13,7 +13,11 @@
 
 .kluster{
    margin-top:40px;
+   padding-left: 1.8%;
 } 
+.tabel-satu, .tabel-transaksi{
+    text-align: center;
+}
 .tabel-satu thead{
     /* border: none; */
     border-top: 5px solid grey;
@@ -58,7 +62,7 @@
 }
 .baris{
     padding-bottom: 20px;
-    width: 97%;
+    width: 89%;
 }
 .one-button-dropdown{
     background-color:#d9dedb;
@@ -70,8 +74,8 @@
 .one-button{
     background-color:#6fbf84;
     text-align: center;
-    padding: 40px;
-    padding-right:-70%;
+    padding: 30px;
+    padding-right:-9%;
 }
 .two-button,.one-button-dropdown,.one-button{
     margin-top:20px;
@@ -79,7 +83,8 @@
 }
 
 .big_detail{
-    margin-top: 20%;
+    margin-top: 10%;
+    margin-bottom: 2%;
     background-color: #d9dedb;
 }
 
