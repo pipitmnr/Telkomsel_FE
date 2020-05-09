@@ -28,15 +28,19 @@ class ShoppingSummary extends Component {
                         <div>Rp. 75.000</div>
                     </div>
                </div>
-               <div className="shopping-summary-method-payment">
-                    Pilih Metode Pembayaran
+               <div className="shopping-summary-payment-container">
+                <button className="shopping-summary-method-payment">
+                      Pilih Metode Pembayaran
+                </button>
                </div>
            </div>
            <div className="shopping-summary-coupon-container container-fluid">
                 <h6 className="shopping-summary-title">Punya Kupon?</h6>
-                <div className="shopping-summary-submit-coupon">
-                    Masukkan Kupon
-               </div>
+                <div className="shopping-summary-payment-container">
+                  <div className="shopping-summary-submit-coupon">
+                      Masukkan Kupon
+                  </div>
+                </div>
            </div>
       </React.Fragment>
     );
