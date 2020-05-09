@@ -8,14 +8,40 @@ import {
 	Row,
 	Col,
 	Container,
+	ButtonGroup
 } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import { store, actions } from '../store';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
+import transaksi from '../data/transaksi.json'
 
 class Transactions extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {list_transaksi:transaksi};
+	}
+
+	ascOrder=(key)=>{
+		transaksi.sort((a,b)=>{var newA=a[key].split('/').concat(),newB=b[key].split('/').concat();
+		if (newA<newB){
+			return -1
+		}
+	    if (newA>newB){
+			return 0
+		}})
+		this.setState({list_transaksi:transaksi})
+
+	}
+	desOrder=(key)=>{
+		transaksi.sort((a,b)=>{var newA=a[key].split('/').concat(),newB=b[key].split('/').concat();
+		if (newA>newB){
+			return -1
+		}
+	    })
+		this.setState({list_transaksi:transaksi})
+	}
 	render() {
 		return (
 			<React.Fragment>
@@ -130,26 +156,45 @@ class Transactions extends React.Component {
 										</Dropdown>
 									</Navbar.Collapse>
 								</Navbar>
-								<Table striped bordered hover variant='white'>
+								<Table  className="tabel-transaksi" striped bordered hover variant='white'>
 									<thead>
-										<th>Nomor Pesanan</th>
+										<th><Dropdown as={ButtonGroup}>
+											<DropdownButton
+												className='d-inline-block align-center'
+												title="Nomor Pemesanan"
+												variant="white"
+											>
+												<Dropdown.Item
+													onClick={event=> this.ascOrder('nomor_pesanan')}
+												>
+													Ascending
+												</Dropdown.Item>
+												<Dropdown.Item
+													onClick={event=> this.desOrder('nomor_pesanan')}
+												>
+													Descending
+												</Dropdown.Item>
+												</DropdownButton>
+											</Dropdown></th>
 										<th>Nama Pemesan</th>
 										<th>Kota/Kecamatan Alamat</th>
 										<th>Detail Pesanan</th>
 										<th>Status</th>
 									</thead>
 									<tbody>
+									{transaksi.map(row=>(
 										<tr>
-											<td>0000000001</td>
-											<td>Yanto Basna</td>
+											<td>{row.nomor_pesanan}</td>
+									        <td>{row.nama_pemesan}</td>
 											<td>
-												Jl. Asemrawa Timur no.5, 602822, Asemrawa, Surabaya
+												{row.alamat}
 											</td>
-											<td>Kartu Perdana Segel-5 Buah</td>
+									          <td>{row.detail_order}</td>
 											<td>
-												<Button variant='success'>Terbayar</Button>
+												<Button variant={row.color}>{row.status}</Button>
 											</td>
-										</tr>
+											
+										</tr>))}
 									</tbody>
 								</Table>
 							</div>
