@@ -1,5 +1,5 @@
 import createStore from "unistore";
-// import data from "../src/data/produk.json"
+
 
 const initialState = {
   filter_payment:"Semua Jenis",

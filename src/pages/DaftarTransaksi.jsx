@@ -48,7 +48,6 @@ class Transactions extends React.Component {
 			this.setState({list_transaksi: transaksi.filter(d=>{return d.status})})
 		}else{
 			store.setState({filter_payment:stats})
-			// console.log(transaksi.filter(d=>{return d.status==stats}))
 			this.setState({list_transaksi: transaksi.filter(d=>{return d.status==stats})})
 		}
 		
