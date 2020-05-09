@@ -42,6 +42,17 @@ class LaporanJual extends React.Component {
 		return new Date(dateB[2],dateB[1],dateB[0]) - new Date(dateA[2],dateA[1],dateA[0])})
 		this.setState({datas:data})
 	}
+
+	filterJenis=(stats)=>{
+		if (stats=='Semua Jenis'){
+			store.setState({filter_payment:stats})
+			this.setState({datas: data.filter(d=>{return d.status_transaksi})})
+		}else{
+		store.setState({filter_payment:stats})
+		this.setState({datas: data.filter(d=>{return d.status_transaksi==stats})})
+		}
+		
+	}
 	render() {
 
 		return (
@@ -157,36 +168,36 @@ class LaporanJual extends React.Component {
 												title={this.props.filter_payment}
 											>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Terbayar' })
+													onClick={event =>
+														this.filterJenis('Terbayar')
 													}
 												>
 													Terbayar
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Terkirim' })
+													onClick={event =>
+														this.filterJenis('Terkirim')
 													}
 												>
 													Terkirim
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Gagal' })
+													onClick={event =>
+														this.filterJenis('Gagal')
 													}
 												>
 													Gagal
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Menunggu Bayar' })
+													onClick={event =>
+														this.filterJenis('Menunggu Bayar')
 													}
 												>
 													Menunggu Bayar
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Semua Jenis' })
+													onClick={event =>
+														this.filterJenis('Semua Jenis')
 													}
 												>
 													Semua Jenis
@@ -279,6 +290,6 @@ class LaporanJual extends React.Component {
 }
 
 export default connect(
-	'filter_payment,filter_kluster, datas',
+	'filter_payment,filter_kluster',
 	actions
 )(withRouter(LaporanJual));

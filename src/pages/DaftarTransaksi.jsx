@@ -42,6 +42,17 @@ class Transactions extends React.Component {
 	    })
 		this.setState({list_transaksi:transaksi})
 	}
+	filterJenis=(stats)=>{
+		if (stats=='Semua Jenis'){
+			store.setState({filter_payment:stats})
+			this.setState({list_transaksi: transaksi.filter(d=>{return d.status})})
+		}else{
+			store.setState({filter_payment:stats})
+			// console.log(transaksi.filter(d=>{return d.status==stats}))
+			this.setState({list_transaksi: transaksi.filter(d=>{return d.status==stats})})
+		}
+		
+	}
 	render() {
 		return (
 			<React.Fragment>
@@ -66,40 +77,40 @@ class Transactions extends React.Component {
 											>
 												<Dropdown.Item
 													as='button'
-													onClick={() =>
-														store.setState({ filter_payment: 'Terbayar' })
+													onClick={event =>
+														this.filterJenis('Terbayar')
 													}
 												>
 													Terbayar
 												</Dropdown.Item>
 												<Dropdown.Item
 													as='button'
-													onClick={() =>
-														store.setState({ filter_payment: 'Gagal' })
+													onClick={event =>
+														this.filterJenis('Gagal')
 													}
 												>
 													Gagal
 												</Dropdown.Item>
 												<Dropdown.Item
 													as='button'
-													onClick={() =>
-														store.setState({ filter_payment: 'Terkirim' })
+													onClick={event =>
+														this.filterJenis('Terkirim')
 													}
 												>
 													Terkirim
 												</Dropdown.Item>
 												<Dropdown.Item
 													as='button'
-													onClick={() =>
-														store.setState({ filter_payment: 'Menunggu Bayar' })
+													onClick={event =>
+														this.filterJenis('Menunggu Pembayaran')
 													}
 												>
 													Menunggu Bayar
 												</Dropdown.Item>
 												<Dropdown.Item
 													as='button'
-													onClick={() =>
-														store.setState({ filter_payment: 'Semua Jenis' })
+													onClick={event =>
+														this.filterJenis('Semua Jenis')
 													}
 												>
 													Semua Jenis
@@ -182,7 +193,7 @@ class Transactions extends React.Component {
 										<th>Status</th>
 									</thead>
 									<tbody>
-									{transaksi.map(row=>(
+									{this.state.list_transaksi.map(row=>(
 										<tr>
 											<td>{row.nomor_pesanan}</td>
 									        <td>{row.nama_pemesan}</td>
