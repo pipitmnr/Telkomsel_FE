@@ -14,13 +14,47 @@ import { store, actions } from '../store';
 import { withRouter } from 'react-router-dom';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
+import data from "../data/produk.json"
 
 class LaporanJual extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { dates_first: 'tanggal awal', dates_last: 'tanggal akhir' };
+		this.state = { dates_first: 'tanggal awal', dates_last: 'tanggal akhir', datas:data};
+	}
+
+	ascending=(key)=>{
+		data.sort((a,b)=>a[key]-b[key])
+        this.setState({datas:data})
+	}
+	descending=(key)=>{
+		data.sort((a,b)=>b[key]-a[key])
+		this.setState({datas: data})
+	}
+
+	dateSortA=(key)=>{
+		data.sort((a,b)=>{var dateA = a[key].split('/'), dateB = b[key].split('/');
+		return new Date(dateA[2],dateA[1],dateA[0]) - new Date(dateB[2],dateB[1],dateB[0])})
+		this.setState({datas:data})
+
+	}
+	dateSortD=(key)=>{
+		data.sort((a,b)=>{var dateA = a[key].split('/'), dateB = b[key].split('/');
+		return new Date(dateB[2],dateB[1],dateB[0]) - new Date(dateA[2],dateA[1],dateA[0])})
+		this.setState({datas:data})
+	}
+
+	filterJenis=(stats)=>{
+		if (stats=='Semua Jenis'){
+			store.setState({filter_payment:stats})
+			this.setState({datas: data.filter(d=>{return d.status_transaksi})})
+		}else{
+		store.setState({filter_payment:stats})
+		this.setState({datas: data.filter(d=>{return d.status_transaksi==stats})})
+		}
+		
 	}
 	render() {
+
 		return (
 			<React.Fragment>
 				<link
@@ -134,36 +168,36 @@ class LaporanJual extends React.Component {
 												title={this.props.filter_payment}
 											>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Terbayar' })
+													onClick={event =>
+														this.filterJenis('Terbayar')
 													}
 												>
 													Terbayar
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Terkirim' })
+													onClick={event =>
+														this.filterJenis('Terkirim')
 													}
 												>
 													Terkirim
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Gagal' })
+													onClick={event =>
+														this.filterJenis('Gagal')
 													}
 												>
 													Gagal
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Menunggu Bayar' })
+													onClick={event =>
+														this.filterJenis('Menunggu Bayar')
 													}
 												>
 													Menunggu Bayar
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={() =>
-														store.setState({ filter_payment: 'Semua Jenis' })
+													onClick={event =>
+														this.filterJenis('Semua Jenis')
 													}
 												>
 													Semua Jenis
@@ -175,7 +209,7 @@ class LaporanJual extends React.Component {
 								<div className='one-button'>
 									<Col>
 										<p>Total Transaksi</p>
-										<h2>Rp. 1.500.000</h2>
+										<h2>Rp {this.state.datas.reduce(function(accumulator,d){return accumulator+d.total_penjualan},0)}</h2>
 									</Col>
 								</div>
 							</Row>
@@ -189,26 +223,61 @@ class LaporanJual extends React.Component {
 									size='sm'
 								>
 									<thead>
-										<th>Tanggal Pemesanan</th>
+										<th><Dropdown as={ButtonGroup}>
+											<DropdownButton
+												className='d-inline-block align-center'
+												title="Tanggal Pemesanan"
+												variant="white"
+											>
+												<Dropdown.Item
+													onClick={event=> this.dateSortA('tanggal_transaksi')}
+												>
+													Ascending
+												</Dropdown.Item>
+												<Dropdown.Item
+													onClick={event=> this.dateSortD('tanggal_transaksi')}
+												>
+													Descending
+												</Dropdown.Item>
+												</DropdownButton>
+											</Dropdown></th>
 										<th>Nomor Pesanan</th>
-										<th>Total Penjualan</th>
+										<th><Dropdown as={ButtonGroup}>
+											<DropdownButton
+												className='d-inline-block align-center'
+												title="Total Transaksi"
+												variant="white"
+											>
+												<Dropdown.Item
+													onClick={event=> this.ascending('total_penjualan')}
+												>
+													Ascending
+												</Dropdown.Item>
+												<Dropdown.Item
+													onClick={event=> this.descending('total_penjualan')}
+												>
+													Descending
+												</Dropdown.Item>
+												</DropdownButton>
+											</Dropdown></th>
 										<th>Status Transaksi</th>
 										<th>Detail Transaksi</th>
 									</thead>
 									<tbody>
+										{this.state.datas.map(row=>(
 										<tr>
-											<td>01/02/2020</td>
-											<td>0000000001</td>
-											<td>Rp 150.000</td>
+											<td>{row.tanggal_transaksi}</td>
+											<td>{row.nomor_pesanan}</td>
+											<td>Rp {row.total_penjualan}</td>
 											<td>
-												<Button variant='success'>Terbayar</Button>
+												<Button variant={row.color}>{row.status_transaksi}</Button>
 											</td>
 											<td>
 												<a className='dots' href='/detail-transaksi'>
 													<i class='fa fa-ellipsis-v'></i>
 												</a>
 											</td>
-										</tr>
+										</tr>))}
 									</tbody>
 								</Table>
 							</Row>
