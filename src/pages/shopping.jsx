@@ -4,7 +4,7 @@ import { connect } from "unistore/react";
 import { actions } from "../store";
 import Header from "../components/header";
 import PageTitle from "../components/pageTitle";
-import ProductListWithImage from "../components/productListWithImage";
+import FilterableProductList from "../components/filterableProductList.jsx";
 import CheckboxFilter from "../components/checkboxFilter";
 import ChooseRegion from "../components/chooseRegion";
 import Footer from "../components/footer";
@@ -33,14 +33,13 @@ class Shopping extends Component {
                 <ChooseRegion />
               </div>
               <div className="shopping-product-list-box">
-                <ProductListWithImage />
-                <ProductListWithImage />
+                <FilterableProductList />
+                <div className="shopping-footer">
+                  <Footer />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="shopping-footer">
-          <Footer />
         </div>
       </React.Fragment>
     );
