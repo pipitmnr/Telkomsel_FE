@@ -3,7 +3,7 @@ import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'unistore/react';
 import {actions, store} from '../store';
 import {Grid, Image, Form, Input, Button, Item} from 'semantic-ui-react';
-// import Footer from '../components/footer';
+import Footer from '../components/footer';
 import LoginLogo from '../images/Telkomsel_Logo.svg';
 import '../styles/resetPassword.css';
 
@@ -35,8 +35,8 @@ class ResetPassword extends Component {
                 <Grid.Row className='text-reset'>
                   <h2 className='title-reset'>Reset Password</h2>
                   <span className='title-desc'>
-                    Please enter your email address to to request a password
-                    reset for your account
+                    Please enter your email address to request a password reset
+                    for your account
                   </span>
                 </Grid.Row>
                 <Grid.Row>
@@ -71,6 +71,11 @@ class ResetPassword extends Component {
               </Grid>
             </Grid.Column>
             <Grid.Column width={4}></Grid.Column>
+          </Grid.Row>
+        </Grid>
+        <Grid>
+          <Grid.Row className='footer-reset'>
+            <Footer />
           </Grid.Row>
         </Grid>
       </React.Fragment>
