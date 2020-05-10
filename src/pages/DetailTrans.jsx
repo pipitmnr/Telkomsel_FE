@@ -18,12 +18,13 @@ class TransactionDetail extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Container fluid>
+				<Container fluid className="main-container">
 					<Row>
 						<Col md='3' className='col-sidebar'>
 							<Sidebar />
 						</Col>
 						<Col md='9'>
+						  <h1 className="title-page">Detail Transaksi</h1>
 							<Col md='10' className='big_detail'>
 								<Row>
 									<Col>
@@ -40,7 +41,7 @@ class TransactionDetail extends React.Component {
 													|
 												</Button>
 											</FormGroup>
-											<p>Informasi Pembeli</p>
+											<p className="info-buyer"><b>Informasi Pembeli</b></p>
 											<FormGroup>
 												<Form.Label>Nama Pembeli</Form.Label>
 												<Button block diabled variant='secondary'>
@@ -123,7 +124,7 @@ class TransactionDetail extends React.Component {
 											</tr>
 										</tbody>
 									</Table>
-									<Button variant='primary'>Kembali</Button>
+									<Button className="back-button" variant='primary' href="/laporan-penjualan" size="lg">Kembali</Button>
 								</Col>
 								&nbsp; &nbsp;
 								<Col md='3'>

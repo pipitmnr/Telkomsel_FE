@@ -1,9 +1,98 @@
+/* DAFTAR TRANSAKSI START */
+
 #transaksi{
-    margin: 10% auto ;
-    /* width:1000px;
-    margin-right: 200px;
-    padding:50px; */
+    margin: 5% auto ;
     
+}
+
+.all-transaksi{
+    font-family: Muli;
+    font-size: 14px;
+}
+
+#bayar{
+    background: #1A345F;
+    color: white;
+}
+
+.tabel-transaksi thead th{
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tabel-transaksi thead, .tabel-transaksi tbody, .tabel-transaksi tbody tr {
+    border-top: 7px solid #E0DEDE;
+    border-right:7px solid #E0DEDE;
+    border-left:7px solid #E0DEDE;
+    border-bottom: 7px solid #E0DEDE;
+    font-size: 14px;
+    color: #1A345F
+    
+}
+
+/* DAFTAR TRANSAKSI END */
+
+/* LAPORAN PENJUALAN START */
+
+#sort-date,#sort-transaction{
+    font-weight: bold;
+}
+
+.all-penjualan{
+    font-family: Muli;
+}
+
+.tabel-satu thead th{
+    text-align: center;
+    vertical-align: middle;
+}
+#date-but, #date-but-2, #payment-filter-but{
+    background: #1A345F;
+    border-radius:5px;
+    color: white;
+}
+.export-excel{
+    background-color: grey;
+    color: white;
+    border-color: grey;
+}
+
+.two-button{
+    background-color: #d9dedb;
+    height:110px;
+    width:400px;
+    padding-top:20px;
+    padding-left:40px;
+    padding-right:10px;
+    padding-bottom: 0px;
+    
+}
+.baris{
+    padding-bottom: 20px;
+    width: 85%;
+}
+.one-button-dropdown{
+    background-color:#d9dedb;
+    height:110px;
+    width: 200px;
+    padding-top:20px;
+    padding-left:30px;
+    margin-right:15px;
+    margin-left:15px;
+    
+}
+.one-button{
+    background-color:#6fbf84;
+    height:110px;
+    width:230px;
+    text-align: center;
+    padding: 20px;
+
+}
+.two-button,.one-button-dropdown,.one-button{
+    margin-top:20px;
+    border-radius: 15px;
 }
 
 .dots{
@@ -12,85 +101,91 @@
 }
 
 .kluster{
-   margin-top:40px;
-   padding-left: 1.8%;
-} 
-.tabel-satu, .tabel-transaksi{
+    margin-top:40px;
+    padding-left: 1.8%;
+ } 
+
+ .tabel-satu, .tabel-transaksi{
     text-align: center;
+
 }
 .tabel-satu thead{
     /* border: none; */
-    border-top: 5px solid grey;
-    border-right:4px solid grey;
-    border-left:4px solid grey;
+    border-top: 7px solid  #E0DEDE;
+    border-right:7px solid  #E0DEDE;
+    border-left:7px solid  #E0DEDE;
 
 }
 
 .tabel-satu tr{
-    border-bottom:4px solid grey;
-    border-right:4px solid grey;
-    border-left:4px solid grey;
+    border-bottom:7px solid  #E0DEDE;
+    border-right:7px solid  #E0DEDE;
+    border-left:7px solid  #E0DEDE;
 }
 
 .tabel-satu thead{
     /* border: none; */
-    border-top: 5px solid grey;
-    border-right:4px solid grey;
-    border-left:4px solid grey;
+    border-top: 7px solid #E0DEDE;
+    border-right:7px solid #E0DEDE;
+    border-left:7px solid #E0DEDE;
+    border-bottom: 7px solid #E0DEDE;
+    
+}
+/* LAPORAN PENJUALAN END */
 
+/* DETAIL TRANSAKSI  START*/
+.main-container{
+    font-family: Muli;
+    font-size: 18px;
+}
+
+.info-buyer{
+    font-size: 24px;
 }
 
 .tabel-trans-satu tr, .tabel-trans-dua tr{
-    border-bottom:4px solid grey;
-    border-right:4px solid grey;
-    border-left:4px solid grey;
+    border-top: 7px solid #E0DEDE;
+    border-right:7px solid #E0DEDE;
+    border-left:7px solid #E0DEDE;
+    border-bottom: 7px solid #E0DEDE;
+    font-size: 14px;
+    color: #1A345F
 }
 
 .tabel-trans-satu thead, .tabel-trans-dua thead{
     /* border: none; */
-    border-top: 5px solid grey;
-    border-right:4px solid grey;
-    border-left:4px solid grey;
-    border-bottom: 4px solid grey;
+    border-top: 7px solid #E0DEDE;
+    border-right:7px solid #E0DEDE;
+    border-left:7px solid #E0DEDE;
+    border-bottom: 7px solid #E0DEDE;
+    font-size: 14px;
+    color: #1A345F
 
 }
-
-.two-button{
-    background-color: #d9dedb;
-    padding: 40px;
-    
-}
-.baris{
-    padding-bottom: 20px;
-    width: 89%;
-}
-.one-button-dropdown{
-    background-color:#d9dedb;
-    padding:40px;
-    margin-right:15px;
-    margin-left:15px;
-    
-}
-.one-button{
-    background-color:#6fbf84;
+.back-button{
+    width:232px;
+    height:64px;
+    background: #1A345F;
+    font-size: 24px;
+    border-color: #1A345F;
     text-align: center;
-    padding: 30px;
-    padding-right:-9%;
-}
-.two-button,.one-button-dropdown,.one-button{
-    margin-top:20px;
-    border-radius: 15px;
+    vertical-align: middle;
 }
 
 .big_detail{
-    margin-top: 10%;
+    margin-top: 3%;
     margin-bottom: 2%;
     background-color: #d9dedb;
 }
-
-#sidebar{
-    margin-bottom: -20%;
-    /* height: 2000px; */
-    background-color: red;
+.title-page{
+    padding-top:3%;
 }
+
+
+/* DETAIL TRANSAKSI END */
+
+
+
+
+
 

@@ -5,7 +5,7 @@
       "nomor_pesanan":"PO XX/123/956",
       "total_penjualan":150000,
       "status_transaksi":"Terbayar",
-      "color":"success"
+      "color":"warning"
         
     },
     {
@@ -14,7 +14,7 @@
         "nomor_pesanan":"PO XX/123/156",
         "total_penjualan":250000,
         "status_transaksi":"Terkirim",
-        "color":"primary"
+        "color":"success"
           
     },
     {
@@ -32,7 +32,7 @@
         "nomor_pesanan":"PO XX/123/656",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
-        "color":"success"
+        "color":"warning"
           
     },
     {
@@ -41,7 +41,7 @@
         "nomor_pesanan":"PO XX/123/676",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
-        "color":"success"
+        "color":"warning"
           
     },
     {
@@ -50,7 +50,7 @@
         "nomor_pesanan":"PO XX/123/777",
         "total_penjualan":150000,
         "status_transaksi":"Menunggu Bayar",
-        "color":"warning"
+        "color":"primary"
           
      },
      {
@@ -59,7 +59,7 @@
         "nomor_pesanan":"PO XX/123/770",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
-        "color":"success"
+        "color":"warning"
           
     },
     {
@@ -68,7 +68,7 @@
         "nomor_pesanan":"PO XX/123/890",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
-        "color":"success"
+        "color":"warning"
           
     },
     {
@@ -77,7 +77,7 @@
         "nomor_pesanan":"PO XX/123/729",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
-        "color":"success"
+        "color":"warning"
           
     },
     {
@@ -86,7 +86,7 @@
         "nomor_pesanan":"PO XX/123/730",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
-        "color":"success"
+        "color":"warning"
           
     }
 

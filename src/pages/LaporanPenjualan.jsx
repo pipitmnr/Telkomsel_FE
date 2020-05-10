@@ -14,6 +14,7 @@ import { store, actions } from '../store';
 import { withRouter } from 'react-router-dom';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
+import Pagination from "../components/pagination"
 import data from "../data/produk.json"
 
 class LaporanJual extends React.Component {
@@ -44,12 +45,12 @@ class LaporanJual extends React.Component {
 	}
 
 	filterJenis=(stats)=>{
-		if (stats=='Semua Jenis'){
+		if (stats==='Semua Jenis'){
 			store.setState({filter_payment:stats})
 			this.setState({datas: data.filter(d=>{return d.status_transaksi})})
 		}else{
 		store.setState({filter_payment:stats})
-		this.setState({datas: data.filter(d=>{return d.status_transaksi==stats})})
+		this.setState({datas: data.filter(d=>{return d.status_transaksi===stats})})
 		}
 		
 	}
@@ -62,7 +63,7 @@ class LaporanJual extends React.Component {
 					href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
 				></link>
 
-				<Container fluid>
+				<Container fluid className="all-penjualan">
 					<Row>
 						<Col sm='3' className='col-sidebar'>
 							<Sidebar />
@@ -127,11 +128,12 @@ class LaporanJual extends React.Component {
 										<b>Pilih Tanggal</b>
 									</p>
 									<Col md='1'>
-										<Dropdown as={ButtonGroup}>
+										<Dropdown  as={ButtonGroup}>
 											<DropdownButton
-												className='d-inline-block align-center'
+												id='date-but'
 												title={this.state.dates_first}
-											>
+											    variant=""											
+												>
 												<Dropdown.Item
 													onClick={() =>
 														this.setState({ dates_first: '1/2/2020' })
@@ -143,8 +145,9 @@ class LaporanJual extends React.Component {
 											<p> &nbsp;Hingga&nbsp; </p>
 
 											<DropdownButton
-												className='d-inline-block align-center'
+												id='date-but-2'
 												title={this.state.dates_last}
+												variant=""
 											>
 												<Dropdown.Item
 													onClick={() =>
@@ -164,8 +167,10 @@ class LaporanJual extends React.Component {
 									<Col md='1'>
 										<Dropdown as={ButtonGroup}>
 											<DropdownButton
+											    id="payment-filter-but"
 												className='d-inline-block align-center'
 												title={this.props.filter_payment}
+												variant=""
 											>
 												<Dropdown.Item
 													onClick={event =>
@@ -225,7 +230,8 @@ class LaporanJual extends React.Component {
 									<thead>
 										<th><Dropdown as={ButtonGroup}>
 											<DropdownButton
-												className='d-inline-block align-center'
+											    
+												id='sort-date'
 												title="Tanggal Pemesanan"
 												variant="white"
 											>
@@ -244,7 +250,7 @@ class LaporanJual extends React.Component {
 										<th>Nomor Pesanan</th>
 										<th><Dropdown as={ButtonGroup}>
 											<DropdownButton
-												className='d-inline-block align-center'
+												id='sort-transaction'
 												title="Total Transaksi"
 												variant="white"
 											>
@@ -281,6 +287,12 @@ class LaporanJual extends React.Component {
 									</tbody>
 								</Table>
 							</Row>
+							<Row>
+							<Col md="8"><Pagination/></Col>
+							
+							<Col md="4"><Button className="export-excel">Export Excel/CSV</Button></Col>
+                            </Row>
+							<br/>
 						</Col>
 					</Row>
 				</Container>

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
 	Table,
-	Navbar,
 	DropdownButton,
 	Dropdown,
 	Button,
@@ -16,6 +15,7 @@ import { store, actions } from '../store';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import transaksi from '../data/transaksi.json'
+import Pagination from "../components/pagination"
 
 class Transactions extends React.Component {
 	constructor(props) {
@@ -43,36 +43,36 @@ class Transactions extends React.Component {
 		this.setState({list_transaksi:transaksi})
 	}
 	filterJenis=(stats)=>{
-		if (stats=='Semua Jenis'){
+		if (stats==='Semua Jenis'){
 			store.setState({filter_payment:stats})
 			this.setState({list_transaksi: transaksi.filter(d=>{return d.status})})
 		}else{
 			store.setState({filter_payment:stats})
-			this.setState({list_transaksi: transaksi.filter(d=>{return d.status==stats})})
+			this.setState({list_transaksi: transaksi.filter(d=>{return d.status===stats})})
 		}
 		
 	}
 	render() {
 		return (
 			<React.Fragment>
-				<Container fluid>
+				<Container fluid className="all-transaksi">
 					<Row>
 						<Col md='3' className='col-sidebar'>
 							<Sidebar />
 						</Col>
-						<Col md='8'>
+						<Col md='9'>
 							
 							<div id='transaksi'>
 							<h1>Transaksi Anda</h1>
 							<br/>
-								<Navbar expand='lg' id='filter_one'>
-									<Navbar.Collapse>
-										<b>Filter</b> : &nbsp;{' '}
+								<Col id='filter_one'>
 										<Dropdown>
+										<b>Filter</b> : &nbsp;
 											<DropdownButton
 												id='bayar'
 												className='d-inline-block align-center'
 												title={this.props.filter_payment}
+												variant=""
 											>
 												<Dropdown.Item
 													as='button'
@@ -164,8 +164,9 @@ class Transactions extends React.Component {
 												</Dropdown.Item>
 											</DropdownButton>
 										</Dropdown>
-									</Navbar.Collapse>
-								</Navbar>
+									
+								</Col>
+								<br/>
 								<Table  className="tabel-transaksi" striped bordered hover variant='white'>
 									<thead>
 										<th><Dropdown as={ButtonGroup}>
@@ -207,9 +208,12 @@ class Transactions extends React.Component {
 										</tr>))}
 									</tbody>
 								</Table>
+								<Pagination/>
 							</div>
+							
 						</Col>
 					</Row>
+					
 				</Container>
 			</React.Fragment>
 		);
