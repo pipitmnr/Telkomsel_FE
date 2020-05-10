@@ -8,7 +8,7 @@ import '../styles/daftarDataCluster.css';
 import _ from 'lodash';
 import Sidebar from '../components/sidebar';
 import TitlePage from '../components/titleAdmin';
-import ModalItem from '../components/modalTambahItem';
+import ModalItem from '../components/modalTambahCluster';
 import PaginationMenu from '../components/pagination';
 import Footer from '../components/footer';
 import tableData from '../json/masterClusterData.json';
