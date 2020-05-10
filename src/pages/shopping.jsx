@@ -29,7 +29,7 @@ class Shopping extends Component {
        <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
-        <PageTitle />
+        <PageTitle pageTitle="Semua Produk"/>
         <div className="container-fluid">
           <div className="row">
             <div className="col-12 col-md-2 shopping-filter-container shopping-product-z-10">

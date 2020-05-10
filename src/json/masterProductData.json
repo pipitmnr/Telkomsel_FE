@@ -1,0 +1,74 @@
+{
+    "Cluster A": [{
+            "no_sku": 7881218204,
+            "nama_produk": "Perdana Segel No Cantik",
+            "tipe_produk": "Perdana Segel",
+            "status": "Aktif",
+            "user": "Valerie"
+        },
+        {
+            "no_sku": 7881218209,
+            "nama_produk": "Perdana Segel No Ganteng",
+            "tipe_produk": "Perdana Segel",
+            "status": "Aktif",
+            "user": "Jackle"
+        },
+        {
+            "no_sku": 7881218203,
+            "nama_produk": "Token PLN Pascabayar",
+            "tipe_produk": "Token PLN",
+            "status": "Aktif",
+            "user": "Andrew"
+        },
+        {
+            "no_sku": 7881218201,
+            "nama_produk": "Token PLN Prabayar",
+            "tipe_produk": "Token PLN",
+            "status": "Aktif",
+            "user": "Zatanna"
+        },
+        {
+            "no_sku": 7881218205,
+            "nama_produk": "Voucher Call of Duty",
+            "tipe_produk": "Voucher",
+            "status": "Tidak Aktif",
+            "user": "Lily"
+        },
+        {
+            "no_sku": 7881218206,
+            "nama_produk": "Voucher Mobile Legend",
+            "tipe_produk": "Voucher",
+            "status": "Tidak Aktif",
+            "user": "Jackle"
+        }
+    ],
+    "Cluster B": [{
+            "no_sku": 7881218208,
+            "nama_produk": "Voucher Internet Bulanan",
+            "tipe_produk": "Voucher",
+            "status": "Aktif",
+            "user": "Andrew"
+        },
+        {
+            "no_sku": 7881218207,
+            "nama_produk": "Voucher Internet Mingguan",
+            "tipe_produk": "Voucher",
+            "status": "Tidak Aktif",
+            "user": "Andrew"
+        },
+        {
+            "no_sku": 7881218202,
+            "nama_produk": "Halo Kick Gold 50GB",
+            "tipe_produk": "Kartu Halo",
+            "status": "Aktif",
+            "user": "Valerie"
+        },
+        {
+            "no_sku": 7881218210,
+            "nama_produk": "Voucher Internet Harian",
+            "tipe_produk": "Voucher",
+            "status": "Aktif",
+            "user": "Thomas"
+        }
+    ]
+}

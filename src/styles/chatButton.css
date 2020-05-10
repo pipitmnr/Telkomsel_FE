@@ -1,9 +1,9 @@
 .chat-button-red{
     width: 60px;
     height: 60px;
-    background-color: #de1d4d;
+    background-color: #D71F27;
 
-    border-color: transparent #de1d4d transparent transparent;
+    border-color: transparent #D71F27 transparent transparent;
     border-radius: 34px 8px 34px 34px;
     box-shadow: 0 5px 4px 0 rgba(0,0,0,.26);
     display: table;

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,500,600,700,800,900&display=swap');
+
 .modal {
     height: auto;
     top: auto;
@@ -86,4 +88,15 @@
 .modal-jenis-produk {
     margin-left: 4.8%;
     min-width: 203px !important;
+}
+
+.row-submit-modal .positive-button {
+    font-family: 'Muli', sans-serif;
+    font-size: 14px;
+}
+
+.row-submit-modal .negative-button {
+    font-family: 'Muli', sans-serif;
+    font-size: 14px;
+    margin-left: 11%;
 }
