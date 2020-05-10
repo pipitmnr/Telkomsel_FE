@@ -92,9 +92,13 @@ class LaporanJual extends React.Component {
 
         <Container fluid>
           <Row>
-            <Col sm='3' className='col-sidebar'>
+            <div
+              className='col-md-3 col-sidebar'
+              style={{position: 'fixed', zIndex: '10'}}
+            >
               <Sidebar />
-            </Col>
+            </div>
+            <div className="col-md-3"></div>
 
             <Col sm='9' className='kluster'>
               <Row>
