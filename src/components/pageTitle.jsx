@@ -14,7 +14,7 @@ class PageTitle extends Component {
            <div className="container-fluid">
                 <div className="row align-items-center page-title">
                     <div className="col-md-6 page-title-entry">
-                        Voucher Paket Data
+                        {this.props.pageTitle}
                     </div>
                     <div className="col-md-6">
                         <div className="row align-items-center">

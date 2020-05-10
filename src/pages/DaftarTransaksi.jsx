@@ -13,11 +13,18 @@ import {
 import {withRouter} from 'react-router-dom';
 import {connect} from 'unistore/react';
 import {store, actions} from '../store';
+import swal from 'sweetalert';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import transaksi from '../data/transaksi.json';
 
 class Transactions extends React.Component {
+  componentDidMount = async () => {
+    if (localStorage.getItem('username') === null) {
+      swal('Error!', 'Mohon login terlebih dahulu!', 'warning');
+      this.props.history.replace('/login-admin');
+    }
+  };
   constructor(props) {
     super(props);
     this.state = {list_transaksi: transaksi};
@@ -68,9 +75,13 @@ class Transactions extends React.Component {
       <React.Fragment>
         <Container fluid>
           <Row>
-            <Col md='3' className='col-sidebar'>
+            <div
+              className='col-md-3 col-sidebar'
+              style={{position: 'fixed', zIndex: '10'}}
+            >
               <Sidebar />
-            </Col>
+            </div>
+            <div className="col-md-3"></div>
             <Col md='8'>
               <div id='transaksi' style={{marginTop:"40px", marginBottom:"0"}}>
                 <h1>Transaksi Anda</h1>

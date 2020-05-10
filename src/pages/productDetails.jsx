@@ -22,7 +22,7 @@ class ProductDetails extends Component {
       <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
-        <PageTitle />
+        <PageTitle pageTitle="Voucher Paket Data"/>
         <div className="container font-muli">
           <div className="row mt-4">
             <div className="col-md-6 text-center">
@@ -41,7 +41,7 @@ class ProductDetails extends Component {
                 </div>
                 <div className="row align-items-center">
                     <div className="col-md-12">
-                        <p className="product-details-description">
+                        <p className="product-details-description" style={{marginBottom:"13px"}}>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                         </p>
                     </div>
@@ -70,7 +70,7 @@ class ProductDetails extends Component {
                     </div>
                     <div className="col-md-9">
                         <input type="number" className="product-details-jumlah form-control"
-                            name="jumlah" id="jumlah" placeholder="1" min="1"/>
+                            name="jumlah" id="jumlah" placeholder="1" min="1" style={{height:"27px"}}/>
                     </div>
                 </div>
                 <div className="row align-items-center my-4">

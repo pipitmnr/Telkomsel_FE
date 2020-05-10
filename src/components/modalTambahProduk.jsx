@@ -6,8 +6,8 @@ import {Modal, Input, Grid, Button, Form, Dropdown} from 'semantic-ui-react';
 import '../styles/modal.css';
 
 const optionsJenis = [
-  {key: 2, text: 'Jenis A', value: 'Jenis A'},
-  {key: 3, text: 'Jenis B', value: 'Jenis B'},
+  {key: 2, text: 'Perdana Segel', value: 'Perdana Segel'},
+  {key: 3, text: 'Voucher', value: 'Voucher'},
 ];
 
 class ModalTambahProduk extends Component {
@@ -15,13 +15,30 @@ class ModalTambahProduk extends Component {
     fotoProfil: null,
     fotoName: '',
     valueJenis: 'Semua Jenis',
+    no_sku: '',
+    jenis_produk: '',
+    nama_produk: '',
+    deskripsi_produk: '',
+    status_produk: '',
+  };
+
+  handleChangeInput = (event) => {
+    this.setState({[event.target.name]: event.target.value});
   };
 
   handleReset = () => {
-    this.setState({fotoProfil: null});
+    this.setState({
+      fotoProfil: null,
+      no_sku: '',
+      jenis_produk: '',
+      nama_produk: '',
+      deskripsi_produk: '',
+      status_produk: '',
+    });
   };
 
-  handleChangeJenis = (e, {value}) => this.setState({valueJenis: value});
+  handleOnChangeJenisProduk = (e, {value}) =>
+    this.setState({jenis_produk: value});
 
   handleInputImage = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -32,7 +49,6 @@ class ModalTambahProduk extends Component {
         });
       }
     }
-    console.log('nama', event.target.name, 'target', event.target.files[0]);
   };
   render() {
     const {fotoProfil, fotoName} = this.state;
@@ -52,9 +68,10 @@ class ModalTambahProduk extends Component {
                     <label>No. SKU</label>
                     <Input
                       className='input-modal no-sku'
-                      placeholder='no-sku'
-                      name='no-sku'
-                      value={this.props.username}
+                      placeholder=''
+                      name='no_sku'
+                      onChange={this.handleChangeInput}
+                      value={this.state.no_sku}
                     />
                   </Form.Field>
                 </Form.Group>
@@ -63,10 +80,10 @@ class ModalTambahProduk extends Component {
                     <label>Jenis Produk</label>
                     <Dropdown
                       className='modal-jenis-produk'
-                      onChange={this.handleChangeCluster}
+                      onChange={this.handleOnChangeJenisProduk}
                       options={optionsJenis}
                       selection
-                      value={this.state.valueJenis}
+                      value={this.state.jenis_produk}
                     />
                   </Form.Field>
                 </Form.Group>
@@ -75,9 +92,10 @@ class ModalTambahProduk extends Component {
                     <label>Nama Produk</label>
                     <Input
                       className='input-modal nama-produk'
-                      placeholder='nama-produk'
-                      name='nama-produk'
-                      value={this.props.username}
+                      placeholder=''
+                      name='nama_produk'
+                      onChange={this.handleChangeInput}
+                      value={this.state.nama_produk}
                     />
                   </Form.Field>
                 </Form.Group>
@@ -86,9 +104,10 @@ class ModalTambahProduk extends Component {
                     <label>Deskripsi Produk</label>
                     <Input
                       className='input-modal deskripsi-produk'
-                      placeholder='deskripsi-produk'
-                      name='deskripsi-produk'
-                      value={this.props.username}
+                      placeholder=''
+                      name='deskripsi_produk'
+                      onChange={this.handleChangeInput}
+                      value={this.state.deskripsi_produk}
                     />
                   </Form.Field>
                 </Form.Group>
@@ -105,7 +124,7 @@ class ModalTambahProduk extends Component {
                       type='file'
                       id='fotoProfil'
                       name='fotoProfil'
-                      accept='image/jpeg'
+                      accept='image/jpeg,image/x-png'
                       hidden
                       onChange={this.handleInputImage}
                     />
@@ -132,19 +151,20 @@ class ModalTambahProduk extends Component {
                     <label>Status Produk</label>
                     <Input
                       className='input-modal status-produk'
-                      placeholder='status-produk'
-                      name='status-produk'
-                      value={this.props.username}
+                      placeholder=''
+                      name='status_produk'
+                      onChange={this.handleChangeInput}
+                      value={this.state.status_produk}
                     />
                   </Form.Field>
                 </Form.Group>
               </Grid.Row>
               <Grid.Row className='row-submit-modal'>
-                <Button style={{fontSize: '14px'}} positive type='submit'>
+                <Button className='positive-button' positive type='submit'>
                   Submit
                 </Button>
                 <Button
-                  style={{fontSize: '14px', marginLeft: '12.5%'}}
+                  className='negative-button'
                   negative
                   onClick={this.handleReset}
                 >
