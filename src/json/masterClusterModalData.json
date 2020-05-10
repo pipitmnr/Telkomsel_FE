@@ -1,0 +1,19 @@
+[{
+        "produk": "Produk A",
+        "no_sku": 7881218234,
+        "nama_produk": "Perdana Segel No Cantik",
+        "jenis_produk": "Perdana Segel"
+    },
+    {
+        "produk": "Produk B",
+        "no_sku": 7881218240,
+        "nama_produk": "Perdana Segel No Ganteng",
+        "jenis_produk": "Perdana Segel"
+    },
+    {
+        "produk": "Produk C",
+        "no_sku": 7881218200,
+        "nama_produk": "Voucher Call of Duty",
+        "jenis_produk": "Voucher"
+    }
+]
