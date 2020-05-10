@@ -126,7 +126,7 @@ class ModalTambahItem extends Component {
                       placeholder='harga produk'
                       name='harga_produk'
                       onChange={this.handleChangeHarga}
-                      value={this.state.harga_produk}
+                      value={`Rp ${this.state.harga_produk}`}
                     />
                   </Form.Field>
                 </Form.Group>

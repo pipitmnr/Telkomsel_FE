@@ -3,6 +3,7 @@ import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'unistore/react';
 import {Dropdown, Table, Checkbox, Icon} from 'semantic-ui-react';
 import {actions} from '../store';
+import swal from 'sweetalert';
 import '../styles/sidebar.css';
 import '../styles/daftarDataCluster.css';
 import _ from 'lodash';
@@ -31,7 +32,12 @@ const optionsCluster = [
   {key: 3, text: 'Cluster B', value: 'Cluster B'},
 ];
 class DaftarProduk extends Component {
-  componentDidMount = async () => {};
+  componentDidMount = async () => {
+    if (localStorage.getItem('username') === null) {
+      swal('Error!', 'Mohon login terlebih dahulu!', 'warning');
+      this.props.history.replace('/login-admin');
+    }
+  };
 
   state = {
     valueItem: 'Semua Item',

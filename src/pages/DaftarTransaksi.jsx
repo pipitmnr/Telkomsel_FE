@@ -13,11 +13,18 @@ import {
 import {withRouter} from 'react-router-dom';
 import {connect} from 'unistore/react';
 import {store, actions} from '../store';
+import swal from 'sweetalert';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import transaksi from '../data/transaksi.json';
 
 class Transactions extends React.Component {
+  componentDidMount = async () => {
+    if (localStorage.getItem('username') === null) {
+      swal('Error!', 'Mohon login terlebih dahulu!', 'warning');
+      this.props.history.replace('/login-admin');
+    }
+  };
   constructor(props) {
     super(props);
     this.state = {list_transaksi: transaksi};
