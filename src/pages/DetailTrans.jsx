@@ -168,6 +168,7 @@ class TransactionDetail extends React.Component {
 			</React.Fragment>
 		);
 	}
+}
 
 
 export default connect('', actions)(withRouter(TransactionDetail));

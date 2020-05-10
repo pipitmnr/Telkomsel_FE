@@ -10,8 +10,8 @@ import LoginAdmin from '../pages/loginAdmin';
 import DaftarProduk from '../pages/daftarProduk';
 import Checkout from '../pages/checkout';
 import ProductDetails from '../pages/productDetails';
-import LaporanPenjualan from '../pages/LaporanPenjualan';
-import TransactionDetail from '../pages/DetailTrans';
+import LaporanPenjualan from '../pages/laporanPenjualan';
+import TransactionDetail from '../pages/detailTrans';
 import ResetPassword from '../pages/reset-password';
 import ContactUs from '../pages/contactUs';
 

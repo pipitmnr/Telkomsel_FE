@@ -16,8 +16,6 @@ import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import Pagination from "../components/pagination"
 import data from "../data/produk.json"
-
-import data from '../data/produk.json';
 import { CSVLink } from "react-csv";
 
 
@@ -334,6 +332,7 @@ class LaporanJual extends React.Component {
 			</React.Fragment>
 		);
 	}
+}
 
 export default connect(
   'filter_payment,filter_kluster',
