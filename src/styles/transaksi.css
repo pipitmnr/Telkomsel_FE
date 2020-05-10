@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+
 #transaksi{
     margin: 10% auto ;
     /* width:1000px;
@@ -94,3 +99,16 @@
     background-color: red;
 }
 
+.laporan-penjualan-export-excel{
+    width: 196px;
+    height: 36px;
+    background: rgba(196, 196, 196, 0.5);
+    border-radius: 5px;
+    font-family: "muli";
+    font-size: 18px;
+}
+
+.laporan-penjualan-export-excel a{
+    text-decoration: none;
+    color: black;
+}

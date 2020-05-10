@@ -15,6 +15,7 @@ import {withRouter} from 'react-router-dom';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import data from '../data/produk.json';
+import { CSVLink } from "react-csv";
 
 class LaporanJual extends React.Component {
   constructor(props) {
@@ -23,6 +24,12 @@ class LaporanJual extends React.Component {
       dates_first: 'tanggal awal',
       dates_last: 'tanggal akhir',
       datas: data,
+      headerscsv : [
+        { label: "Tanggal Pemesanan", key: "tanggal_transaksi" },
+        { label: "Nomor Pesanan", key: "nomor_pesanan" },
+        { label: "Total Transaksi", key: "total_penjualan" },
+        { label: "Status Transaksi", key: "status_transaksi" }
+      ],
     };
   }
 
@@ -314,6 +321,15 @@ class LaporanJual extends React.Component {
                   </tbody>
                 </Table>
               </Row>
+              <div className="row my-5">
+                <div className="col-md-12 text-right">
+                  <div className="btn laporan-penjualan-export-excel">
+                    <CSVLink data={this.state.datas} headers={this.state.headerscsv} separator={";"}>
+                      Export Excel / CSV
+                    </CSVLink>
+                  </div>
+                </div>
+              </div>
             </Col>
           </Row>
         </Container>
