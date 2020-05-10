@@ -9,3 +9,23 @@
     height: 552px;
     width: 100vw;
 }
+@font-face{
+    font-family: "Helvetica-Medium-Condensed";
+    src: url("../fonts/HelveticaMediumCondensedPlain.otf");
+}
+.carousel-text-image{
+    position: absolute;
+    color: white;
+    top: 30%;
+    left: 50%;
+    width: 483px;
+}
+.carousel-text-image h2{
+    font-size: 3em;
+    margin: 0 0 20px;
+    font-family: "Helvetica-Medium-Condensed";
+}
+.carousel-text-image p{
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
