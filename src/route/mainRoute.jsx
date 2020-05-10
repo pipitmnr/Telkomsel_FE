@@ -5,7 +5,7 @@ import {store} from '../store';
 import Home from '../pages/home';
 import Shopping from '../pages/shopping';
 import DaftarCluster from '../pages/daftarCluster';
-import DaftarTransaksi from '../pages/DaftarTransaksi';
+import DaftarTransaksi from '../pages/daftarTransaksi';
 import LoginAdmin from '../pages/loginAdmin';
 import DaftarProduk from '../pages/daftarProduk';
 import Checkout from '../pages/checkout';
