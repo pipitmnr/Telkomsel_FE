@@ -6,8 +6,8 @@ import {Modal, Input, Grid, Button, Form, Dropdown} from 'semantic-ui-react';
 import '../styles/modal.css';
 
 const optionsJenis = [
-  {key: 2, text: 'Jenis A', value: 'Jenis A'},
-  {key: 3, text: 'Jenis B', value: 'Jenis B'},
+  {key: 2, text: 'Perdana Segel', value: 'Perdana Segel'},
+  {key: 3, text: 'Voucher', value: 'Voucher'},
 ];
 
 class ModalTambahProduk extends Component {
@@ -52,7 +52,6 @@ class ModalTambahProduk extends Component {
   };
   render() {
     const {fotoProfil, fotoName} = this.state;
-    console.log('cek value jenis', this.state.jenis_produk);
     return (
       <React.Fragment>
         <Modal size='tiny' trigger={<Button>Tambah Item</Button>}>
@@ -125,7 +124,7 @@ class ModalTambahProduk extends Component {
                       type='file'
                       id='fotoProfil'
                       name='fotoProfil'
-                      accept='image/jpeg'
+                      accept='image/jpeg,image/x-png'
                       hidden
                       onChange={this.handleInputImage}
                     />

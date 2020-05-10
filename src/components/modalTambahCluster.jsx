@@ -7,9 +7,9 @@ import '../styles/modal.css';
 
 const optionsProduk = [
   {key: 1, text: 'Pilih...', value: 'Pilih...'},
-  {key: 2, text: 'Produk A', value: 'Produk A'},
-  {key: 3, text: 'Produk B', value: 'Produk B'},
-  {key: 4, text: 'Produk C', value: 'Produk C'},
+  {key: 2, text: 'Perdana Segel A', value: 'Perdana Segel A'},
+  {key: 3, text: 'Voucher B', value: 'Voucher B'},
+  {key: 4, text: 'Voucher C', value: 'Voucher C'},
 ];
 
 class ModalTambahItem extends Component {
@@ -55,13 +55,13 @@ class ModalTambahItem extends Component {
   render() {
     let nama_produk;
     let jenis_produk;
-    if (this.state.valueProduk === 'Produk A') {
+    if (this.state.valueProduk === 'Perdana Segel A') {
       nama_produk = 'Perdana Segel Cantik';
       jenis_produk = 'Perdana Segel';
-    } else if (this.state.valueProduk === 'Produk B') {
+    } else if (this.state.valueProduk === 'Voucher B') {
       nama_produk = 'Voucher Mobile Legend';
       jenis_produk = 'Voucher';
-    } else if (this.state.valueProduk === 'Produk C') {
+    } else if (this.state.valueProduk === 'Voucher C') {
       nama_produk = 'Voucher Call of Duty';
       jenis_produk = 'Voucher Game';
     } else if (this.state.valueProduk === 'Pilih...') {
