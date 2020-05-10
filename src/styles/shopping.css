@@ -26,6 +26,7 @@
 .shopping-product-list {
     min-height: 482px;
     vertical-align: top;
+    margin-bottom: 30px;
 }
 
 .shopping-footer {

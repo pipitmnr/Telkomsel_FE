@@ -20,7 +20,8 @@ class Shopping extends Component {
       productListWithImage: [],
       isPerdanaSegel: false,
       isPerdanaPaketData: false,
-      isVoucherData: false
+      isVoucherData: false,
+      locationSearch: ""
     })
   };
 
@@ -56,4 +57,4 @@ class Shopping extends Component {
   }
 }
 
-export default connect("productListWithImage, isPerdanaSegel, isPerdanaPaketData, isVoucherData", actions)(withRouter(Shopping));
+export default connect("productListWithImage, isPerdanaSegel, isPerdanaPaketData, isVoucherData, locationSearch", actions)(withRouter(Shopping));

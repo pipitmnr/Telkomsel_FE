@@ -1,11 +1,56 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "unistore/react";
-import { actions } from "../store";
+import { actions, store } from "../store";
 import "../styles/bootstrap.min.css";
 import "../styles/chooseRegion.css";
 
 class ChooseRegion extends Component {
+    /**
+     * The following function is used to filter product list by location
+     * 
+     * @param {object} event The object returned from filter checkbox
+     */
+    handleFilter = async (event) => {
+        // Define some variables needed
+        let productList = require('../json/productList.json');
+        let filterName = [];
+        let filterLocation = event.target.value;
+
+        // Filter by location
+        if (filterLocation !== "") {
+            productList = productList.filter(function(product) {
+                return product["location"] === filterLocation;
+            })
+        }
+
+        // Get filter by name indicator
+        if (this.props.isPerdanaSegel === true) {
+            filterName.push("Perdana Segel")
+        }
+
+        if (this.props.isPerdanaPaketData === true) {
+            filterName.push("Perdana Paket Data")
+        }
+
+        if (this.props.isVoucherData === true) {
+            filterName.push("Voucher Data")
+        }
+
+        // Filter by name
+        if (filterName.length > 0) {
+            productList = productList.filter(function(product) {
+                return filterName.includes(product["name"]);
+            })
+        }
+
+        // Set some props
+        store.setState({
+            [event.target.name]: event.target.value,
+            productListWithImage: productList
+        })
+    }
+    
     /**
      * The following method is used to transform regionName.json file into array
      */
@@ -59,7 +104,7 @@ class ChooseRegion extends Component {
                         <form className="form-inline">
                             <div className="form-group choose-region-form-container">
                                 <label for="regionSearch"><span className="choose-region-label">Kota / Kecamatan</span></label>
-                                <input id="regionSearch" list="regionName" type="text" className="choose-region-input" placeholder="Contoh: Jawa Timur, Kota Surabaya, Asemrowo"/>
+                                <input name="locationSearch" onChange={(e) => this.handleFilter(e)} id="regionSearch" list="regionName" type="text" className="choose-region-input" placeholder="Contoh: Jawa Timur, Kota Surabaya, Asemrowo"/>
                                 <datalist id="regionName" className="choose-region-datalist">
                                     {datalistOptions}
                                 </datalist>
@@ -72,5 +117,5 @@ class ChooseRegion extends Component {
     }
   }
   
-export default connect("", actions)(withRouter(ChooseRegion));
+export default connect("productListWithImage, isPerdanaSegel, isPerdanaPaketData, isVoucherData, locationSearch", actions)(withRouter(ChooseRegion));
   
