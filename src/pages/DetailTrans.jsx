@@ -1,20 +1,28 @@
 import React from 'react';
 import {
-	Container,
-	Row,
-	Col,
-	Table,
-	Form,
-	FormGroup,
-	Button,
+  Container,
+  Row,
+  Col,
+  Table,
+  Form,
+  FormGroup,
+  Button,
 } from 'react-bootstrap';
-import { connect } from 'unistore/react';
-import { actions } from '../store';
-import { withRouter } from 'react-router-dom';
+import {connect} from 'unistore/react';
+import {actions} from '../store';
+import {withRouter} from 'react-router-dom';
+import swal from 'sweetalert';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 
 class TransactionDetail extends React.Component {
+    componentDidMount = async () => {
+    if (localStorage.getItem('username') === null) {
+      swal('Error!', 'Mohon login terlebih dahulu!', 'warning');
+      this.props.history.replace('/login-admin');
+    }
+  };
+
 	render() {
 		return (
 			<React.Fragment>
@@ -160,6 +168,6 @@ class TransactionDetail extends React.Component {
 			</React.Fragment>
 		);
 	}
-}
+
 
 export default connect('', actions)(withRouter(TransactionDetail));
