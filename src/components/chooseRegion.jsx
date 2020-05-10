@@ -20,7 +20,7 @@ class ChooseRegion extends Component {
         // Filter by location
         if (filterLocation !== "") {
             productList = productList.filter(function(product) {
-                return product["location"] === filterLocation;
+                return product["location"].toLowerCase().search(filterLocation.toLowerCase()) >= 0;
             })
         }
 

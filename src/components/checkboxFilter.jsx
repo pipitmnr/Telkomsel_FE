@@ -45,7 +45,7 @@ class CheckboxFilter extends Component {
         // Filter by location
         if (locationSearch !== "") {
             productList = productList.filter(function(product) {
-                return product["location"] === locationSearch;
+                return product["location"].toLowerCase().match(locationSearch.toLowerCase()) >= 0;
             })
         }
 
