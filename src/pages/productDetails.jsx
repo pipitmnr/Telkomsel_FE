@@ -22,7 +22,7 @@ class ProductDetails extends Component {
       <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
-        <PageTitle />
+        <PageTitle pageTitle="Voucher Paket Data"/>
         <div className="container font-muli">
           <div className="row mt-4">
             <div className="col-md-6 text-center">
