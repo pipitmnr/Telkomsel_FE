@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Table,
-  Navbar,
   DropdownButton,
   Dropdown,
   Button,
@@ -17,6 +16,7 @@ import swal from 'sweetalert';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import transaksi from '../data/transaksi.json';
+import Pagination from '../components/pagination';
 
 class Transactions extends React.Component {
   componentDidMount = async () => {
@@ -73,117 +73,128 @@ class Transactions extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Container fluid>
+        <Container fluid className='all-transaksi'>
           <Row>
-            <div
-              className='col-md-3 col-sidebar'
+            <Col
+              md='3'
+              className='col-sidebar'
               style={{position: 'fixed', zIndex: '10'}}
             >
               <Sidebar />
-            </div>
-            <div className="col-md-3"></div>
-            <Col md='8'>
-              <div id='transaksi' style={{marginTop:"40px", marginBottom:"0"}}>
+            </Col>
+            <Col
+              md='9'
+              style={{
+                paddingLeft: '0px',
+                paddingRight: '0px',
+                marginBottom: '50px',
+                marginLeft: '27%',
+                marginRight: '2%',
+                position: 'relative',
+              }}
+            >
+              <div id='transaksi'>
                 <h1>Transaksi Anda</h1>
                 <br />
-                <Navbar expand='lg' id='filter_one'>
-                  <Navbar.Collapse>
-                    <b>Filter</b> : &nbsp;{' '}
-                    <Dropdown>
-                      <DropdownButton
-                        id='bayar'
-                        className='d-inline-block align-center'
-                        title={this.props.filter_payment}
+                <Col id='filter_one'>
+                  <Dropdown>
+                    <b>Filter</b> : &nbsp;
+                    <DropdownButton
+                      id='bayar'
+                      className='d-inline-block align-center'
+                      title={this.props.filter_payment}
+                      variant=''
+                    >
+                      <Dropdown.Item
+                        as='button'
+                        onClick={(event) => this.filterJenis('Terbayar')}
                       >
-                        <Dropdown.Item
-                          as='button'
-                          onClick={(event) => this.filterJenis('Terbayar')}
-                        >
-                          Terbayar
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          as='button'
-                          onClick={(event) => this.filterJenis('Gagal')}
-                        >
-                          Gagal
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          as='button'
-                          onClick={(event) => this.filterJenis('Terkirim')}
-                        >
-                          Terkirim
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          as='button'
-                          onClick={(event) =>
-                            this.filterJenis('Menunggu Pembayaran')
-                          }
-                        >
-                          Menunggu Bayar
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          as='button'
-                          onClick={(event) => this.filterJenis('Semua Jenis')}
-                        >
-                          Semua Jenis
-                        </Dropdown.Item>
-                      </DropdownButton>
-                      &nbsp;
-                      <DropdownButton
-                        className='d-inline-block align-center'
-                        title={this.props.filter_kluster}
-                        variant='danger'
+                        Terbayar
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        as='button'
+                        onClick={(event) => this.filterJenis('Gagal')}
                       >
-                        <Dropdown.Item
-                          href=''
-                          onClick={() =>
-                            store.setState({filter_kluster: 'Kluster 1'})
-                          }
-                        >
-                          Kluster 1
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          href=''
-                          onClick={() =>
-                            store.setState({filter_kluster: 'Kluster 2'})
-                          }
-                        >
-                          Kluster 2
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          href=''
-                          onClick={() =>
-                            store.setState({filter_kluster: 'Kluster 3'})
-                          }
-                        >
-                          Kluster 3
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          href=''
-                          onClick={() =>
-                            store.setState({filter_kluster: 'Kluster 4'})
-                          }
-                        >
-                          Kluster 4
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          href=''
-                          onClick={() =>
-                            store.setState({filter_kluster: 'Semua Kluster'})
-                          }
-                        >
-                          Semua Kluster
-                        </Dropdown.Item>
-                      </DropdownButton>
-                    </Dropdown>
-                  </Navbar.Collapse>
-                </Navbar>
+                        Gagal
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        as='button'
+                        onClick={(event) => this.filterJenis('Terkirim')}
+                      >
+                        Terkirim
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        as='button'
+                        onClick={(event) =>
+                          this.filterJenis('Menunggu Pembayaran')
+                        }
+                      >
+                        Menunggu Bayar
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        as='button'
+                        onClick={(event) => this.filterJenis('Semua Jenis')}
+                      >
+                        Semua Jenis
+                      </Dropdown.Item>
+                    </DropdownButton>
+                    &nbsp;
+                    <DropdownButton
+                      className='d-inline-block align-center'
+                      title={this.props.filter_kluster}
+                      variant='danger'
+                    >
+                      <Dropdown.Item
+                        href=''
+                        onClick={() =>
+                          store.setState({filter_kluster: 'Kluster 1'})
+                        }
+                      >
+                        Kluster 1
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        href=''
+                        onClick={() =>
+                          store.setState({filter_kluster: 'Kluster 2'})
+                        }
+                      >
+                        Kluster 2
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        href=''
+                        onClick={() =>
+                          store.setState({filter_kluster: 'Kluster 3'})
+                        }
+                      >
+                        Kluster 3
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        href=''
+                        onClick={() =>
+                          store.setState({filter_kluster: 'Kluster 4'})
+                        }
+                      >
+                        Kluster 4
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        href=''
+                        onClick={() =>
+                          store.setState({filter_kluster: 'Semua Kluster'})
+                        }
+                      >
+                        Semua Kluster
+                      </Dropdown.Item>
+                    </DropdownButton>
+                  </Dropdown>
+                </Col>
+                <br />
                 <Table
                   className='tabel-transaksi'
                   striped
                   bordered
                   hover
                   variant='white'
+                  style={{width: '95%'}}
                 >
                   <thead>
                     <th>
@@ -225,6 +236,7 @@ class Transactions extends React.Component {
                     ))}
                   </tbody>
                 </Table>
+                <Pagination />
               </div>
             </Col>
           </Row>

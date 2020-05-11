@@ -18,6 +18,7 @@ class CheckboxFilter extends Component {
         let checkedValue = event.target.checked;
         let productList = require('../json/productList.json');
         let filterName = [];
+        let locationSearch = this.props.locationSearch;
 
         // Add "Perdana Segel" to filterName variable
         if ((checkedProp === "isPerdanaSegel" && checkedValue === true) || (checkedProp !== "isPerdanaSegel" && this.props.isPerdanaSegel === true)) {
@@ -34,10 +35,17 @@ class CheckboxFilter extends Component {
             filterName.push("Voucher Data")
         }
 
-        // Filter process
+        // Filter by name
         if (filterName.length > 0) {
             productList = productList.filter(function(product) {
                 return filterName.includes(product["name"]);
+            })
+        }
+
+        // Filter by location
+        if (locationSearch !== "") {
+            productList = productList.filter(function(product) {
+                return product["location"].toLowerCase().match(locationSearch.toLowerCase()) >= 0;
             })
         }
 
@@ -75,5 +83,5 @@ class CheckboxFilter extends Component {
     }
   }
   
-export default connect("isPerdanaSegel, isPerdanaPaketData, isVoucherData, productListWithImage", actions)(withRouter(CheckboxFilter));
+export default connect("isPerdanaSegel, isPerdanaPaketData, isVoucherData, productListWithImage, locationSearch", actions)(withRouter(CheckboxFilter));
   
