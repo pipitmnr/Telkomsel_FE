@@ -54,30 +54,36 @@ class ChooseRegion extends Component {
     /**
      * The following method is used to transform regionName.json file into array
      */
-    transformJson = () => {
-        // Get all regions in Indonesia in JSON format
-        let regionNameJson = require("../json/regionName.json");
-
-        // Transform the JSON format into desired format
+    formattingRegion = () => {
+        // Get all regions in Indonesia in JSON format and define some variables
+        let regionNameJson = require("../json/masterRegion.json");
         let regionDetail = [];
-        for (var index in regionNameJson) {
-            let province = regionNameJson[index];
-            let provinceName = Object.keys(province)[0];
-            let cityList = province[provinceName];
-            for (var cityIndex in cityList) {
-                if (typeof cityList[cityIndex] === "object") {
-                    let city = cityList[cityIndex];
-                    let cityName = Object.keys(city)[0];
-                    let villageList = city[cityName];
-                    for (var villageIndex in villageList) {
-                        regionDetail.push(villageList[villageIndex] + ", " + cityName + ", " + provinceName)
-                    }
-                } else {
-                    regionDetail.push(cityList[cityIndex] + ", " + provinceName)
-                }
+        let regionLength = regionNameJson.length;
+        let province = "";
+        let city = "";
+
+        // Formatting the JSON into array of string
+        for (let index = 0; index < regionLength; index++) {
+            let regionObject = regionNameJson[index];
+            
+            // Processing reion object at province level
+            if (regionObject["level"] === 1) {
+                province = regionObject["nama"];
+            }
+
+            // Processing reion object at city level
+            if (regionObject["level"] === 2) {
+                city = regionObject["nama"];
+            }
+
+            // Processing reion object at district level
+            if (regionObject["level"] === 3) {
+                let regionName = regionObject["nama"] + ", " + city + ", " + province;
+                regionDetail.push(regionName);
             }
         }
 
+        // Return the result
         return regionDetail;
     }
     
@@ -87,7 +93,7 @@ class ChooseRegion extends Component {
   
     render() {
         // Get all formatted region in Indonesia
-        let regionName = this.transformJson();
+        let regionName = this.formattingRegion();
 
         // Define JSX variable which will provide datalist options
         let datalistOptions = regionName.map((region) => {
