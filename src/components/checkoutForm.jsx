@@ -26,7 +26,7 @@ class CheckoutForm extends Component {
                                             <div className="form-group">
                                                 <label for="receiverName">
                                                     <span className="checkout-form-label">Nama Penerima</span>
-                                                    <input id="receiverName" className="checkout-input-type-1" type="text"/>
+                                                    <input id="receiverName" className="checkout-input-type-1 form-control" type="text"/>
                                                 </label>
                                             </div>
                                         </div>
@@ -34,7 +34,7 @@ class CheckoutForm extends Component {
                                             <div className="form-group">
                                                 <label for="phoneNumber">
                                                     <span className="checkout-form-label">Nomor Telepon</span>
-                                                    <input id="phoneNumber" className="checkout-input-type-1" type="text"/>
+                                                    <input id="phoneNumber" className="checkout-input-type-1 form-control" type="text"/>
                                                     <span className="checkout-phone-example">Contoh: 012345678910</span>
                                                 </label>
                                             </div>
@@ -43,7 +43,7 @@ class CheckoutForm extends Component {
                                             <div className="form-group">
                                                 <label for="city">
                                                     <span className="checkout-form-label">Kota atau Kecamatan</span>
-                                                    <input id="city" placeholder="Tulis nama alamat / kota / kecamatan tujuan pengiriman" className="checkout-input-type-2" type="text"/>
+                                                    <input id="city" placeholder="Tulis nama alamat / kota / kecamatan tujuan pengiriman" className="checkout-input-type-2 form-control" type="text"/>
                                                 </label>
                                             </div>
                                         </div>
@@ -51,7 +51,7 @@ class CheckoutForm extends Component {
                                             <div className="form-group">
                                                 <label for="postalCode">
                                                     <span className="checkout-form-label">Kode Pos</span>
-                                                    <input readOnly id="postalCode" placeholder="Kode Pos" className="checkout-input-type-1 checkout-readonly" type="text"/>
+                                                    <input readOnly id="postalCode" placeholder="Kode Pos" className="checkout-input-type-3 checkout-readonly form-control" type="text"/>
                                                 </label>
                                             </div>
                                         </div>
@@ -59,7 +59,7 @@ class CheckoutForm extends Component {
                                             <div className="form-group">
                                                 <label for="address">
                                                     <span className="checkout-form-label">Alamat</span>
-                                                    <textarea id="address" placeholder="Isi dengan nama jalan, nomor rumah, nomor kompleks, nama gedung, lantai, atau nomor unit" className="checkout-input-type-3"/>
+                                                    <textarea rows="3" id="address" placeholder="Isi dengan nama jalan, nomor rumah, nomor kompleks, nama gedung, lantai, atau nomor unit" className="checkout-input-type-4 form-control"/>
                                                 </label>
                                             </div>
                                         </div>
