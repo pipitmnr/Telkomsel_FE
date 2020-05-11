@@ -8,22 +8,33 @@ import {
 	Col,
 	Container,
 	ButtonGroup
+
 } from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'unistore/react';
-import { store, actions } from '../store';
+import {withRouter} from 'react-router-dom';
+import {connect} from 'unistore/react';
+import {store, actions} from '../store';
+import swal from 'sweetalert';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import transaksi from '../data/transaksi.json'
 import Pagination from "../components/pagination"
 
-class Transactions extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {list_transaksi:transaksi};
-	}
 
-	ascOrder=(key)=>{
+
+class Transactions extends React.Component {
+  componentDidMount = async () => {
+    if (localStorage.getItem('username') === null) {
+      swal('Error!', 'Mohon login terlebih dahulu!', 'warning');
+      this.props.history.replace('/login-admin');
+    }
+  };
+  constructor(props) {
+    super(props);
+    this.state = {list_transaksi: transaksi, direction:null, arrow:null};
+  }
+
+	sortingOrder=(key)=>{
+		if(this.state.direction===null|| this.state.direction==='descending'){
 		transaksi.sort((a,b)=>{var newA=a[key].split('/').concat(),newB=b[key].split('/').concat();
 		if (newA<newB){
 			return -1
@@ -32,9 +43,7 @@ class Transactions extends React.Component {
 			return 0
 		}})
 		this.setState({list_transaksi:transaksi})
-
-	}
-	desOrder=(key)=>{
+	    }else if(this.state.direction==="ascending"){
 		transaksi.sort((a,b)=>{var newA=a[key].split('/').concat(),newB=b[key].split('/').concat();
 		if (newA>newB){
 			return -1
@@ -42,6 +51,7 @@ class Transactions extends React.Component {
 	    })
 		this.setState({list_transaksi:transaksi})
 	}
+}
 	filterJenis=(stats)=>{
 		if (stats==='Semua Jenis'){
 			store.setState({filter_payment:stats})
@@ -176,12 +186,12 @@ class Transactions extends React.Component {
 												variant="white"
 											>
 												<Dropdown.Item
-													onClick={event=> this.ascOrder('nomor_pesanan')}
+													onClick={event=> this.sortingOrder('nomor_pesanan')}
 												>
 													Ascending
 												</Dropdown.Item>
 												<Dropdown.Item
-													onClick={event=> this.desOrder('nomor_pesanan')}
+													onClick={event=> this.sortingOrder('nomor_pesanan')}
 												>
 													Descending
 												</Dropdown.Item>
@@ -221,6 +231,7 @@ class Transactions extends React.Component {
 }
 
 export default connect(
-	'filter_payment, filter_kluster',
-	actions
+  'filter_payment, filter_kluster',
+  actions
 )(withRouter(Transactions));
+

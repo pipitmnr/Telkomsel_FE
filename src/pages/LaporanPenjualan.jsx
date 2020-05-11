@@ -1,68 +1,126 @@
 import React from 'react';
 import {
-	ButtonGroup,
-	Dropdown,
-	DropdownButton,
-	Container,
-	Row,
-	Col,
-	Button,
-	Table,
+  ButtonGroup,
+  Dropdown,
+  DropdownButton,
+  Container,
+  Row,
+  Col,
+  Button,
+  Table,
 } from 'react-bootstrap';
-import { connect } from 'unistore/react';
-import { store, actions } from '../store';
-import { withRouter } from 'react-router-dom';
+import {connect} from 'unistore/react';
+import {store, actions} from '../store';
+import {withRouter} from 'react-router-dom';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import Pagination from "../components/pagination"
 import data from "../data/produk.json"
+import { CSVLink } from "react-csv";
+
 
 class LaporanJual extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = { dates_first: 'tanggal awal', dates_last: 'tanggal akhir', datas:data};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      dates_first: 'tanggal awal',
+      dates_last: 'tanggal akhir',
+	  datas: data,
+	  arrow1:null,
+	  arrow2:null,
+	  arrow3:null,
+	  direction: null,
+      headerscsv : [
+        { label: "Tanggal Pemesanan", key: "tanggal_transaksi" },
+        { label: "Nomor Pesanan", key: "nomor_pesanan" },
+        { label: "Total Transaksi", key: "total_penjualan" },
+        { label: "Status Transaksi", key: "status_transaksi" }
+      ],
+    };
+  }
 
-	ascending=(key)=>{
-		data.sort((a,b)=>a[key]-b[key])
-        this.setState({datas:data})
-	}
-	descending=(key)=>{
-		data.sort((a,b)=>b[key]-a[key])
-		this.setState({datas: data})
-	}
+  sortingNum = (key) => {
+	if (this.state.direction===null || this.state.direction==='descending'){
+    data.sort((a, b) => a[key] - b[key]);
+    this.setState({datas: data, direction:'ascending', arrow3:"down"});
+  }else if (this.state.direction==='ascending'){
+    data.sort((a, b) => b[key] - a[key]);
+    this.setState({datas: data, direction:'descending', arrow3:"up"});
+  }
+};
 
-	dateSortA=(key)=>{
-		data.sort((a,b)=>{var dateA = a[key].split('/'), dateB = b[key].split('/');
-		return new Date(dateA[2],dateA[1],dateA[0]) - new Date(dateB[2],dateB[1],dateB[0])})
-		this.setState({datas:data})
-
+sortingOrder=(key)=>{
+	if(this.state.direction===null|| this.state.direction==='descending'){
+	data.sort((a,b)=>{var newA=a[key].split('/').concat(),newB=b[key].split('/').concat();
+	if (newA<newB){
+		return -1
 	}
-	dateSortD=(key)=>{
-		data.sort((a,b)=>{var dateA = a[key].split('/'), dateB = b[key].split('/');
-		return new Date(dateB[2],dateB[1],dateB[0]) - new Date(dateA[2],dateA[1],dateA[0])})
-		this.setState({datas:data})
+	if (newA>newB){
+		return 0
+	}})
+	this.setState({datas:data, direction:"ascending",arrow2:"down"})
+	}else if(this.state.direction==="ascending"){
+	data.sort((a,b)=>{var newA=a[key].split('/').concat(),newB=b[key].split('/').concat();
+	if (newA>newB){
+		return -1
 	}
+	})
+	this.setState({datas:data, direction:"descending",arrow2:"up"})
+}
+}
 
-	filterJenis=(stats)=>{
-		if (stats==='Semua Jenis'){
-			store.setState({filter_payment:stats})
-			this.setState({datas: data.filter(d=>{return d.status_transaksi})})
-		}else{
-		store.setState({filter_payment:stats})
-		this.setState({datas: data.filter(d=>{return d.status_transaksi===stats})})
-		}
-		
-	}
-	render() {
+  sorting = (key) => {
+	if (this.state.direction===null || this.state.direction==='descending'){	
+    data.sort((a, b) => {
+      var dateA = a[key].split('/'),
+        dateB = b[key].split('/');
+      return (
+        new Date(dateA[2], dateA[1], dateA[0]) -
+        new Date(dateB[2], dateB[1], dateB[0])
+      );
+	})
 
+    this.setState({datas: data, direction:'ascending', arrow1: "down"});
+  }else if (this.state.direction==='ascending'){
+	data.sort((a, b) => {
+		var dateA = a[key].split('/'),
+		  dateB = b[key].split('/');
 		return (
-			<React.Fragment>
-				<link
-					rel='stylesheet'
-					href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
-				></link>
+		  new Date(dateB[2], dateB[1], dateB[0]) -
+		  new Date(dateA[2], dateA[1], dateA[0])
+		);
+	  });
+	  this.setState({datas: data, direction:'descending', arrow1:"up"});
 
+  }
+};
+  
+
+  filterJenis = (stats) => {
+    if (stats === 'Semua Jenis') {
+      store.setState({filter_payment: stats});
+      this.setState({
+        datas: data.filter((d) => {
+          return d.status_transaksi;
+        }),
+      });
+    } else {
+      store.setState({filter_payment: stats});
+      this.setState({
+        datas: data.filter((d) => {
+          return d.status_transaksi === stats;
+        }),
+      });
+    }
+  };
+  
+  render() {
+    return (
+      <React.Fragment>
+        <link
+          rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+        ></link>
 				<Container fluid className="all-penjualan">
 					<Row>
 						<Col sm='3' className='col-sidebar'>
@@ -72,7 +130,7 @@ class LaporanJual extends React.Component {
 						<Col sm='9' className='kluster'>
 						<Row>
 
-							<Col md="8">
+							<Col md="10">
 							<h1>Laporan Penjualan</h1>
                             </Col>
 						
@@ -228,43 +286,36 @@ class LaporanJual extends React.Component {
 									size='sm'
 								>
 									<thead>
-										<th><Dropdown as={ButtonGroup}>
-											<DropdownButton
-											    
+										<th><Dropdown drop={this.state.arrow1}>
+											<Dropdown.Toggle
+	   
 												id='sort-date'
 												title="Tanggal Pemesanan"
 												variant="white"
-											>
-												<Dropdown.Item
-													onClick={event=> this.dateSortA('tanggal_transaksi')}
-												>
-													Ascending
-												</Dropdown.Item>
-												<Dropdown.Item
-													onClick={event=> this.dateSortD('tanggal_transaksi')}
-												>
-													Descending
-												</Dropdown.Item>
-												</DropdownButton>
+												onClick={event=> this.sorting('tanggal_transaksi')}
+											> 
+											     Tanggal Pemesanan
+												</Dropdown.Toggle>
 											</Dropdown></th>
-										<th>Nomor Pesanan</th>
-										<th><Dropdown as={ButtonGroup}>
-											<DropdownButton
+										<th><Dropdown drop={this.state.arrow2}>
+											<Dropdown.Toggle
 												id='sort-transaction'
 												title="Total Transaksi"
 												variant="white"
+												onClick={event=>this.sortingOrder('nomor_pesanan')}
 											>
-												<Dropdown.Item
-													onClick={event=> this.ascending('total_penjualan')}
-												>
-													Ascending
-												</Dropdown.Item>
-												<Dropdown.Item
-													onClick={event=> this.descending('total_penjualan')}
-												>
-													Descending
-												</Dropdown.Item>
-												</DropdownButton>
+												Nomor Pesanan
+												</Dropdown.Toggle>
+											</Dropdown></th>
+										<th><Dropdown drop={this.state.arrow3}>
+											<Dropdown.Toggle
+												id='sort-transaction'
+												title="Total Transaksi"
+												variant="white"
+												onClick={event=>this.sortingNum('total_penjualan')}
+											>
+												Total Transaksi
+												</Dropdown.Toggle>
 											</Dropdown></th>
 										<th>Status Transaksi</th>
 										<th>Detail Transaksi</th>
@@ -290,8 +341,13 @@ class LaporanJual extends React.Component {
 							<Row>
 							<Col md="8"><Pagination/></Col>
 							
-							<Col md="4"><Button className="export-excel">Export Excel/CSV</Button></Col>
-                            </Row>
+							<Col md="4"><div className="btn laporan-penjualan-export-excel">
+                    <CSVLink data={this.state.datas} headers={this.state.headerscsv} separator={";"}>
+                      Export Excel / CSV
+                    </CSVLink>
+                  </div>
+                </Col>
+                </Row>
 							<br/>
 						</Col>
 					</Row>
@@ -302,6 +358,6 @@ class LaporanJual extends React.Component {
 }
 
 export default connect(
-	'filter_payment,filter_kluster',
-	actions
+  'filter_payment,filter_kluster',
+  actions
 )(withRouter(LaporanJual));
