@@ -53,7 +53,7 @@ class DaftarProduk extends Component {
     if (this.state.valueJenis !== 'Semua Jenis') {
       this.setState({
         data: this.state.dataCluster.filter((d) => {
-          return d.tipe_produk === this.state.valueJenis;
+          return d.jenis_produk === this.state.valueJenis;
         }),
       });
     } else {
@@ -173,9 +173,9 @@ class DaftarProduk extends Component {
                   <Table sortable selectable basic='very'>
                     <Table.Header>
                       <Table.Row className='thead-col'>
-                        <Table.HeaderCell>
+                        {/* <Table.HeaderCell>
                           <Checkbox />
-                        </Table.HeaderCell>
+                        </Table.HeaderCell> */}
                         <Table.HeaderCell
                           sorted={column === 'no_sku' ? direction : null}
                           onClick={this.handleSort('no_sku')}
@@ -191,11 +191,11 @@ class DaftarProduk extends Component {
                           Nama Produk
                         </Table.HeaderCell>
                         <Table.HeaderCell
-                          sorted={column === 'tipe_produk' ? direction : null}
-                          onClick={this.handleSort('tipe_produk')}
+                          sorted={column === 'jenis_produk' ? direction : null}
+                          onClick={this.handleSort('jenis_produk')}
                           style={{color: '#1B355F'}}
                         >
-                          Tipe Produk
+                          Jenis Produk
                         </Table.HeaderCell>
                         <Table.HeaderCell
                           sorted={column === 'status' ? direction : null}
@@ -229,12 +229,12 @@ class DaftarProduk extends Component {
                         {this.state.data.map((dataItem) => {
                           return (
                             <Table.Row>
-                              <Table.Cell>
+                              {/* <Table.Cell>
                                 <Checkbox />
-                              </Table.Cell>
+                              </Table.Cell> */}
                               <Table.Cell>{dataItem.no_sku}</Table.Cell>
                               <Table.Cell>{dataItem.nama_produk}</Table.Cell>
-                              <Table.Cell>{dataItem.tipe_produk}</Table.Cell>
+                              <Table.Cell>{dataItem.jenis_produk}</Table.Cell>
                               <Table.Cell>{dataItem.status}</Table.Cell>
                               <Table.Cell>{dataItem.user}</Table.Cell>
                               <Table.Cell className='vertical-ellipsis'>
