@@ -56,6 +56,10 @@ class ProductListWithImage extends Component {
                     <span></span>:
                     <div className="product-list-with-image-line"></div>
                 }
+                <div className="product-list-with-image-dummy-div-5"></div>
+                <div className="product-list-with-image-dummy-div-6"></div>
+                <div className="product-list-with-image-dummy-div-7"></div>
+                <div className="product-list-with-image-dummy-div-8"></div>
             </div>
         )
     })
