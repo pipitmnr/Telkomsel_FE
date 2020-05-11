@@ -14,8 +14,9 @@ import {store, actions} from '../store';
 import {withRouter} from 'react-router-dom';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
+import Pagination from '../components/pagination';
 import data from '../data/produk.json';
-import { CSVLink } from "react-csv";
+import {CSVLink} from 'react-csv';
 
 class LaporanJual extends React.Component {
   constructor(props) {
@@ -24,11 +25,11 @@ class LaporanJual extends React.Component {
       dates_first: 'tanggal awal',
       dates_last: 'tanggal akhir',
       datas: data,
-      headerscsv : [
-        { label: "Tanggal Pemesanan", key: "tanggal_transaksi" },
-        { label: "Nomor Pesanan", key: "nomor_pesanan" },
-        { label: "Total Transaksi", key: "total_penjualan" },
-        { label: "Status Transaksi", key: "status_transaksi" }
+      headerscsv: [
+        {label: 'Tanggal Pemesanan', key: 'tanggal_transaksi'},
+        {label: 'Nomor Pesanan', key: 'nomor_pesanan'},
+        {label: 'Total Transaksi', key: 'total_penjualan'},
+        {label: 'Status Transaksi', key: 'status_transaksi'},
       ],
     };
   }
@@ -89,18 +90,27 @@ class LaporanJual extends React.Component {
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
         ></link>
-
-        <Container fluid>
+        <Container fluid className='all-penjualan'>
           <Row>
-            <div
-              className='col-md-3 col-sidebar'
+            <Col
+              sm='3'
+              className='col-sidebar'
               style={{position: 'fixed', zIndex: '10'}}
             >
               <Sidebar />
-            </div>
-            <div className="col-md-3"></div>
+            </Col>
 
-            <Col sm='9' className='kluster'>
+            <Col
+              sm='9'
+              className='kluster'
+              style={{
+                paddingLeft: '0px',
+                paddingRight: '0px',
+                marginBottom: '50px',
+                marginLeft: '29%',
+                position: 'relative',
+              }}
+            >
               <Row>
                 <Col md='8'>
                   <h1>Laporan Penjualan</h1>
@@ -161,8 +171,9 @@ class LaporanJual extends React.Component {
                   <Col md='1'>
                     <Dropdown as={ButtonGroup}>
                       <DropdownButton
-                        className='d-inline-block align-center'
+                        id='date-but'
                         title={this.state.dates_first}
+                        variant=''
                       >
                         <Dropdown.Item
                           onClick={() =>
@@ -175,8 +186,9 @@ class LaporanJual extends React.Component {
                       <p> &nbsp;Hingga&nbsp; </p>
 
                       <DropdownButton
-                        className='d-inline-block align-center'
+                        id='date-but-2'
                         title={this.state.dates_last}
+                        variant=''
                       >
                         <Dropdown.Item
                           onClick={() =>
@@ -196,8 +208,10 @@ class LaporanJual extends React.Component {
                   <Col md='1'>
                     <Dropdown as={ButtonGroup}>
                       <DropdownButton
+                        id='payment-filter-but'
                         className='d-inline-block align-center'
                         title={this.props.filter_payment}
+                        variant=''
                       >
                         <Dropdown.Item
                           onClick={(event) => this.filterJenis('Terbayar')}
@@ -255,7 +269,7 @@ class LaporanJual extends React.Component {
                     <th>
                       <Dropdown as={ButtonGroup}>
                         <DropdownButton
-                          className='d-inline-block align-center'
+                          id='sort-date'
                           title='Tanggal Pemesanan'
                           variant='white'
                         >
@@ -280,7 +294,7 @@ class LaporanJual extends React.Component {
                     <th>
                       <Dropdown as={ButtonGroup}>
                         <DropdownButton
-                          className='d-inline-block align-center'
+                          id='sort-transaction'
                           title='Total Transaksi'
                           variant='white'
                         >
@@ -325,15 +339,24 @@ class LaporanJual extends React.Component {
                   </tbody>
                 </Table>
               </Row>
-              <div className="row my-5">
-                <div className="col-md-12 text-right">
-                  <div className="btn laporan-penjualan-export-excel">
-                    <CSVLink data={this.state.datas} headers={this.state.headerscsv} separator={";"}>
+              <Row>
+                <Col md='8'>
+                  <Pagination />
+                </Col>
+
+                <Col md='4'>
+                  <div className='btn laporan-penjualan-export-excel'>
+                    <CSVLink
+                      data={this.state.datas}
+                      headers={this.state.headerscsv}
+                      separator={';'}
+                    >
                       Export Excel / CSV
                     </CSVLink>
                   </div>
-                </div>
-              </div>
+                </Col>
+              </Row>
+              <br />
             </Col>
           </Row>
         </Container>
