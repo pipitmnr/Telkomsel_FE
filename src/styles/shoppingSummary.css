@@ -5,7 +5,7 @@
 
 .shopping-summary-container {
     margin-top: 11%;
-    padding: 15px 10px 10px 10px;
+    padding: 25px 25px 15px 25px;
     font-family: "muli";
     background: linear-gradient(0deg, rgba(225, 225, 225, 0.5), rgba(225, 225, 225, 0.5)), linear-gradient(0deg, rgba(225, 225, 225, 0.5), rgba(225, 225, 225, 0.5)), rgba(225, 225, 225, 0.5);
     border-radius: 10px;

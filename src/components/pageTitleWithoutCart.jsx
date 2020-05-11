@@ -12,7 +12,7 @@ class PageTitleWithoutCart extends Component {
        <React.Fragment>
            <div className="container-fluid">
                 <div className="row align-items-center page-title">
-                    <div className="col-md-6 page-title-entry">
+                    <div className="col-md-6 page-title-entry" style={{paddingRight: "95px"}}>
                         Keranjang Belanja
                     </div>
                 </div>

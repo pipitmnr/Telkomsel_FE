@@ -20,7 +20,8 @@ class Shopping extends Component {
       productListWithImage: [],
       isPerdanaSegel: false,
       isPerdanaPaketData: false,
-      isVoucherData: false
+      isVoucherData: false,
+      locationSearch: ""
     })
   };
 
@@ -29,7 +30,7 @@ class Shopping extends Component {
        <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
-        <PageTitle />
+        <PageTitle pageTitle="Semua Produk"/>
         <div className="container-fluid">
           <div className="row">
             <div className="col-12 col-md-2 shopping-filter-container shopping-product-z-10">
@@ -56,4 +57,4 @@ class Shopping extends Component {
   }
 }
 
-export default connect("productListWithImage, isPerdanaSegel, isPerdanaPaketData, isVoucherData", actions)(withRouter(Shopping));
+export default connect("productListWithImage, isPerdanaSegel, isPerdanaPaketData, isVoucherData, locationSearch", actions)(withRouter(Shopping));

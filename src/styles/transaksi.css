@@ -6,11 +6,13 @@
     src : url("../fonts/Muli-Regular.ttf");
 }
 
+
 #title-transaksi, #title-jual, .title-page{
     font-family:Muli; 
     color:#8A8D93; 
     font-size:48px
 }
+
 
 #transaksi{
     margin: 5% auto ;
@@ -219,9 +221,11 @@
 .title-page{
     padding-top:3%;
 }
+
 #below-side{
     padding-top:49px;
 }
+
 
 /* DETAIL TRANSAKSI END */
 
@@ -234,15 +238,15 @@
     font-size: 18px;
 }
 
+
 .laporan-penjualan-export-excel a{
     text-decoration: none;
     color: black;
 }
 
 
-
-
-
-
-
+.laporan-penjualan-export-excel a{
+    text-decoration: none;
+    color: black;
+}
 

@@ -9,7 +9,6 @@
   padding: 0px 0px;
   height: 100vh;
   background-color: #e30015;
-  
 }
 
 .nav-link {
@@ -21,7 +20,7 @@
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
   color: #fff;
-  background-color: #e25459;
+  background-color: rgba(245, 181, 181, 0.3);
 }
 
 .sidebar-menu a {
@@ -29,4 +28,5 @@
   text-align: center;
   font-size: 24px;
   font-family: 'Muli', sans-serif;
+  text-decoration: none;
 }

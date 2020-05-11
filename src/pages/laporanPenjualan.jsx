@@ -18,7 +18,6 @@ import Pagination from "../components/pagination"
 import data from "../data/produk.json"
 import { CSVLink } from "react-csv";
 
-
 class LaporanJual extends React.Component {
   constructor(props) {
     super(props);

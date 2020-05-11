@@ -10,7 +10,8 @@ const initialState = {
   productListWithImage: [],
   isPerdanaSegel: false,
   isPerdanaPaketData: false,
-  isVoucherData: false
+  isVoucherData: false,
+  locationSearch: ""
 };
 
 export const store = createStore(initialState);

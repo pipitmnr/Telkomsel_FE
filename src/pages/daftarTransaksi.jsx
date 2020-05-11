@@ -8,7 +8,6 @@ import {
 	Col,
 	Container,
 	ButtonGroup
-
 } from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'unistore/react';
@@ -20,7 +19,6 @@ import transaksi from '../data/transaksi.json'
 import Pagination from "../components/pagination"
 
 
-
 class Transactions extends React.Component {
   componentDidMount = async () => {
     if (localStorage.getItem('username') === null) {
@@ -30,7 +28,7 @@ class Transactions extends React.Component {
   };
   constructor(props) {
     super(props);
-	this.state = {list_transaksi: transaksi, direction:null, nomor_pesanan:null,
+	  this.state = {list_transaksi: transaksi, direction:null, nomor_pesanan:null,
 		nama_pemesan:null, alamat:null, detail_order:null, dummy:null};
   }
     changePayment=(stats, ids)=>{

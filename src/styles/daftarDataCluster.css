@@ -6,7 +6,7 @@
 }
 
 .pagination-cluster .ui.pagination.menu {
-    margin-left: 30px;
+    margin-left: 15px;
 }
 
 .ui.selection.dropdown.dropdown-table {
@@ -19,4 +19,19 @@
 
 .ui.selection.dropdown.dropdown-table {
     min-width: 1px;
+}
+
+.ui.sortable.table thead th {
+    border-left: none !important;
+    border-top: none !important;
+}
+
+.vertical-ellipsis a {
+    text-decoration: none;
+    color: unset;
+}
+
+.ui.selection.visible.dropdown>.text:not(.default) {
+    font-weight: 700;
+    color: white;
 }

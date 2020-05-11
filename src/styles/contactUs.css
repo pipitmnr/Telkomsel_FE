@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "muli";
+    src : url("../fonts/Muli-Regular.ttf");
+}
+.font-muli{
+    font-family: "muli";
+}
+.contact-us-gradient-red{
+    background: linear-gradient(180deg, #D32026 0%, rgba(237, 83, 90, 0) 100%), #450002;
+    height: 594px;
+}
+.contact-us-konten-form{
+    margin: 37px 0;
+}
+.contact-us-konten-form h2{
+    color: #D32026;
+    font-weight: bold;
+    font-size: 36px;
+}
+.contact-us-konten-form h3{
+    color: #D32026;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 9px 0;
+}
+.contact-us-label-form{
+    font-size: 14px;
+    display: inherit;
+    margin: 14px 0;
+}
+.contact-us-label-form label{
+    width: 180px;
+}
+.contact-us-mini-button{
+    width: 100%;
+    background: #D32026;
+}
+.contact-us-big-button{
+    font-size: 22px;
+    font-weight: bold;
+    background: #D32026;
+    width: 40%;
+}

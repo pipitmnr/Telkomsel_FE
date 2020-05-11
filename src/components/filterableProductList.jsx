@@ -23,7 +23,7 @@ class FilterableProductList extends Component {
     // Define JSX variable to show all products
     let productsList = products.map((product, index) => {
         return (
-            <div className="col-md-3 col-12 product-list-with-image-product-container">
+            <div className="col-md-3 col-12 product-list-with-image-product-container" style={{minWidth: "312px"}}>
                 <img src={voucherTelkomsel} alt={product.name} className="product-list-with-image-image"/>
                 <div className="product-list-with-image-product-info">
                     <Link to={'/detail-produk'} className="product-list-with-image-formatting-link">

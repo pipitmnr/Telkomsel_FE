@@ -13,6 +13,7 @@ import ProductDetails from '../pages/productDetails';
 import LaporanPenjualan from '../pages/laporanPenjualan';
 import TransactionDetail from '../pages/detailTrans';
 import ResetPassword from '../pages/reset-password';
+import ContactUs from '../pages/contactUs';
 
 const MainRoute = () => {
   return (
@@ -31,6 +32,7 @@ const MainRoute = () => {
           <Route exact path='/detail-produk' component={ProductDetails} />
           <Route exact path='/laporan-penjualan' component={LaporanPenjualan} />
           <Route exact path='/detail-transaksi' component={TransactionDetail} />
+          <Route exact path='/hubungi-kami' component={ContactUs} />
           {/* <Route exact path="/login" component={Login} /> */}
           {/* <Route component={NotMatch} /> */}
         </Switch>
