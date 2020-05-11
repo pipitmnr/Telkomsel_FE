@@ -20,7 +20,7 @@
     position: absolute;
     left: -4%;
     top: 105px;
-    z-index: 1;
+    z-index: 5;
 }
 
 .shopping-product-list {
