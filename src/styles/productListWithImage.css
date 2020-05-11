@@ -6,6 +6,7 @@
 .product-list-with-image-product-container {
     padding: 0;
     text-align: center;
+    min-width: 312px;
 }
 
 .product-list-with-image-image {
