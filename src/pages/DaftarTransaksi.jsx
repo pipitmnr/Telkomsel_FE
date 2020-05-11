@@ -58,11 +58,11 @@ class Transactions extends React.Component {
 			return -1
 		}
 	    })
-		this.setState({list_transaksi:transaksi,direction:"descending", arrow:"down"})
+		this.setState({list_transaksi:transaksi,direction:"descending", key:"up"})
 	}
 }
 	filterJenis=(stats)=>{
-		if (stats==='Semua Jenis'){
+		if (stats==='Semua Status'){
 			store.setState({filter_payment:stats})
 			this.setState({list_transaksi: transaksi.filter(d=>{return d.status})})
 		}else{
@@ -82,7 +82,7 @@ class Transactions extends React.Component {
 						<Col md='9'>
 							
 							<div id='transaksi'>
-							<h1>Transaksi Anda</h1>
+							<h1 id="title-transaksi">Transaksi Anda</h1>
 							<br/>
 								<Col id='filter_one'>
 										<Dropdown>
@@ -128,10 +128,10 @@ class Transactions extends React.Component {
 												<Dropdown.Item
 													as='button'
 													onClick={event =>
-														this.filterJenis('Semua Jenis')
+														this.filterJenis('Semua Status')
 													}
 												>
-													Semua Jenis
+													Semua Status
 												</Dropdown.Item>
 												
 											</DropdownButton>

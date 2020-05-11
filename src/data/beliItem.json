@@ -1,0 +1,14 @@
+[
+    {
+        "nama":"Pulsa Segel",
+        "jumlah":2,
+        "price_item":"Rp 20.000",
+        "total":"Rp 40.000"
+    },
+    {
+        "nama":"Paket Data",
+        "jumlah":1,
+        "price_item":"Rp 50.000",
+        "total":"Rp 50.000"
+    }
+]

@@ -30,6 +30,7 @@ class LaporanJual extends React.Component {
 	  arrow2:null,
 	  arrow3:null,
 	  direction: null,
+	  dummy:null,
       headerscsv : [
         { label: "Tanggal Pemesanan", key: "tanggal_transaksi" },
         { label: "Nomor Pesanan", key: "nomor_pesanan" },
@@ -39,6 +40,15 @@ class LaporanJual extends React.Component {
     };
   }
 
+  changePayment=(stats, ids)=>{
+	data.map(el=>{
+		if(el.id===ids){
+		el.status_transaksi=stats;
+		el.color="success"
+	this.setState({dummy:"new"})}
+	})
+
+}
   sortingNum = (key) => {
 	if (this.state.direction===null || this.state.direction==='descending'){
     data.sort((a, b) => a[key] - b[key]);
@@ -97,7 +107,7 @@ sortingOrder=(key)=>{
   
 
   filterJenis = (stats) => {
-    if (stats === 'Semua Jenis') {
+    if (stats === 'Semua Status') {
       store.setState({filter_payment: stats});
       this.setState({
         datas: data.filter((d) => {
@@ -131,7 +141,7 @@ sortingOrder=(key)=>{
 						<Row>
 
 							<Col md="10">
-							<h1>Laporan Penjualan</h1>
+							<h1 id="title-jual">Laporan Penjualan</h1>
                             </Col>
 						
 								<DropdownButton
@@ -200,7 +210,7 @@ sortingOrder=(key)=>{
 													1/2/2020
 												</Dropdown.Item>
 											</DropdownButton>
-											<p> &nbsp;Hingga&nbsp; </p>
+											<p id="middle-hingga"> &nbsp;Hingga&nbsp; </p>
 
 											<DropdownButton
 												id='date-but-2'
@@ -260,10 +270,10 @@ sortingOrder=(key)=>{
 												</Dropdown.Item>
 												<Dropdown.Item
 													onClick={event =>
-														this.filterJenis('Semua Jenis')
+														this.filterJenis('Semua Status')
 													}
 												>
-													Semua Jenis
+												   Semua Status
 												</Dropdown.Item>
 											</DropdownButton>
 										</Dropdown>
@@ -327,7 +337,12 @@ sortingOrder=(key)=>{
 											<td>{row.nomor_pesanan}</td>
 											<td>Rp {row.total_penjualan}</td>
 											<td>
-												<Button variant={row.color}>{row.status_transaksi}</Button>
+											{row.status_transaksi==="Terbayar" ?
+											<Dropdown>
+												<DropdownButton variant={row.color} title={row.status_transaksi}>
+													<Dropdown.Item onClick={event=>this.changePayment("Terkirim", row.id)}>Terkirim</Dropdown.Item>
+												</DropdownButton>
+											</Dropdown> : <Button variant={row.color}>{row.status_transaksi}</Button>}
 											</td>
 											<td>
 												<a className='dots' href='/detail-transaksi'>
