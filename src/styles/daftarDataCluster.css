@@ -30,3 +30,8 @@
     text-decoration: none;
     color: unset;
 }
+
+.ui.selection.visible.dropdown>.text:not(.default) {
+    font-weight: 700;
+    color: white;
+}
