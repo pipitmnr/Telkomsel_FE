@@ -5,7 +5,15 @@ import { actions, store } from "../store";
 import "../styles/bootstrap.min.css";
 import "../styles/chooseRegion.css";
 
+/**
+ * The following function is used to convert any string into Title case format
+ */
+String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
 class ChooseRegion extends Component {
+    
     /**
      * The following function is used to filter product list by location
      * 
@@ -68,17 +76,23 @@ class ChooseRegion extends Component {
             
             // Processing reion object at province level
             if (regionObject["level"] === 1) {
-                province = regionObject["nama"];
+                province = regionObject["nama"].slice(6).toProperCase();
+                // Special cases for Jakarta and Yogyakarta
+                if (province === "D.k.i. Jakarta") {
+                    province = "D.K.I. Jakarta";
+                } else if (province === "D.i. Yogyakarta") {
+                    province = "D.I. Yogyakarta";
+                }
             }
 
             // Processing reion object at city level
             if (regionObject["level"] === 2) {
-                city = regionObject["nama"];
+                city = regionObject["nama"].toProperCase();
             }
 
             // Processing reion object at district level
             if (regionObject["level"] === 3) {
-                let regionName = regionObject["nama"] + ", " + city + ", " + province;
+                let regionName = regionObject["nama"].toProperCase() + ", " + city + ", " + province;
                 regionDetail.push(regionName);
             }
         }
