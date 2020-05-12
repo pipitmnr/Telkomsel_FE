@@ -68,6 +68,11 @@
 
 .harga-item {
     margin-left: 3%;
+    width: 31.5% !important;
+}
+
+.ui.form .fields .field .harga-item input {
+    width: 31.5% !important;
 }
 
 .stok-item {
