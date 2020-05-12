@@ -1,6 +1,3 @@
-
-/* DAFTAR TRANSAKSI START */
-
 @font-face {
     font-family: "muli";
     src : url("../fonts/Muli-Regular.ttf");
@@ -56,8 +53,11 @@
 
 #sort-date,#sort-transaction{
     font-weight: bold;
+    
 }
-
+#sort-transaction{
+    color: #1A345F;
+}
 #middle-hingga{
     margin-top:7px;
     padding-right: 5px;
@@ -189,7 +189,9 @@
     color: #1A345F
 
 }
-
+.tabel-trans-satu{
+    width:110%
+}
 .tabel-trans-dua{
     margin-left:70px;
 
@@ -200,6 +202,7 @@
     width:450px;
 }
 .detail-inside-box, .info-buyer{
+
     padding-left: 30px;
 }
 .back-button{
@@ -214,7 +217,10 @@
 }
 
 .big_detail{
+    border-radius: 15px;
     margin-top: 3%;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-bottom: 2%;
     background-color: #d9dedb;
 }
@@ -224,6 +230,15 @@
 
 #below-side{
     padding-top:49px;
+}
+
+.tabel-trans-dua th{
+    padding: 20px;
+}
+
+.tabel-trans-satu th{
+   text-align: center;
+   padding-bottom: 20px;
 }
 
 
@@ -238,7 +253,9 @@
     font-size: 18px;
 }
 
-
+.laporan-penjualan-export-excel{
+    margin-left: 150px;
+}
 .laporan-penjualan-export-excel a{
     text-decoration: none;
     color: black;
@@ -249,4 +266,6 @@
     text-decoration: none;
     color: black;
 }
+
+
 

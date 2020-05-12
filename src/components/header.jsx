@@ -33,7 +33,7 @@ class Header extends Component {
                         {this.props.menuActive === "/info-produk" ?
                           <li className="header-menu-active"><Link>Info Produk Telkomsel</Link></li>
                           :
-                          <li><Link>Info Produk Telkomsel</Link></li>
+                          <li><a href="https://www.telkomsel.com" target="_blank" >Info Produk Telkomsel</a></li>
                         }
                       </ul>
                     </div>
