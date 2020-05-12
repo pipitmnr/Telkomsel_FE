@@ -4,7 +4,7 @@
 }
 
 .checkout-form-container {
-    padding-top: 7%;
+    padding-top: 15px;
     font-family: "muli";
 }
 
@@ -52,6 +52,10 @@
     font-weight: normal;
     padding: 3px 7px 3px 7px;
     border-radius: 5px;
+}
+
+.datalist-input::-webkit-calendar-picker-indicator {
+    display: none;
 }
 
 .checkout-readonly {

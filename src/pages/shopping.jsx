@@ -4,6 +4,7 @@ import { connect } from "unistore/react";
 import { actions, store } from "../store";
 import Header from "../components/header";
 import PageTitle from "../components/pageTitle";
+import Breadcrumbs from "../components/breadcrumbs";
 import FilterableProductList from "../components/filterableProductList.jsx";
 import CheckboxFilter from "../components/checkboxFilter";
 import ChooseRegion from "../components/chooseRegion";
@@ -26,11 +27,24 @@ class Shopping extends Component {
   };
 
   render() {
+    // Define path
+    let paths = [
+      {
+        "name": "Beranda",
+        "path": "/"
+      },
+      {
+        "name": "Belanja",
+        "path": "/belanja"
+      }
+    ];
+
     return (
        <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
-        <PageTitle pageTitle="Semua Produk"/>
+        <PageTitle pageTitle="Belanja menjadi lebih mudah"/>
+        <Breadcrumbs paths={paths} paddingLeft={"255px"}/>
         <div className="container-fluid">
           <div className="row">
             <div className="col-12 col-md-2 shopping-filter-container shopping-product-z-10">

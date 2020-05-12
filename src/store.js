@@ -17,6 +17,9 @@ const initialState = {
   isPerdanaPaketData: false,
   isVoucherData: false,
   locationSearch: "",
+  // Checkout related
+  checkoutLocation: "",
+  postalCode: "",
   cartValue: totalCart
 };
 

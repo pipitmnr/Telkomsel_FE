@@ -3,11 +3,12 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'unistore/react';
 import {actions, store} from '../store';
 import Header from '../components/header';
-import Footer from '../components/footer';
-import PageTitle from '../components/pageTitle';
-import '../styles/productDetails.css';
-import ProductListWithImage from '../components/productListWithImage';
-import ChatButton from '../components/chatButton';
+import Breadcrumbs from '../components/breadcrumbs';
+import Footer from "../components/footer";
+import PageTitle from "../components/pageTitle";
+import "../styles/productDetails.css";
+import ProductListWithImage from "../components/productListWithImage";
+import ChatButton from "../components/chatButton";
 
 class ProductDetails extends Component {
   componentDidMount = async () => {
@@ -32,24 +33,32 @@ class ProductDetails extends Component {
   };
 
   render() {
-    console.log(
-      'cek input global state',
-      typeof this.props.cartValue,
-      this.props.cartValue
-    );
+    // Define path
+    let paths = [
+        {
+          "name": "Beranda",
+          "path": "/"
+        },
+        {
+          "name": "Belanja",
+          "path": "/belanja"
+        },
+        {
+            "name": "Voucher Data",
+            "path": "/detail-produk"
+          }
+      ];
+
     return (
       <React.Fragment>
-        <Header menuActive={this.props.location.pathname} />
-        <div className='header-white-space'></div>
-        <PageTitle pageTitle='Voucher Paket Data' />
-        <div className='container font-muli'>
-          <div className='row mt-4'>
-            <div className='col-md-6 text-center'>
-              <img
-                className='product-details-image'
-                src={require('../images/voucherTelkomsel.jpg')}
-                alt=''
-              />
+        <Header menuActive={this.props.location.pathname}/>
+        <div className="header-white-space"></div>
+        <PageTitle pageTitle="Voucher Paket Data"/>
+        <Breadcrumbs paths={paths} paddingLeft={"170px"} />
+        <div className="container font-muli">
+          <div className="row mt-4">
+            <div className="col-md-6 text-center">
+                <img className="product-details-image" src={require("../images/voucherTelkomsel.jpg")} alt=""/>
             </div>
             <div className='col-md-6'>
               <div className='row align-items-center'>
