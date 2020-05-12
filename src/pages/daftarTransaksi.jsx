@@ -28,8 +28,7 @@ class Transactions extends React.Component {
   };
   constructor(props) {
     super(props);
-	  this.state = {list_transaksi: transaksi, direction:null, nomor_pesanan:null,
-		nama_pemesan:null, alamat:null, detail_order:null, dummy:null};
+	  this.state = {list_transaksi: transaksi, direction:null, arrow:null, dummy:null, kondisi:null};
   }
     changePayment=(stats, ids)=>{
 		transaksi.map(el=>{
@@ -41,22 +40,24 @@ class Transactions extends React.Component {
 
 	}
 	sortingOrder=(key)=>{
+
 		if(this.state.direction===null|| this.state.direction==='descending'){
-		transaksi.sort((a,b)=>{var newA=a[key].split(/[./,-]+/).concat(),newB=b[key].split('/').concat();
-		if (newA<newB){
-			return -1
-		}
-	    if (newA>newB){
-			return 0
-		}})
-		this.setState({list_transaksi:transaksi, direction:"ascending", key:"down"})
-	    }else if(this.state.direction==="ascending"){
 		transaksi.sort((a,b)=>{var newA=a[key].split(/[./,-]+/).concat(),newB=b[key].split('/').concat();
 		if (newA>newB){
 			return -1
 		}
+		})
+		this.setState({list_transaksi:transaksi, kondisi:key, direction:"ascending",arrow:"up"})
+	    }else if(this.state.direction==="ascending"){
+		transaksi.sort((a,b)=>{var newA=a[key].split(/[./,-]+/).concat(),newB=b[key].split('/').concat();
+		if (newA<newB){
+			return -1
+		}
+		if (newA>newB){
+			return 0
+		}
 	    })
-		this.setState({list_transaksi:transaksi,direction:"descending", key:"up"})
+		this.setState({list_transaksi:transaksi,direction:"descending",arrow:"down"})
 	}
 }
 	filterJenis=(stats)=>{
@@ -186,7 +187,7 @@ class Transactions extends React.Component {
 								<br/>
 								<Table  className="tabel-transaksi" striped bordered hover variant='white'>
 									<thead>
-										<th><Dropdown drop={this.state.nomor_pemesanan}>
+										<th><Dropdown drop={this.state.kondisi==="nomor_pesanan"? this.state.arrow: "down"}>
 											<Dropdown.Toggle
 												id='sort-transaction'
 												title="Nomor Pesanan"
@@ -196,7 +197,7 @@ class Transactions extends React.Component {
 												Nomor Pesanan
 												</Dropdown.Toggle>
 											</Dropdown></th>
-										<th><Dropdown drop={this.state.nama_pemesan}>
+										<th><Dropdown drop={this.state.kondisi==="nama_pemesan"? this.state.arrow : "down"}>
 											<Dropdown.Toggle
 												id='sort-transaction'
 												title="Nama Pemesan"
@@ -206,7 +207,7 @@ class Transactions extends React.Component {
 												Nama Pemesan
 												</Dropdown.Toggle>
 											</Dropdown></th>
-										<th><Dropdown drop={this.state.alamat}>
+										<th><Dropdown drop={this.state.kondisi==="alamat"? this.state.arrow: "down"}>
 											<Dropdown.Toggle
 												id='sort-transaction'
 												title="alamat"
@@ -216,12 +217,12 @@ class Transactions extends React.Component {
 												Kota/Kecamatan Alamat
 												</Dropdown.Toggle>
 											</Dropdown></th>
-										<th><Dropdown drop={this.state.detail_order}>
+										<th><Dropdown drop={this.state.kondisi==="detail_order"? this.state.arrow: "down"}>
 											<Dropdown.Toggle
 												id='sort-transaction'
 												title="detail order"
 												variant="white"
-												onClick={event=>this.sortingOrder('detail_order')}
+												onClick={event=>this.sortingOrder('detail_order', this.state.detail_order)}
 											>
 												Detail Pesanan
 												</Dropdown.Toggle>
@@ -266,4 +267,6 @@ export default connect(
   'filter_payment, filter_kluster',
   actions
 )(withRouter(Transactions));
+
+
 

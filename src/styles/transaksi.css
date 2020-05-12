@@ -1,6 +1,3 @@
-
-/* DAFTAR TRANSAKSI START */
-
 @font-face {
     font-family: "muli";
     src : url("../fonts/Muli-Regular.ttf");
@@ -189,7 +186,9 @@
     color: #1A345F
 
 }
-
+.tabel-trans-satu{
+    width:110%
+}
 .tabel-trans-dua{
     margin-left:70px;
 
@@ -238,7 +237,9 @@
     font-size: 18px;
 }
 
-
+.laporan-penjualan-export-excel{
+    margin-left: 150px;
+}
 .laporan-penjualan-export-excel a{
     text-decoration: none;
     color: black;
@@ -249,4 +250,6 @@
     text-decoration: none;
     color: black;
 }
+
+
 

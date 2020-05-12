@@ -25,20 +25,21 @@ class TransactionDetail extends React.Component {
 	sortingOrder=(key)=>{
 		if(this.state.direction===null|| this.state.direction==='descending'){
 		itemBeli.sort((a,b)=>{var newA=a[key].split(/[./,-]+/).concat(),newB=b[key].split('/').concat();
-		if (newA<newB){
-			return -1
-		}
-	    if (newA>newB){
-			return 0
-		}})
-		this.setState({item:itemBeli, direction:"ascending", arrow:"down"})
-	    }else if(this.state.direction==="ascending"){
-		itemBeli.sort((a,b)=>{var newA=a[key].split(/[./,-]+/).concat(),newB=b[key].split('/').concat();
 		if (newA>newB){
 			return -1
 		}
 	    })
-		this.setState({item:itemBeli,direction:"descending", arrow:"up"})
+		this.setState({item:itemBeli, direction:"ascending", arrow:"up"})
+	    }else if(this.state.direction==="ascending"){
+		itemBeli.sort((a,b)=>{var newA=a[key].split(/[./,-]+/).concat(),newB=b[key].split('/').concat();
+		if (newA<newB){
+			return -1
+		}
+		if (newA>newB){
+			return 0
+		}
+	    })
+		this.setState({item:itemBeli,direction:"descending", arrow:"down"})
 	}
 }
 	render() {
@@ -130,7 +131,7 @@ class TransactionDetail extends React.Component {
 								<Col md='8'>
 									<Table className='tabel-trans-satu' bordered>
 										<thead>
-											<th><Dropdown drop={this.state.arrow3}>
+											<th><Dropdown drop={this.state.arrow}>
 											<Dropdown.Toggle
 											    id="sort-transaction"
 												title="nama_item"
