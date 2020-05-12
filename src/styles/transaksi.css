@@ -53,8 +53,11 @@
 
 #sort-date,#sort-transaction{
     font-weight: bold;
+    
 }
-
+#sort-transaction{
+    color: #1A345F;
+}
 #middle-hingga{
     margin-top:7px;
     padding-right: 5px;
@@ -230,7 +233,12 @@
 }
 
 .tabel-trans-dua th{
-    padding: 15px;
+    padding: 20px;
+}
+
+.tabel-trans-satu th{
+   text-align: center;
+   padding-bottom: 20px;
 }
 
 
