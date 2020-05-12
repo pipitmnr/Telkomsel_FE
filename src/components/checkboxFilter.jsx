@@ -63,7 +63,7 @@ class CheckboxFilter extends Component {
     render() {
         return (
             <div className="checkbox-filter-container">
-                <span className="checkbox-filter-title">Filter</span>
+                <div className="checkbox-filter-title">Filter</div>
                 <div className="checkbox-filter-box">
                     <div className="checkbox-filter-product-type">Jenis Produk</div>
                     <form onSubmit={(e) => e.preventDefault(e)}>

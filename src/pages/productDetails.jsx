@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
 import { actions } from '../store';
 import Header from '../components/header';
+import Breadcrumbs from '../components/breadcrumbs';
 import Footer from "../components/footer";
 import PageTitle from "../components/pageTitle";
 import "../styles/productDetails.css";
@@ -18,11 +19,28 @@ class ProductDetails extends Component {
   }
 
   render() {
+    // Define path
+    let paths = [
+        {
+          "name": "Beranda",
+          "path": "/"
+        },
+        {
+          "name": "Belanja",
+          "path": "/belanja"
+        },
+        {
+            "name": "Voucher Data",
+            "path": "/detail-produk"
+          }
+      ];
+
     return (
       <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
         <div className="header-white-space"></div>
         <PageTitle pageTitle="Voucher Paket Data"/>
+        <Breadcrumbs paths={paths} paddingLeft={"170px"} />
         <div className="container font-muli">
           <div className="row mt-4">
             <div className="col-md-6 text-center">
