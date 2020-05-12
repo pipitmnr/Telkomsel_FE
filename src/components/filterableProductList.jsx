@@ -24,7 +24,9 @@ class FilterableProductList extends Component {
     let productsList = products.map((product, index) => {
         return (
             <div className="col-md-3 col-12 product-list-with-image-product-container" style={{minWidth: "312px"}}>
-                <img src={voucherTelkomsel} alt={product.name} className="product-list-with-image-image"/>
+                <Link to={'/detail-produk'}>
+                    <img src={voucherTelkomsel} alt={product.name} className="product-list-with-image-image"/>
+                </Link>
                 <div className="product-list-with-image-product-info">
                     <Link to={'/detail-produk'} className="product-list-with-image-formatting-link">
                         <span className="prouct-list-with-image-span-name">{product.name}</span>
@@ -37,6 +39,10 @@ class FilterableProductList extends Component {
                     <span></span>:
                     <div className="product-list-with-image-line"></div>
                 }
+                <div className="product-list-with-image-dummy-div-1"></div>
+                <div className="product-list-with-image-dummy-div-2"></div>
+                <div className="product-list-with-image-dummy-div-3"></div>
+                <div className="product-list-with-image-dummy-div-4"></div>
             </div>
         )
     })

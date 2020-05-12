@@ -41,7 +41,9 @@ class ProductListWithImage extends Component {
     let productsList = products.map((product, index) => {
         return (
             <div className="col-md-3 col-12 product-list-with-image-product-container">
-                <img src={product.image} alt={product.name} className="product-list-with-image-image"/>
+                <Link to={'/detail-produk'}>
+                    <img src={product.image} alt={product.name} className="product-list-with-image-image"/>
+                </Link>
                 <div className="product-list-with-image-product-info">
                     <Link to={'/detail-produk'} className="product-list-with-image-formatting-link">
                         <span className="prouct-list-with-image-span-name">{product.name}</span>
@@ -54,6 +56,10 @@ class ProductListWithImage extends Component {
                     <span></span>:
                     <div className="product-list-with-image-line"></div>
                 }
+                <div className="product-list-with-image-dummy-div-5"></div>
+                <div className="product-list-with-image-dummy-div-6"></div>
+                <div className="product-list-with-image-dummy-div-7"></div>
+                <div className="product-list-with-image-dummy-div-8"></div>
             </div>
         )
     })

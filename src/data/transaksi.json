@@ -6,7 +6,8 @@
       "alamat":"Jl. Asemrawa Timur no.5, 602822, Asemrawa, Surabaya",
       "detail_order":"Kartu Perdana Segel-5 Buah",
       "status":"Terbayar",
-      "color":"warning"
+      "color":"warning",
+      "color2":"success"
         
     },
     {
@@ -46,7 +47,8 @@
         "alamat":"Jl. Asemrawa Timur no.5, 602822, Asemrawa, Surabaya",
         "detail_order":"Kartu Perdana Segel-5 Buah",
         "status":"Terbayar",
-        "color":"warning"
+        "color":"warning",
+        "color2":"success"
           
     },
     {
@@ -56,7 +58,8 @@
         "alamat":"Jl. Asemrawa Timur no.5, 602822, Asemrawa, Surabaya",
         "detail_order":"Kartu Perdana Segel-5 Buah",
         "status":"Terbayar",
-        "color":"warning"
+        "color":"warning",
+        "color2":"success"
           
     },
     {
@@ -66,7 +69,8 @@
         "alamat":"Jl. Asemrawa Timur no.5, 602822, Asemrawa, Surabaya",
         "detail_order":"Kartu Perdana Segel-5 Buah",
         "status":"Terbayar",
-        "color":"warning"
+        "color":"warning",
+        "color2":"success"
           
     },
     {
@@ -76,7 +80,8 @@
         "alamat":"Jl. Asemrawa Timur no.5, 602822, Asemrawa, Surabaya",
         "detail_order":"Kartu Perdana Segel-5 Buah",
         "status":"Terbayar",
-        "color":"warning"
+        "color":"warning",
+        "color2":"success"
           
     },
     {
@@ -86,7 +91,8 @@
         "alamat":"Jl. Asemrawa Timur no.5, 602822, Asemrawa, Surabaya",
         "detail_order":"Kartu Perdana Segel-5 Buah",
         "status":"Terbayar",
-        "color":"warning"
+        "color":"warning",
+        "color2":"success"
           
     },
     {
@@ -96,7 +102,8 @@
         "alamat":"Jl. Asemrawa Timur no.5, 602822, Asemrawa, Surabaya",
         "detail_order":"Kartu Perdana Segel-5 Buah",
         "status":"Terbayar",
-        "color":"warning"
+        "color":"warning",
+        "color2":"success"
           
     }
 

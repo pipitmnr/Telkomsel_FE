@@ -22,6 +22,13 @@ class ModalTambahProduk extends Component {
     status_produk: '',
   };
 
+  handleChangeSku = (event) => {
+    const regexNum = /^[0-9]*$/;
+    if (regexNum.test(event.target.value)) {
+      this.setState({[event.target.name]: event.target.value});
+    }
+  };
+
   handleChangeInput = (event) => {
     this.setState({[event.target.name]: event.target.value});
   };
@@ -70,7 +77,7 @@ class ModalTambahProduk extends Component {
                       className='input-modal no-sku'
                       placeholder=''
                       name='no_sku'
-                      onChange={this.handleChangeInput}
+                      onChange={this.handleChangeSku}
                       value={this.state.no_sku}
                     />
                   </Form.Field>
