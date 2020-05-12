@@ -214,6 +214,7 @@
 }
 
 .big_detail{
+    border-radius: 15px;
     margin-top: 3%;
     padding-top: 30px;
     padding-bottom: 30px;
