@@ -63,44 +63,40 @@ class ChooseRegion extends Component {
      * The following method is used to transform regionName.json file into array
      */
     formattingRegion = () => {
-        // Get all regions in Indonesia in JSON format and define some variables
-        let regionNameJson = require("../json/masterRegion.json");
+        // Get some JSON files needed and also define some variables
+        let postalCode = require("../json/postalCode.json");
+        let provinceCode = require("../json/provinceCode.json");
+        let provinceArray = require("../json/provinceArray.json");
+        let postalLength = postalCode.length;
+        let initialProvinceIndex = 0;
+        let initialProvinceCode = "11";
+        let initialProvince = "ACEH";
         let regionDetail = [];
-        let regionLength = regionNameJson.length;
-        let province = "";
-        let city = "";
 
-        // Formatting the JSON into array of string
-        for (let index = 0; index < regionLength; index++) {
-            let regionObject = regionNameJson[index];
-            
-            // Processing reion object at province level
-            if (regionObject["level"] === 1) {
-                province = regionObject["nama"].slice(6).toProperCase();
-                // Special cases for Jakarta and Yogyakarta
-                if (province === "D.k.i. Jakarta") {
-                    province = "D.K.I. Jakarta";
-                } else if (province === "D.i. Yogyakarta") {
-                    province = "D.I. Yogyakarta";
-                }
+        // Process of getting the list of regions in Indonesia
+        for (let index = 0; index < postalLength; index++) {
+            let postalObject = postalCode[index];
+            let cityName = postalObject["city"];
+            let districtName = postalObject["sub_district"];
+            if (initialProvinceCode !== postalObject["province_code"]) {
+                initialProvinceIndex ++;
+                initialProvinceCode = postalObject["province_code"]
+                
+                // Get province name
+                initialProvince = provinceArray[initialProvinceIndex];
             }
 
-            // Processing reion object at city level
-            if (regionObject["level"] === 2) {
-                city = regionObject["nama"].toProperCase();
-            }
-
-            // Processing reion object at district level
-            if (regionObject["level"] === 3) {
-                let regionName = regionObject["nama"].toProperCase() + ", " + city + ", " + province;
-                regionDetail.push(regionName);
-            }
+            // Formatting the region
+            let regionName = initialProvince + ", " + cityName + ", " + districtName;
+            regionName = regionName.toProperCase();
+            regionDetail.push(regionName);
         }
 
         // Return the result
-        return regionDetail;
+        let distinctRegionName = [...new Set(regionDetail)];
+        return distinctRegionName;
     }
-    
+
     componentDidMount = async () => {
       
     };
