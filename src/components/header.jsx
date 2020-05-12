@@ -13,7 +13,9 @@ class Header extends Component {
            <div className="container-fluid">
                 <div className="row align-items-center header">
                     <div className="col-md-6">
-                        <img src={require("../images/Telkomsel_Logo.svg")} className="header-logo" alt=""/>
+                        <Link to={`/`}>
+                          <img src={require("../images/Telkomsel_Logo.svg")} className="header-logo" alt=""/>
+                        </Link>
                     </div>
                     <div className="col-md-6">
                       <ul className="header-menu">
@@ -29,9 +31,9 @@ class Header extends Component {
                           <li><Link to={`/belanja`}>Belanja</Link></li>
                         }
                         {this.props.menuActive === "/info-produk" ?
-                          <li className="header-menu-active"><Link to={`/info-produk`}>Info Produk Telkomsel</Link></li>
+                          <li className="header-menu-active"><Link>Info Produk Telkomsel</Link></li>
                           :
-                          <li><Link to={`/info-produk`}>Info Produk Telkomsel</Link></li>
+                          <li><Link>Info Produk Telkomsel</Link></li>
                         }
                       </ul>
                     </div>

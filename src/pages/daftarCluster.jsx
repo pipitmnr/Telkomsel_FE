@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'unistore/react';
-import {Dropdown, Table, Checkbox, Icon} from 'semantic-ui-react';
+import {Dropdown, Table, Icon} from 'semantic-ui-react';
 import {actions} from '../store';
 import swal from 'sweetalert';
 import '../styles/sidebar.css';
@@ -53,7 +53,7 @@ class DaftarCluster extends Component {
     if (this.state.valueJenis !== 'Semua Jenis') {
       this.setState({
         data: this.state.dataCluster.filter((d) => {
-          return d.tipe_produk === this.state.valueJenis;
+          return d.jenis_produk === this.state.valueJenis;
         }),
       });
     } else {
@@ -106,7 +106,6 @@ class DaftarCluster extends Component {
   };
 
   render() {
-    console.log('cek klaster', tableData['Cluster A']);
     const {column, direction} = this.state;
     var currencyFormatter = require('currency-formatter');
     return (
@@ -180,9 +179,9 @@ class DaftarCluster extends Component {
                   <Table sortable selectable basic='very'>
                     <Table.Header>
                       <Table.Row className='thead-col'>
-                        <Table.HeaderCell>
+                        {/* <Table.HeaderCell>
                           <Checkbox />
-                        </Table.HeaderCell>
+                        </Table.HeaderCell> */}
                         <Table.HeaderCell
                           sorted={column === 'no_sku' ? direction : null}
                           onClick={this.handleSort('no_sku')}
@@ -200,12 +199,12 @@ class DaftarCluster extends Component {
                           Nama Produk
                         </Table.HeaderCell>
                         <Table.HeaderCell
-                          sorted={column === 'tipe_produk' ? direction : null}
-                          onClick={this.handleSort('tipe_produk')}
+                          sorted={column === 'jenis_produk' ? direction : null}
+                          onClick={this.handleSort('jenis_produk')}
                           tyle={{color: '#1B355F'}}
                           style={{color: '#1B355F'}}
                         >
-                          Tipe Produk
+                          Jenis Produk
                         </Table.HeaderCell>
                         <Table.HeaderCell
                           sorted={column === 'harga_produk' ? direction : null}
@@ -248,12 +247,12 @@ class DaftarCluster extends Component {
                         {this.state.data.map((dataItem) => {
                           return (
                             <Table.Row>
-                              <Table.Cell>
+                              {/* <Table.Cell>
                                 <Checkbox />
-                              </Table.Cell>
+                              </Table.Cell> */}
                               <Table.Cell>{dataItem.no_sku}</Table.Cell>
                               <Table.Cell>{dataItem.nama_produk}</Table.Cell>
-                              <Table.Cell>{dataItem.tipe_produk}</Table.Cell>
+                              <Table.Cell>{dataItem.jenis_produk}</Table.Cell>
                               <Table.Cell>
                                 Rp{' '}
                                 {currencyFormatter.format(
