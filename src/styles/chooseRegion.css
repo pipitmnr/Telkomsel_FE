@@ -3,9 +3,8 @@
     src : url("../fonts/Muli-Regular.ttf");
 }
 
-
 .choose-region-container {
-    padding-top: 11px;
+    padding-top: 0px;
 }
 
 .choose-region-title {
@@ -13,6 +12,7 @@
     font-size: 24px;
     font-weight: bold;
     font-style: normal;
+    padding-left: 15px;
 }
 
 .choose-region-box {

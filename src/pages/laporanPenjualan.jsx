@@ -17,6 +17,7 @@ import Sidebar from '../components/sidebar';
 import Pagination from "../components/pagination"
 import data from "../data/produk.json"
 import { CSVLink } from "react-csv";
+import axios from "axios"
 
 class LaporanJual extends React.Component {
   constructor(props) {
@@ -30,6 +31,8 @@ class LaporanJual extends React.Component {
 	  arrow3:null,
 	  direction: null,
 	  dummy:null,
+	  result:null,
+	  currency:null,
       headerscsv : [
         { label: "Tanggal Pemesanan", key: "tanggal_transaksi" },
         { label: "Nomor Pesanan", key: "nomor_pesanan" },
@@ -38,7 +41,22 @@ class LaporanJual extends React.Component {
       ],
     };
   }
-
+  componentDidMount() {
+	axios
+		.get("http://api.openrates.io/latest")
+		.then(response => {
+			// Initialized with 'EUR' because the base currency is 'EUR'
+			// and it is not included in the response
+			const currencyAr = ["EUR"]
+			for (const key in response.data.rates) {
+				currencyAr.push(key)
+			}
+			this.setState({ currencies: currencyAr.sort() })
+		})
+		.catch(err => {
+			console.log("Opps", err.message);
+		});
+}
   changePayment=(stats, ids)=>{
 	data.map(el=>{
 		if(el.id===ids){
@@ -50,31 +68,31 @@ class LaporanJual extends React.Component {
 };
   sortingNum = (key) => {
 	if (this.state.direction===null || this.state.direction==='descending'){
-    data.sort((a, b) => a[key] - b[key]);
-    this.setState({datas: data, direction:'ascending', arrow3:"down"});
-  }else if (this.state.direction==='ascending'){
     data.sort((a, b) => b[key] - a[key]);
-    this.setState({datas: data, direction:'descending', arrow3:"up"});
+    this.setState({datas: data, direction:'ascending', arrow3:"up"});
+  }else if (this.state.direction==='ascending'){
+    data.sort((a, b) => a[key] - b[key]);
+    this.setState({datas: data, direction:'descending', arrow3:"down"});
   }
 };
 
 sortingOrder=(key)=>{
 	if(this.state.direction===null|| this.state.direction==='descending'){
 	data.sort((a,b)=>{var newA=a[key].split('/').concat(),newB=b[key].split('/').concat();
+	if (newA>newB){
+		return -1
+	}
+	if (newA<newB){
+		return 0
+	}})
+	this.setState({datas:data, direction:"ascending",arrow2:"up"})
+	}else if(this.state.direction==="ascending"){
+	data.sort((a,b)=>{var newA=a[key].split('/').concat(),newB=b[key].split('/').concat();
 	if (newA<newB){
 		return -1
 	}
-	if (newA>newB){
-		return 0
-	}})
-	this.setState({datas:data, direction:"ascending",arrow2:"down"})
-	}else if(this.state.direction==="ascending"){
-	data.sort((a,b)=>{var newA=a[key].split('/').concat(),newB=b[key].split('/').concat();
-	if (newA>newB){
-		return -1
-	}
 	})
-	this.setState({datas:data, direction:"descending",arrow2:"up"})
+	this.setState({datas:data, direction:"descending",arrow2:"down"})
 }
 };
 
@@ -84,22 +102,22 @@ sortingOrder=(key)=>{
       var dateA = a[key].split('/'),
         dateB = b[key].split('/');
       return (
-        new Date(dateA[2], dateA[1], dateA[0]) -
-        new Date(dateB[2], dateB[1], dateB[0])
+        new Date(dateB[2], dateB[1], dateB[0]) -
+        new Date(dateA[2], dateA[1], dateA[0])
       );
 	})
 
-    this.setState({datas: data, direction:'ascending', arrow1: "down"});
+    this.setState({datas: data, direction:'ascending', arrow1: "up"});
   }else if (this.state.direction==='ascending'){
 	data.sort((a, b) => {
 		var dateA = a[key].split('/'),
 		  dateB = b[key].split('/');
 		return (
-		  new Date(dateB[2], dateB[1], dateB[0]) -
-		  new Date(dateA[2], dateA[1], dateA[0])
+		  new Date(dateA[2], dateA[1], dateA[0]) -
+		  new Date(dateB[2], dateB[1], dateB[0])
 		);
 	  });
-	  this.setState({datas: data, direction:'descending', arrow1:"up"});
+	  this.setState({datas: data, direction:'descending', arrow1:"down"});
 
   }
 };
@@ -122,6 +140,39 @@ sortingOrder=(key)=>{
       });
     }
   };
+  
+  currencyChanger=(mu)=>{
+	  this.setState({currency:mu})
+  }
+  currencyHandler = (amount,from,to) => {
+	const req = {method: "get",
+		url: `http://api.openrates.io/latest?base=${from}&symbols=${to}`,
+		headers: {"Access-Control-Allow-Origin":'*'}
+
+	};
+	if (amount === 0) {
+		axios (req)
+			.then(response => {
+				// console.log("oops"+response)
+				this.state.data.reduce((accumulator, d)=>{
+				var x=(d.total_penjualan * (response.data.rates[to]))
+				this.setState({ result: accumulator + x})
+			})
+		})
+			.catch(err => {
+				console.log("Opps", err.message);
+			})
+	}else if (amount !==0){
+		axios(req)
+			.then(response=>{
+				var result= amount *response.data.rates[to]
+				return result
+			})
+	
+    }else {
+		alert("Wrong Input" )
+	}
+};
   
   render() {
     return (
@@ -283,8 +334,8 @@ sortingOrder=(key)=>{
 								</div>
 								<div className='one-button'>
 									<Col>
-										<p>Total Transaksi</p>
-										<h2>Rp {this.state.datas.reduce(function(accumulator,d){return accumulator+d.total_penjualan},0)}</h2>
+									<p>Total Transaksi</p>
+										<h2>Rp {this.state.datas.reduce(function(accumulator,d){return accumulator+d.total_penjualan},0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}</h2>
 									</Col>
 								</div>
 							</Row>
@@ -312,7 +363,7 @@ sortingOrder=(key)=>{
 										<th><Dropdown drop={this.state.arrow2}>
 											<Dropdown.Toggle
 												id='sort-transaction'
-												title="Total Transaksi"
+												title="nomor_pesanan"
 												variant="white"
 												onClick={event=>this.sortingOrder('nomor_pesanan')}
 											>
@@ -337,7 +388,7 @@ sortingOrder=(key)=>{
 										<tr>
 											<td>{row.tanggal_transaksi}</td>
 											<td>{row.nomor_pesanan}</td>
-											<td>Rp {row.total_penjualan}</td>
+											<td>Rp {row.total_penjualan.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}</td>
 											<td>
 											{row.status_transaksi==="Terbayar" ?
 											<Dropdown>

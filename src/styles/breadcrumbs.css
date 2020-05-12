@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "roboto";
+    src : url("../fonts/Roboto-Regular.ttf");
+}
+
+.breadcrumbs {
+    font-family: "roboto";
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 5px; 
+    padding-right: 0; 
+    padding-bottom: 0px;
+    color: #D32026;
+}
+
+.breadcrumbs-font {
+    color: #D32026;
+}
