@@ -199,6 +199,7 @@
     width:450px;
 }
 .detail-inside-box, .info-buyer{
+
     padding-left: 30px;
 }
 .back-button{
@@ -214,6 +215,8 @@
 
 .big_detail{
     margin-top: 3%;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-bottom: 2%;
     background-color: #d9dedb;
 }
@@ -223,6 +226,10 @@
 
 #below-side{
     padding-top:49px;
+}
+
+.tabel-trans-dua th{
+    padding: 15px;
 }
 
 

@@ -59,32 +59,32 @@ class TransactionDetail extends React.Component {
 											<FormGroup className="detail-inside-box">
 												<Form.Label>Tanggal Transaksi</Form.Label>
 												<Button className="not-active-btn" block disabled variant='secondary'>
-													|
+													01/05/2020
 												</Button>
 											</FormGroup>
 											<FormGroup className="detail-inside-box">
 												<Form.Label>Purchase Order</Form.Label>
 												<Button className="not-active-btn" block disabled variant='secondary'>
-													|
+													PO XX/203/99
 												</Button>
 											</FormGroup>
 											<p className="info-buyer"><b>Informasi Pembeli</b></p>
 											<FormGroup className="detail-inside-box">
 												<Form.Label>Nama Pembeli</Form.Label>
 												<Button className="not-active-btn" block disabled variant='secondary'>
-													|
+													Yanto Basna
 												</Button>
 											</FormGroup>
 											<FormGroup className="detail-inside-box">
 												<Form.Label>Nomor Telepon</Form.Label>
 												<Button className="not-active-btn" block disabled variant='secondary'>
-													|
+													087654XXXXX
 												</Button>
 											</FormGroup>
 											<FormGroup className="detail-inside-box">
 												<Form.Label>Email</Form.Label>
 												<Button className="not-active-btn" block disabled variant='secondary'>
-													|
+													yanto@email.id
 												</Button>
 											</FormGroup>
 										</Form>
@@ -95,32 +95,32 @@ class TransactionDetail extends React.Component {
 											<FormGroup id='upper-side'>
 												<Form.Label>Potongan</Form.Label>
 												<Button  className="not-active-btn" block disabled variant='secondary'>
-													|
+													10%
 												</Button>
 											</FormGroup>
 											<FormGroup>
 												<Form.Label>Total Penjualan</Form.Label>
 												<Button className="not-active-btn" block disabled variant='secondary'>
-													|
+													Rp 90.000
 												</Button>
 											</FormGroup>
 										
 											<FormGroup id='below-side'>
 												<Form.Label>Kota/Kecamatan</Form.Label>
 												<Button className="not-active-btn" block disabled variant='secondary'>
-													|
+													Buleleng
 												</Button>
 											</FormGroup>
 											<FormGroup>
 												<Form.Label>Alamat</Form.Label>
 												<Button className="not-active-btn" block disabled variant='secondary'>
-													|
+													Jl. Asemrawut 23
 												</Button>
 											</FormGroup>
 											<FormGroup>
 												<Form.Label>Kode Pos</Form.Label>
 												<Button className="not-active-btn" block disabled block variant='secondary'>
-													|
+													402111
 												</Button>
 											</FormGroup>
 										</Form>
