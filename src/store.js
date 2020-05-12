@@ -11,7 +11,10 @@ const initialState = {
   isPerdanaSegel: false,
   isPerdanaPaketData: false,
   isVoucherData: false,
-  locationSearch: ""
+  locationSearch: "",
+
+  // Checkout related
+  checkoutLocation: ""
 };
 
 export const store = createStore(initialState);

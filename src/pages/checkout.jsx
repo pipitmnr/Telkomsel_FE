@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'unistore/react';
-import { actions } from '../store';
+import { actions, store } from '../store';
 import Header from '../components/header';
 import PageTitleWithoutCart from "../components/pageTitleWithoutCart";
 import Footer from "../components/footer";
@@ -11,7 +11,13 @@ import ShoppingSummary from "../components/shoppingSummary";
 import ChatButton from "../components/chatButton";
 
 class Checkout extends Component {
-  componentDidMount = async () => {};
+  componentDidMount = async () => {
+    // Get initial value for location input
+    let location = await localStorage.getItem("location");
+    store.setState({
+        checkoutLocation: location
+    })
+  };
 
   render() {
     return (
@@ -37,4 +43,4 @@ class Checkout extends Component {
   }
 }
 
-export default connect('', actions)(withRouter(Checkout));
+export default connect('checkoutLocation', actions)(withRouter(Checkout));

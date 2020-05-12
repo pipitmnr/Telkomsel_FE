@@ -57,6 +57,9 @@ class ChooseRegion extends Component {
             [event.target.name]: event.target.value,
             productListWithImage: productList
         })
+        if (event.target.value !== "") {
+            localStorage.setItem('location', event.target.value);
+        }
     }
     
     /**
@@ -65,7 +68,6 @@ class ChooseRegion extends Component {
     formattingRegion = () => {
         // Get some JSON files needed and also define some variables
         let postalCode = require("../json/postalCode.json");
-        let provinceCode = require("../json/provinceCode.json");
         let provinceArray = require("../json/provinceArray.json");
         let postalLength = postalCode.length;
         let initialProvinceIndex = 0;

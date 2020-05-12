@@ -54,6 +54,10 @@
     border-radius: 5px;
 }
 
+.datalist-input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
 .checkout-readonly {
     background-color: #E9ECEF;
 }
