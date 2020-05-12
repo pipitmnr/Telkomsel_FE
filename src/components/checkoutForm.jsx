@@ -67,6 +67,9 @@ class CheckoutForm extends Component {
      * @param {string} location The location inputted in checkout form
      */
     getPostalCode = (location) => {
+        if (location === null || location === undefined || location === "") {
+            return [];
+        }
         let locationArray = location.split(", ");
         let district = "";
         let city = "";
