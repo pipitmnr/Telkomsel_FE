@@ -47,7 +47,7 @@ class LaporanJual extends React.Component {
 	this.setState({dummy:"new"})}
 	})
 
-}
+};
   sortingNum = (key) => {
 	if (this.state.direction===null || this.state.direction==='descending'){
     data.sort((a, b) => a[key] - b[key]);
@@ -76,7 +76,7 @@ sortingOrder=(key)=>{
 	})
 	this.setState({datas:data, direction:"descending",arrow2:"up"})
 }
-}
+};
 
   sorting = (key) => {
 	if (this.state.direction===null || this.state.direction==='descending'){	
@@ -132,10 +132,13 @@ sortingOrder=(key)=>{
         ></link>
 				<Container fluid className="all-penjualan">
 					<Row>
-						<Col sm='3' className='col-sidebar'>
+						<div
+							className='col-md-3 col-sidebar'
+							style={{position: 'fixed', zIndex: '10'}}
+							>
 							<Sidebar />
-						</Col>
-						
+						</div>
+						<Col sm='3'></Col>
 						<Col sm='9' className='kluster'>
 						<Row>
 

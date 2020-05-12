@@ -6,8 +6,7 @@ import {
 	Button,
 	Row,
 	Col,
-	Container,
-	ButtonGroup
+	Container
 } from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'unistore/react';
@@ -74,9 +73,13 @@ class Transactions extends React.Component {
 			<React.Fragment>
 				<Container fluid className="all-transaksi">
 					<Row>
-						<Col md='3' className='col-sidebar'>
+						<div
+							className='col-md-3 col-sidebar'
+							style={{position: 'fixed', zIndex: '10'}}
+							>
 							<Sidebar />
-						</Col>
+						</div>
+						<Col md='3'></Col>
 						<Col md='9'>
 							
 							<div id='transaksi'>
