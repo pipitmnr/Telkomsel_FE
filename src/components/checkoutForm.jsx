@@ -51,14 +51,31 @@ class CheckoutForm extends Component {
     }
 
     /**
+     * The following function is used to filter product list by location
+     * 
+     * @param {object} event The object returned from city input form
+     */
+    handleChange = (event) => {
+        store.setState({
+            [event.target.name]: event.target.value,
+        })
+    }
+
+    /**
      * The following function is used to get postal code
      * 
      * @param {string} location The location inputted in checkout form
      */
-    getPostalCode = async (location) => {
+    getPostalCode = (location) => {
         let locationArray = location.split(", ");
-        let district = locationArray[2].toLocaleUpperCase();
-        let city = locationArray[1].toLocaleUpperCase();
+        let district = "";
+        let city = "";
+
+        if (locationArray.length >= 3) {
+            district = locationArray[2].toLocaleUpperCase();
+            city = locationArray[1].toLocaleUpperCase();
+        }
+
         let postalCodeList = [];
         let postalCode = require("../json/postalCode.json");
         let relatedPostalCode = postalCode.filter(function(postalObject) {
@@ -76,16 +93,23 @@ class CheckoutForm extends Component {
   };
 
   render() {
-    this.getPostalCode("Aceh, Pidie Jaya, Bandar Baru");
-    // Get all formatted region in Indonesia
+    // Get all formatted region and postal code in Indonesia
     let regionName = this.formattingRegion();
+    let postalCodeList = this.getPostalCode(this.props.checkoutLocation);
 
-    // Define JSX variable which will provide datalist options
+    // Define JSX variable which provide datalist options
     let datalistOptions = regionName.map((region) => {
         return (
             <option value={region} />
         )
     })
+
+    // Define JSX varibale which provide related postal code
+    let postalCodeJsx = postalCodeList.map((postal) => {
+        return (
+            <option value={postal} />
+        )
+    });
 
     return (
         <React.Fragment>
@@ -118,7 +142,7 @@ class CheckoutForm extends Component {
                                             <div className="form-group">
                                                 <label for="city">
                                                     <span className="checkout-form-label">Kota atau Kecamatan</span>
-                                                    <input value={this.props.checkoutLocation} list="regionName" id="city" placeholder="Tulis nama alamat / kota / kecamatan tujuan pengiriman" className="checkout-input-type-2 form-control datalist-input" />
+                                                    <input name="checkoutLocation" onChange={(e) => this.handleChange(e)} list="regionName" id="city" placeholder="Tulis nama alamat / kota / kecamatan tujuan pengiriman" className="checkout-input-type-2 form-control datalist-input" />
                                                     <datalist id="regionName" className="choose-region-datalist">
                                                         {datalistOptions}
                                                     </datalist>
@@ -129,7 +153,10 @@ class CheckoutForm extends Component {
                                             <div className="form-group">
                                                 <label for="postalCode">
                                                     <span className="checkout-form-label">Kode Pos</span>
-                                                    <input readOnly id="postalCode" placeholder="Kode Pos" className="checkout-input-type-3 checkout-readonly form-control" type="text"/>
+                                                    <input name="postalCode" list="postalCodeList" id="postalCode" placeholder="Kode Pos" className="checkout-input-type-3 form-control datalist-input" />
+                                                    <datalist id="postalCodeList" className="choose-region-datalist">
+                                                        {postalCodeJsx}
+                                                    </datalist>
                                                 </label>
                                             </div>
                                         </div>
@@ -153,4 +180,4 @@ class CheckoutForm extends Component {
   }
 }
 
-export default connect("checkoutLocation", actions)(withRouter(CheckoutForm));
+export default connect("checkoutLocation, postalCode", actions)(withRouter(CheckoutForm));

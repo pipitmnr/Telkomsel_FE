@@ -14,7 +14,8 @@ const initialState = {
   locationSearch: "",
 
   // Checkout related
-  checkoutLocation: ""
+  checkoutLocation: "",
+  postalCode: ""
 };
 
 export const store = createStore(initialState);
