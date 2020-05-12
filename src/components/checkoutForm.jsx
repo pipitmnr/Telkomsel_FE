@@ -50,11 +50,33 @@ class CheckoutForm extends Component {
         return distinctRegionName;
     }
 
+    /**
+     * The following function is used to get postal code
+     * 
+     * @param {string} location The location inputted in checkout form
+     */
+    getPostalCode = async (location) => {
+        let locationArray = location.split(", ");
+        let district = locationArray[2].toLocaleUpperCase();
+        let city = locationArray[1].toLocaleUpperCase();
+        let postalCodeList = [];
+        let postalCode = require("../json/postalCode.json");
+        let relatedPostalCode = postalCode.filter(function(postalObject) {
+            return (postalObject["sub_district"] === district) && (postalObject["city"] === city);
+        });
+        for (let postalIndex in relatedPostalCode) {
+            postalCodeList.push(relatedPostalCode[postalIndex]["postal_code"])
+        }
+        let distinctPostal = [...new Set(postalCodeList)];
+        return distinctPostal;
+    }
+
   componentDidMount = async () => {
 
   };
 
   render() {
+    this.getPostalCode("Aceh, Pidie Jaya, Bandar Baru");
     // Get all formatted region in Indonesia
     let regionName = this.formattingRegion();
 
