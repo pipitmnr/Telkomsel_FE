@@ -2,7 +2,7 @@ import createStore from "unistore";
 
 
 const initialState = {
-  filter_payment: "Semua Jenis",
+  filter_payment: "Semua Status",
   filter_kluster: "Semua Kluster",
   username: "",
   emailReset: "",
