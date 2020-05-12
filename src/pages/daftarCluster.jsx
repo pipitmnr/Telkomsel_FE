@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'unistore/react';
-import {Dropdown, Table, Checkbox, Icon} from 'semantic-ui-react';
+import {Dropdown, Table, Icon} from 'semantic-ui-react';
 import {actions} from '../store';
 import swal from 'sweetalert';
 import '../styles/sidebar.css';

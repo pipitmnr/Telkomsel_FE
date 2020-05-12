@@ -23,9 +23,13 @@ class ModalTambahProduk extends Component {
   };
 
   handleChangeSku = (event) => {
-    const regexNum = /^[0-9]*$/;
-    if (regexNum.test(event.target.value)) {
-      this.setState({[event.target.name]: event.target.value});
+    const regexNum = /^[a-zA-Z0-9]+$/;
+    if (event.target.value !== '') {
+      if (regexNum.test(event.target.value)) {
+        this.setState({[event.target.name]: event.target.value});
+      }
+    } else if (event.target.value === '') {
+      this.setState({[event.target.name]: ''});
     }
   };
 
