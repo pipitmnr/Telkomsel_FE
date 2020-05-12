@@ -89,7 +89,10 @@ class CheckoutForm extends Component {
     }
 
   componentDidMount = async () => {
-
+    let postalCode = localStorage.getItem("location");
+    store.setState({
+        checkoutLocation: postalCode
+    })
   };
 
   render() {
@@ -142,7 +145,7 @@ class CheckoutForm extends Component {
                                             <div className="form-group">
                                                 <label for="city">
                                                     <span className="checkout-form-label">Kota atau Kecamatan</span>
-                                                    <input name="checkoutLocation" onChange={(e) => this.handleChange(e)} list="regionName" id="city" placeholder="Tulis nama alamat / kota / kecamatan tujuan pengiriman" className="checkout-input-type-2 form-control datalist-input" />
+                                                    <input value={this.props.checkoutLocation} name="checkoutLocation" onChange={(e) => this.handleChange(e)} list="regionName" id="city" placeholder="Tulis nama alamat / kota / kecamatan tujuan pengiriman" className="checkout-input-type-2 form-control datalist-input" />
                                                     <datalist id="regionName" className="choose-region-datalist">
                                                         {datalistOptions}
                                                     </datalist>
