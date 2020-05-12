@@ -251,16 +251,9 @@
     border-radius: 5px;
     font-family: "muli";
     font-size: 18px;
+    margin-left: auto;
+    display: table;
 }
-
-.laporan-penjualan-export-excel{
-    margin-left: 150px;
-}
-.laporan-penjualan-export-excel a{
-    text-decoration: none;
-    color: black;
-}
-
 
 .laporan-penjualan-export-excel a{
     text-decoration: none;
