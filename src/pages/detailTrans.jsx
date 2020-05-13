@@ -131,7 +131,9 @@ class TransactionDetail extends React.Component {
 								</Row>
 							</Col>
 							<Row>
-								<Col md='8'>
+								<Col xs={8} md={12}>
+								<Row>
+								  <Col xs={5} md={9}>
 									<Table className='tabel-trans-satu' bordered>
 										<thead>
 											<th><Dropdown drop={this.state.arrow}>
@@ -161,7 +163,7 @@ class TransactionDetail extends React.Component {
 									<Button className="back-button" variant='primary' href="/laporan-penjualan" size="lg">Kembali</Button>
 								</Col>
 								&nbsp; &nbsp;
-								<Col md='3'>
+								<Col xs={3} md={2}>
 									<Table className='tabel-trans-dua' bordered>
 										<thead>
 											<th>Keterangan</th>
@@ -187,6 +189,8 @@ class TransactionDetail extends React.Component {
 										</tbody>
 									</Table>
 								</Col>
+								</Row>
+							  </Col>
 							</Row>
 						</Col>
 					</Row>

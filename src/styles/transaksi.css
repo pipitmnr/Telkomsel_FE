@@ -47,6 +47,11 @@
 
 }
 
+#search{
+    width:400px;
+    
+}
+
 /* DAFTAR TRANSAKSI END */
 
 /* LAPORAN PENJUALAN START */
@@ -158,16 +163,29 @@
     border-bottom: 7px solid #E0DEDE;
     
 }
+.rata-kanan{
+    float: right;
+    padding-left: 0px;
+    padding-right:-30px
+}
+.rata-kiri{
+    text-align: left;
+    padding-left:30px;
+}
+.total-header{
+    display: inline;
+    padding-left:20px;
+}
 /* LAPORAN PENJUALAN END */
 
 /* DETAIL TRANSAKSI  START*/
 .main-container{
     font-family: Muli;
-    font-size: 18px;
+    font-size: 120%;
 }
 
 .info-buyer{
-    font-size: 24px;
+    font-size: 140%;
 }
 
 .tabel-trans-satu tr, .tabel-trans-dua tr{
@@ -175,7 +193,7 @@
     border-right:7px solid #E0DEDE;
     border-left:7px solid #E0DEDE;
     border-bottom: 7px solid #E0DEDE;
-    font-size: 14px;
+    font-size: 90%;
     color: #1A345F
 }
 
@@ -185,42 +203,47 @@
     border-right:7px solid #E0DEDE;
     border-left:7px solid #E0DEDE;
     border-bottom: 7px solid #E0DEDE;
-    font-size: 14px;
+    font-size: 90%;
     color: #1A345F
 
 }
 .tabel-trans-satu{
-    width:110%
+    width:100%;
+    
 }
 .tabel-trans-dua{
-    margin-left:70px;
+    width: 150%;
+    margin-left:2%;
+    
+    /* margin-right: 60%; */
 
 }
+
 .not-active-btn{
     pointer-events: none;
     height:50px;
-    width:450px;
+    width:85%;
 }
 .detail-inside-box, .info-buyer{
 
-    padding-left: 30px;
+    padding-left: 5%;
 }
 .back-button{
-    width:232px;
-    height:64px;
-    padding-top: 13px;
+    width:40%;
+    height:24%;
+    padding-top: 1.5%;
     background: #1A345F;
-    font-size: 24px;
+    font-size: 160%;
     border-color: #1A345F;
     text-align: center;
     vertical-align: middle;
 }
 
 .big_detail{
-    border-radius: 15px;
+    border-radius: 10px;
     margin-top: 3%;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 3%;
+    padding-bottom: 3%;
     margin-bottom: 2%;
     background-color: #d9dedb;
 }
@@ -229,16 +252,16 @@
 }
 
 #below-side{
-    padding-top:49px;
+    padding-top:9%;
 }
 
 .tabel-trans-dua th{
-    padding: 20px;
+    padding: 8.5%;
 }
 
 .tabel-trans-satu th{
    text-align: center;
-   padding-bottom: 20px;
+   padding-bottom: 3%;
 }
 
 

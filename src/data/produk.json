@@ -3,8 +3,9 @@
       "id":1,
       "tanggal_transaksi":"01/02/2020",
       "nomor_pesanan":"PO XX/123/956",
-      "total_penjualan":150000,
+      "total_penjualan":15000,
       "status_transaksi":"Terbayar",
+      "kluster":"Cluster A",
       "color":"warning"
         
     },
@@ -14,6 +15,7 @@
         "nomor_pesanan":"PO XX/123/156",
         "total_penjualan":250000,
         "status_transaksi":"Terkirim",
+        "kluster":"Cluster B",
         "color":"success"
           
     },
@@ -21,8 +23,9 @@
         "id":3,
         "tanggal_transaksi":"03/02/2020",
         "nomor_pesanan":"PO XX/123/356",
-        "total_penjualan":150000,
+        "total_penjualan":100,
         "status_transaksi":"Gagal",
+        "kluster":"Cluster B",
         "color":"danger"
           
     },
@@ -30,8 +33,9 @@
         "id":4,
         "tanggal_transaksi":"04/02/2020",
         "nomor_pesanan":"PO XX/123/656",
-        "total_penjualan":150000,
+        "total_penjualan":1000,
         "status_transaksi":"Terbayar",
+        "kluster":"Cluster B",
         "color":"warning"
           
     },
@@ -39,8 +43,9 @@
         "id":5,
         "tanggal_transaksi":"05/02/2020",
         "nomor_pesanan":"PO XX/123/676",
-        "total_penjualan":150000,
+        "total_penjualan":10000,
         "status_transaksi":"Terbayar",
+        "kluster":"Cluster B",
         "color":"warning"
           
     },
@@ -48,8 +53,9 @@
         "id":6,
         "tanggal_transaksi":"06/02/2020",
         "nomor_pesanan":"PO XX/123/777",
-        "total_penjualan":150000,
+        "total_penjualan":1,
         "status_transaksi":"Menunggu Bayar",
+        "kluster":"Cluster A",
         "color":"primary"
           
      },
@@ -59,6 +65,7 @@
         "nomor_pesanan":"PO XX/123/770",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
+        "kluster":"Cluster A",
         "color":"warning"
           
     },
@@ -68,6 +75,7 @@
         "nomor_pesanan":"PO XX/123/890",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
+        "kluster":"Cluster A",
         "color":"warning"
           
     },
@@ -77,6 +85,7 @@
         "nomor_pesanan":"PO XX/123/729",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
+        "kluster":"Cluster A",
         "color":"warning"
           
     },
@@ -86,6 +95,7 @@
         "nomor_pesanan":"PO XX/123/730",
         "total_penjualan":150000,
         "status_transaksi":"Terbayar",
+        "kluster":"Cluster A",
         "color":"warning"
           
     }

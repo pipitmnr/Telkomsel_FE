@@ -16,7 +16,7 @@ import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import transaksi from '../data/transaksi.json'
 import Pagination from "../components/pagination"
-
+import Searchbar from "../components/searchbar"
 
 class Transactions extends React.Component {
   componentDidMount = async () => {
@@ -27,7 +27,7 @@ class Transactions extends React.Component {
   };
   constructor(props) {
     super(props);
-	  this.state = {list_transaksi: transaksi, direction:null, arrow:null, dummy:null, kondisi:null};
+	  this.state = {list_transaksi: transaksi, filter_kluster:"Semua Cluster",direction:null, arrow:null, dummy:null, kondisi:null};
   }
     changePayment=(stats, ids)=>{
 		transaksi.map(el=>{
@@ -38,6 +38,17 @@ class Transactions extends React.Component {
 		})
 
 	}
+	filterCluster=(clus)=>{
+		if (clus==='Semua Cluster'){
+			this.setState({filter_kluster:clus})
+			this.setState({list_transaksi: transaksi.filter(d=>{return d.kota})})
+		}else{
+			this.setState({filter_kluster:clus})
+			this.setState({list_transaksi: transaksi.filter(d=>{return d.kota===clus})})
+		}
+       
+	}
+
 	sortingOrder=(key)=>{
 
 		if(this.state.direction===null|| this.state.direction==='descending'){
@@ -82,9 +93,16 @@ class Transactions extends React.Component {
 						</div>
 						<Col md='3'></Col>
 						<Col md='9'>
-							
+						
 							<div id='transaksi'>
-							<h1 id="title-transaksi">Transaksi Anda</h1>
+							<Row>
+							  <Col md="7">
+							  <h1 id="title-transaksi">Transaksi Anda</h1>
+							  </Col>
+							  <Col md="5">
+							  <Searchbar id="search"/>
+							  </Col>
+							</Row>
 							<br/>
 								<Col id='filter_one'>
 										<Dropdown>
@@ -140,45 +158,30 @@ class Transactions extends React.Component {
 											&nbsp;
 											<DropdownButton
 												className='d-inline-block align-center'
-												title={this.props.filter_kluster}
+												title={this.state.filter_kluster}
 												variant='danger'
 											>
 												<Dropdown.Item
 													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Kluster 1' })
+													onClick={event=>
+														this.filterCluster('Cluster A')
 													}
 												>
-													Kluster 1
+													Cluster A
 												</Dropdown.Item>
 												<Dropdown.Item
 													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Kluster 2' })
+													onClick={event=>
+														this.filterCluster('Cluster B')
 													}
 												>
-													Kluster 2
+													Cluster B
 												</Dropdown.Item>
+												
 												<Dropdown.Item
 													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Kluster 3' })
-													}
-												>
-													Kluster 3
-												</Dropdown.Item>
-												<Dropdown.Item
-													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Kluster 4' })
-													}
-												>
-													Kluster 4
-												</Dropdown.Item>
-												<Dropdown.Item
-													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Semua Kluster' })
+													onClick={event=>
+														this.filterCluster('Semua Cluster')
 													}
 												>
 													Semua Kluster
@@ -267,7 +270,7 @@ class Transactions extends React.Component {
 }
 
 export default connect(
-  'filter_payment, filter_kluster',
+  'filter_payment',
   actions
 )(withRouter(Transactions));
 
