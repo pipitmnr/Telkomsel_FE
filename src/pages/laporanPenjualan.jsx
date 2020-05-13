@@ -147,14 +147,14 @@ filterCluster=(clus)=>{
     if (stats === 'Semua Status') {
       store.setState({filter_payment: stats});
       this.setState({
-        datas: this.state.datas.filter((d) => {
+        datas: data.filter((d) => {
           return d.status_transaksi;
         }),
 	  });
 	}else{
       store.setState({filter_payment: stats});
       this.setState({
-        datas: this.state.datas.filter((d) => {
+        datas:data.filter((d) => {
           return d.status_transaksi === stats;
         }),
       });
