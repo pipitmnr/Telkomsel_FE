@@ -14,17 +14,20 @@ import ChatButton from "../components/chatButton";
 
 class Home extends Component {
   componentDidMount = async () => {};
-
+  
   render() {
     const settings = {
       dots: true,
-      autoplay: true,
-      infinite: true,
+      infinite: false,
+      speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      speed: 500
+      autoplay: true,
+      arrows: true,
+      className: "slides"
 
     };
+    
     return (
       <React.Fragment>
         <Header menuActive={this.props.location.pathname}/>
