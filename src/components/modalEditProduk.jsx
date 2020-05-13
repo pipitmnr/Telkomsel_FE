@@ -2,24 +2,35 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'unistore/react';
 import {actions} from '../store';
-import {Modal, Input, Grid, Button, Form, Dropdown} from 'semantic-ui-react';
+import {
+  Modal,
+  Input,
+  Grid,
+  Button,
+  Form,
+  Dropdown,
+  Icon,
+} from 'semantic-ui-react';
 import '../styles/modal.css';
 
 const optionsJenis = [
+  {key: 1, text: 'Pilih...', value: 'Pilih...'},
   {key: 2, text: 'Perdana Segel', value: 'Perdana Segel'},
-  {key: 3, text: 'Voucher', value: 'Voucher'},
+  {key: 3, text: 'Token PLN', value: 'Token PLN'},
+  {key: 4, text: 'Voucher', value: 'Voucher'},
+  {key: 5, text: 'Kartu Halo', value: 'Kartu Halo'},
 ];
 
-class ModalTambahProduk extends Component {
+class ModalEditProduk extends Component {
   state = {
     fotoProfil: null,
     fotoName: '',
-    valueJenis: 'Semua Jenis',
-    no_sku: '',
-    jenis_produk: '',
-    nama_produk: '',
-    deskripsi_produk: '',
-    status_produk: '',
+    valueJenis: this.props.dataRow.jenis_produk,
+    no_sku: this.props.dataRow.no_sku,
+    jenis_produk: this.props.dataRow.jenis_produk,
+    nama_produk: this.props.dataRow.nama_produk,
+    deskripsi_produk: this.props.dataRow.deskripsi,
+    status_produk: this.props.dataRow.status,
   };
 
   handleChangeSku = (event) => {
@@ -66,8 +77,6 @@ class ModalTambahProduk extends Component {
     return (
       <React.Fragment>
         <Modal
-          size='tiny'
-          trigger={<Button>Tambah Item</Button>}
           closeIcon={{
             style: {
               top: '0.5rem',
@@ -79,6 +88,10 @@ class ModalTambahProduk extends Component {
             color: 'black',
             name: 'close',
           }}
+          size='tiny'
+          trigger={
+            <Icon style={{cursor: 'pointer'}} name='ellipsis vertical' />
+          }
         >
           <Modal.Header
             style={{fontSize: '24px', position: 'relative', height: 'auto'}}
@@ -204,4 +217,4 @@ class ModalTambahProduk extends Component {
   }
 }
 
-export default connect('', actions)(withRouter(ModalTambahProduk));
+export default connect('', actions)(withRouter(ModalEditProduk));

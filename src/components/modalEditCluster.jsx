@@ -2,23 +2,47 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'unistore/react';
 import {actions} from '../store';
-import {Modal, Input, Grid, Button, Form, Dropdown} from 'semantic-ui-react';
+import {
+  Modal,
+  Input,
+  Grid,
+  Button,
+  Form,
+  Dropdown,
+  Icon,
+} from 'semantic-ui-react';
 import '../styles/modal.css';
 
 const optionsProduk = [
   {key: 1, text: 'Pilih...', value: 'Pilih...'},
-  {key: 2, text: 'Perdana Segel A', value: 'Perdana Segel A'},
-  {key: 3, text: 'Voucher B', value: 'Voucher B'},
-  {key: 4, text: 'Voucher C', value: 'Voucher C'},
+  {key: 2, text: 'Perdana Cantik', value: 'Perdana Segel No Cantik'},
+  {key: 3, text: 'Perdana Ganteng', value: 'Perdana Segel No Ganteng'},
+  {key: 4, text: 'Token Pascabayar', value: 'Token PLN Pascabayar'},
+  {key: 5, text: 'Token Prabayar', value: 'Token PLN Prabayar'},
+  {key: 6, text: 'Voucher COD', value: 'Voucher Call of Duty'},
+  {key: 7, text: 'Voucher ML', value: 'Voucher Mobile Legend'},
+  {key: 8, text: 'Voucher Bulanan', value: 'Voucher Internet Bulanan'},
+  {
+    key: 9,
+    text: 'Voucher I Mingguan',
+    value: 'Voucher I Mingguan',
+  },
+  {key: 10, text: 'Voucher I Harian', value: 'Voucher Internet Harian'},
+  {key: 11, text: 'Halo 50GB', value: 'Halo Kick Gold 50GB'},
 ];
 
-class ModalTambahItem extends Component {
+class ModalEditData extends Component {
   state = {
-    valueProduk: 'Pilih...',
-    nama_produk: '',
-    jenis_produk: '',
-    harga_produk: '',
-    stok_produk: '',
+    valueProduk: this.props.dataRow.nama_produk,
+    nama_produk: this.props.dataRow.nama_produk,
+    jenis_produk: this.props.dataRow.jenis_produk,
+    harga_produk: this.props.dataRow.harga_produk
+      .toString()
+      .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.'),
+
+    stok_produk: this.props.dataRow.sisa_stok
+      .toString()
+      .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1.'),
   };
 
   handleChangeProduk = async (e, {value}) => {
@@ -61,15 +85,36 @@ class ModalTambahItem extends Component {
   render() {
     let nama_produk;
     let jenis_produk;
-    if (this.state.valueProduk === 'Perdana Segel A') {
-      nama_produk = 'Perdana Segel Cantik';
+    if (this.state.valueProduk === 'Perdana Segel No Cantik') {
+      nama_produk = 'Perdana Segel No Cantik';
       jenis_produk = 'Perdana Segel';
-    } else if (this.state.valueProduk === 'Voucher B') {
+    } else if (this.state.valueProduk === 'Perdana Segel No Ganteng') {
+      nama_produk = 'Perdana Segel No Ganteng';
+      jenis_produk = 'Perdana Segel';
+    } else if (this.state.valueProduk === 'Token PLN Pascabayar') {
+      nama_produk = 'Token PLN Pascabayar';
+      jenis_produk = 'Token PLN';
+    } else if (this.state.valueProduk === 'Token PLN Prabayar') {
+      nama_produk = 'Token PLN Prabayar';
+      jenis_produk = 'Token PLN';
+    } else if (this.state.valueProduk === 'Voucher Call of Duty') {
+      nama_produk = 'Voucher Call of Duty';
+      jenis_produk = 'Voucher';
+    } else if (this.state.valueProduk === 'Voucher Mobile Legend') {
       nama_produk = 'Voucher Mobile Legend';
       jenis_produk = 'Voucher';
-    } else if (this.state.valueProduk === 'Voucher C') {
-      nama_produk = 'Voucher Call of Duty';
-      jenis_produk = 'Voucher Game';
+    } else if (this.state.valueProduk === 'Voucher Internet Bulanan') {
+      nama_produk = 'Voucher Internet Bulanan';
+      jenis_produk = 'Voucher';
+    } else if (this.state.valueProduk === 'Voucher Internet Mingguan') {
+      nama_produk = 'Voucher Internet Mingguan';
+      jenis_produk = 'Voucher';
+    } else if (this.state.valueProduk === 'Voucher Internet Harian') {
+      nama_produk = 'Voucher Internet Harian';
+      jenis_produk = 'Voucher';
+    } else if (this.state.valueProduk === 'Halo Kick Gold 50GB') {
+      nama_produk = 'Halo Kick Gold 50GB';
+      jenis_produk = 'Kartu Halo';
     } else if (this.state.valueProduk === 'Pilih...') {
       nama_produk = 'Nama Produk';
       jenis_produk = 'Jenis produk';
@@ -90,7 +135,9 @@ class ModalTambahItem extends Component {
             name: 'close',
           }}
           size='tiny'
-          trigger={<Button>Tambah Item</Button>}
+          trigger={
+            <Icon style={{cursor: 'pointer'}} name='ellipsis vertical' />
+          }
         >
           <Modal.Header
             style={{fontSize: '24px', position: 'relative', height: 'auto'}}
@@ -184,4 +231,4 @@ class ModalTambahItem extends Component {
   }
 }
 
-export default connect('', actions)(withRouter(ModalTambahItem));
+export default connect('', actions)(withRouter(ModalEditData));

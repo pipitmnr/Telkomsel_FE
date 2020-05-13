@@ -12,27 +12,69 @@ class ProductListWithImage extends Component {
     
   };
 
+    /**
+     * The following method is used to formatting number into currency
+     * 
+     * @param {int} money The amount that will be converted in currency format
+     */
+    convertToCurrency = (money) => {
+        // Convert to string
+        let moneyString = money.toString(10);
+        let currency = "Rp. ";
+        let moneyLength = moneyString.length;
+        let moneyArray = moneyString.split("");
+        
+        //  Converting process
+        if (moneyLength % 3 === 0) {
+            for (let index in moneyArray) {
+                if (index % 3 === 0 && index > 0) {
+                    currency = currency + "." + moneyArray[index];
+                } else {
+                    currency = currency + moneyArray[index];
+                }
+            }
+        } else if (moneyLength % 3 === 1) {
+            for (let index in moneyArray) {
+                if (index % 3 === 1) {
+                    currency = currency + "." + moneyArray[index];
+                } else {
+                    currency = currency + moneyArray[index];
+                }
+            }
+        } else {
+            for (let index in moneyArray) {
+                if (index % 3 === 2) {
+                    currency = currency + "." + moneyArray[index];
+                } else {
+                    currency = currency + moneyArray[index];
+                }
+            }
+        }
+
+        return currency;
+    };
+
   render() {
     // Define an array that store information about the products
     let products = [
         {
             "name": "Nama Produk",
-            "price": "Rp. 15.000",
+            "price": 15000,
             "image": voucherTelkomsel
         },
         {
             "name": "Perdana Paket Data",
-            "price": "Rp. 15.000",
+            "price": 15000,
             "image": voucherTelkomsel
         },
         {
             "name": "Voucher Data",
-            "price": "Rp. 15.000",
+            "price": 15000,
             "image": voucherTelkomsel
         },
         {
             "name": "Voucher Data",
-            "price": "Rp. 15.000",
+            "price": 15000,
             "image": voucherTelkomsel
         }
     ];
@@ -49,7 +91,7 @@ class ProductListWithImage extends Component {
                         <span className="prouct-list-with-image-span-name">{product.name}</span>
                     </Link>
                     <br />
-                    <span className="prouct-list-with-image-span-price">{product.price}</span>
+                    <span className="prouct-list-with-image-span-price">{this.convertToCurrency(product.price)}</span>
                 </div>
                 {
                     index % 4 === 0 ?

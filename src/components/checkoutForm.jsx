@@ -113,7 +113,7 @@ class CheckoutForm extends Component {
     // Define JSX varibale which provide related postal code
     let postalCodeJsx = postalCodeList.map((postal) => {
         return (
-            <option value={postal} />
+            <option value={postal}>{postal}</option>
         )
     });
 
@@ -159,10 +159,9 @@ class CheckoutForm extends Component {
                                             <div className="form-group">
                                                 <label for="postalCode">
                                                     <span className="checkout-form-label">Kode Pos</span>
-                                                    <input name="postalCode" list="postalCodeList" id="postalCode" placeholder="Kode Pos" className="checkout-input-type-3 form-control datalist-input" />
-                                                    <datalist id="postalCodeList" className="choose-region-datalist">
+                                                    <select name="postalCode" id="postalCode" className="checkout-input-type-3 form-control datalist-input" > 
                                                         {postalCodeJsx}
-                                                    </datalist>
+                                                    </select>
                                                 </label>
                                             </div>
                                         </div>

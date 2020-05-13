@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {connect} from 'unistore/react';
-import {Dropdown, Table, Icon} from 'semantic-ui-react';
+import {Dropdown, Table} from 'semantic-ui-react';
 import {actions} from '../store';
 import swal from 'sweetalert';
 import '../styles/sidebar.css';
@@ -10,6 +10,7 @@ import _ from 'lodash';
 import Sidebar from '../components/sidebar';
 import TitlePage from '../components/titleAdmin';
 import ModalItem from '../components/modalTambahCluster';
+import ModalEdit from '../components/modalEditCluster';
 import PaginationMenu from '../components/pagination';
 import Footer from '../components/footer';
 import tableData from '../json/masterClusterData.json';
@@ -254,26 +255,70 @@ class DaftarCluster extends Component {
                               <Table.Cell>{dataItem.nama_produk}</Table.Cell>
                               <Table.Cell>{dataItem.jenis_produk}</Table.Cell>
                               <Table.Cell>
-                                Rp{' '}
-                                {currencyFormatter.format(
-                                  dataItem.harga_produk,
-                                  {
-                                    code: 'IDR',
-                                    symbol: '',
-                                  }
-                                )}
+                                <div className='container-fluid'>
+                                  <div
+                                    className='row'
+                                    style={{
+                                      display: 'flex',
+                                      width: 'inherit',
+                                    }}
+                                  >
+                                    <div
+                                      className='col-md-3'
+                                      style={{
+                                        textAlign: 'left',
+                                        paddingLeft: '0px',
+                                      }}
+                                    >
+                                      <span>Rp</span>
+                                    </div>
+                                    <div
+                                      className='col-md-9'
+                                      style={{
+                                        textAlign: 'right',
+                                        paddingLeft: '0px',
+                                      }}
+                                    >
+                                      <span>
+                                        {currencyFormatter.format(
+                                          dataItem.harga_produk,
+                                          {
+                                            code: 'IDR',
+                                            symbol: '',
+                                          }
+                                        )}
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
                               </Table.Cell>
                               <Table.Cell>
-                                {currencyFormatter.format(dataItem.sisa_stok, {
-                                  code: 'IDR',
-                                  symbol: '',
-                                })}
+                                <div className='container-fluid'>
+                                  <div
+                                    className='row'
+                                    style={{
+                                      display: 'flex',
+                                      width: 'inherit',
+                                      textAlign: 'right',
+                                    }}
+                                  >
+                                    <div className='col-md-12'>
+                                      <span>
+                                        {currencyFormatter.format(
+                                          dataItem.sisa_stok,
+                                          {
+                                            code: 'IDR',
+                                            symbol: '',
+                                          }
+                                        )}
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
                               </Table.Cell>
                               <Table.Cell>{dataItem.user}</Table.Cell>
                               <Table.Cell className='vertical-ellipsis'>
-                                <Link to='/detail-transaksi'>
-                                  <Icon name='ellipsis vertical' />
-                                </Link>
+                                <ModalEdit dataRow={dataItem} />
                               </Table.Cell>
                               <Table.Cell></Table.Cell>
                             </Table.Row>
