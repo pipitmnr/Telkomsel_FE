@@ -167,6 +167,10 @@
     text-align: left;
     padding-left:30px;
 }
+.total-header{
+    display: inline;
+    padding-left:20px;
+}
 /* LAPORAN PENJUALAN END */
 
 /* DETAIL TRANSAKSI  START*/

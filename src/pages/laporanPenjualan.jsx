@@ -299,7 +299,7 @@ filterCluster=(clus)=>{
 								<div className='one-button'>
 									<Col>
 									<p>Total Transaksi</p>
-										<h2>Rp {this.state.datas.reduce(function(accumulator,d){return accumulator+d.total_penjualan},0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}</h2>
+										<h2>Rp <p className="total-header">{this.state.datas.reduce(function(accumulator,d){return accumulator+d.total_penjualan},0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}</p></h2>
 									</Col>
 								</div>
 							</Row>
