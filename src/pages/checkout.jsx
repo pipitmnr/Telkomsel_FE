@@ -39,7 +39,7 @@ class Checkout extends Component {
         <div className="header-white-space"></div>
         <PageTitleWithoutCart />
         <Breadcrumbs paths={paths} paddingLeft={"165px"}/>
-        <div className="container">
+        <div className="container" style={{minHeight: "565px"}}>
             <div className="row">
               <div className="col-12 col-md-7 checkout-left-part">
                 <CheckoutForm />

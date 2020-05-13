@@ -2,56 +2,56 @@
     {
         "id": 1,
         "name": "Nama Produk",
-        "price": "Rp. 15.000",
+        "price": 15000,
         "image": "../images/voucherTelkomsel.jpg",
         "location": "Jawa Timur"
     },
     {
         "id": 2,
         "name": "Perdana Paket Data",
-        "price": "Rp. 15.000",
+        "price": 15000,
         "image": "../images/voucherTelkomsel.jpg",
         "location": "Jawa Tengah"
     },
     {
         "id": 3,
         "name": "Voucher Data",
-        "price": "Rp. 15.000",
+        "price": 15000,
         "image": "../images/voucherTelkomsel.jpg",
         "location": "Kota Malang, Jawa Timur"
     },
     {
         "id": 4,
         "name": "Voucher Data",
-        "price": "Rp. 15.000",
+        "price": 15000,
         "image": "../images/voucherTelkomsel.jpg",
         "location": "Kab. Malang, Jawa Timur"
     },
     {
         "id": 5,
         "name": "Nama Produk",
-        "price": "Rp. 15.000",
+        "price": 15000,
         "image": "../images/voucherTelkomsel.jpg",
         "location": "Jawa Barat"
     },
     {
         "id": 6,
         "name": "Perdana Paket Data",
-        "price": "Rp. 15.000",
+        "price": 15000,
         "image": "../images/voucherTelkomsel.jpg",
         "location": "Jawa Tengah"
     },
     {
         "id": 7,
         "name": "Voucher Data",
-        "price": "Rp. 15.000",
+        "price": 15000,
         "image": "../images/voucherTelkomsel.jpg",
         "location": "Jambi"
     },
     {
         "id": 8,
         "name": "Voucher Data",
-        "price": "Rp. 15.000",
+        "price": 15000,
         "image": "../images/voucherTelkomsel.jpg",
         "location": "Sungai Putri, Kota Jambi, Jambi"
     }

@@ -1,9 +1,18 @@
 import createStore from "unistore";
+
 var totalCart
 if (localStorage.getItem('cart_value') === null) {
   totalCart = 0
 } else {
   totalCart = localStorage.getItem('cart_value')
+}
+
+// Checking local storage for cart list
+var productInCart;
+if (localStorage.getItem('productInCart') === null) {
+  productInCart = require("./json/cartList.json");
+} else {
+  productInCart = localStorage.getItem("productInCart");
 }
 
 const initialState = {
@@ -19,7 +28,10 @@ const initialState = {
   // Checkout related
   checkoutLocation: "",
   postalCode: "",
-  cartValue: totalCart
+  cartValue: totalCart,
+  productInCart: productInCart,
+  shippingPrice: 10000,
+  discount: 0
 };
 
 export const store = createStore(initialState);
