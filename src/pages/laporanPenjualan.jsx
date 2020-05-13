@@ -136,11 +136,11 @@ execute=()=>{
 
 filterCluster=(clus)=>{
 	if (clus==='Semua Cluster'){
-		// this.setState({filter_kluster:clus})
-		this.setState({filter_kluster:clus, datas: data.filter(d=>{return d.kluster})})
+		
+		this.setState({filter_kluster:clus, datas: this.state.datas.filter(d=>{return d.kluster})})
 	}else{
-		// this.setState({filter_kluster:clus})
-		this.setState({filter_kluster:clus,datas: data.filter(d=>{return d.kluster===clus})})
+		
+		this.setState({filter_kluster:clus,datas: this.state.datas.filter(d=>{return d.kluster===clus})})
 	}
    
 }
@@ -148,14 +148,14 @@ filterCluster=(clus)=>{
     if (stats === 'Semua Status') {
       store.setState({filter_payment: stats});
       this.setState({
-        datas: data.filter((d) => {
+        datas: this.state.datas.filter((d) => {
           return d.status_transaksi;
         }),
-      });
-    } else {
+	  });
+	}else{
       store.setState({filter_payment: stats});
       this.setState({
-        datas: data.filter((d) => {
+        datas: this.state.datas.filter((d) => {
           return d.status_transaksi === stats;
         }),
       });
@@ -348,7 +348,8 @@ filterCluster=(clus)=>{
 										<th>Detail Transaksi</th>
 									</thead>
 									<tbody>
-										{this.state.datas.map(row=>(
+										
+										{this.state.datas.length !==0 ? this.state.datas.map(row=>(
 										<tr>
 											<td>{row.tanggal_transaksi}</td>
 											<td>{row.nomor_pesanan}</td>
@@ -373,7 +374,7 @@ filterCluster=(clus)=>{
 													<i class='fa fa-ellipsis-v'></i>
 												</a>
 											</td>
-										</tr>))}
+										</tr>)): <tr><td colSpan="12">Mohon Maaf Data Tidak Ditemukan</td></tr>}
 									</tbody>
 								</Table>
 							</Row>

@@ -16,7 +16,7 @@ import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import transaksi from '../data/transaksi.json'
 import Pagination from "../components/pagination"
-
+import Searchbar from "../components/searchbar"
 
 class Transactions extends React.Component {
   componentDidMount = async () => {
@@ -93,9 +93,16 @@ class Transactions extends React.Component {
 						</div>
 						<Col md='3'></Col>
 						<Col md='9'>
-							
+						
 							<div id='transaksi'>
-							<h1 id="title-transaksi">Transaksi Anda</h1>
+							<Row>
+							  <Col md="7">
+							  <h1 id="title-transaksi">Transaksi Anda</h1>
+							  </Col>
+							  <Col md="5">
+							  <Searchbar id="search"/>
+							  </Col>
+							</Row>
 							<br/>
 								<Col id='filter_one'>
 										<Dropdown>
