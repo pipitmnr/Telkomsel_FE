@@ -137,10 +137,10 @@ execute=()=>{
 filterCluster=(clus)=>{
 	if (clus==='Semua Cluster'){
 		
-		this.setState({filter_kluster:clus, datas: this.state.datas.filter(d=>{return d.kluster})})
+		this.setState({filter_kluster:clus, datas: data.filter(d=>{return d.kluster})})
 	}else{
 		
-		this.setState({filter_kluster:clus,datas: this.state.datas.filter(d=>{return d.kluster===clus})})
+		this.setState({filter_kluster:clus,datas: data.filter(d=>{return d.kluster===clus})})
 	}
    
 }
