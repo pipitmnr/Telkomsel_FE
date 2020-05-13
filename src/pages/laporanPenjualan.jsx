@@ -11,13 +11,12 @@ import {
 } from 'react-bootstrap';
 import {connect} from 'unistore/react';
 import {store, actions} from '../store';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import '../styles/transaksi.css';
 import Sidebar from '../components/sidebar';
 import Pagination from "../components/pagination"
 import data from "../data/produk.json"
 import { CSVLink } from "react-csv";
-import Calendar from "react-calendar"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import format from "date-fns/format";
@@ -370,9 +369,9 @@ filterCluster=(clus)=>{
 											</Dropdown> : <Button variant={row.color}>{row.status_transaksi}</Button>}
 											</td>
 											<td>
-												<a className='dots' href='/detail-transaksi'>
+												<Link className='dots' to='/detail-transaksi'>
 													<i class='fa fa-ellipsis-v'></i>
-												</a>
+												</Link>
 											</td>
 										</tr>)): <tr><td colSpan="12">Mohon Maaf Data Tidak Ditemukan</td></tr>}
 									</tbody>
