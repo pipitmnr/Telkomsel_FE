@@ -1,23 +1,23 @@
 [
     {
+        "id": 1,
         "image": "../images/voucherTelkomselSecondVersion.png",
-        "name": "Kartu Perdana Segel",
+        "name": "Perdana Segel",
         "price": 15000,
-        "totalItem": 5,
-        "totalPrice": 75000
+        "totalItem": 1
     },
     {
+        "id": 2,
         "image": "../images/voucherTelkomselSecondVersion.png",
         "name": "Perdana Paket Data",
         "price": 150000,
-        "totalItem": 5,
-        "totalPrice": 750000
+        "totalItem": 1
     },
     {
+        "id": 3,
         "image": "../images/voucherTelkomselSecondVersion.png",
         "name": "Voucher Data",
         "price": 150000,
-        "totalItem": 5,
-        "totalPrice": 750000
+        "totalItem": 1
     }
 ]
