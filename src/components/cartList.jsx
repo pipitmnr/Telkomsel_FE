@@ -7,33 +7,53 @@ import "../styles/cartList.css";
 import voucherTelkomsel from "../images/voucherTelkomselSecondVersion.png"
 
 class CartList extends Component {
-	componentDidMount = async () => {};
+    /**
+     * The following method is used to formatting number into currency
+     * 
+     * @param {int} money The amount that will be converted in currency format
+     */
+    convertToCurrency = (money) => {
+        // Convert to string
+        let moneyString = money.toString(10);
+        let currency = "Rp. ";
+        let moneyLength = moneyString.length;
+        let moneyArray = moneyString.split("");
+        
+        //  Converting process
+        if (moneyLength % 3 === 0) {
+            for (let index in moneyArray) {
+                if (index % 3 === 0 && index > 0) {
+                    currency = currency + "." + moneyArray[index];
+                } else {
+                    currency = currency + moneyArray[index];
+                }
+            }
+        } else if (moneyLength % 3 === 1) {
+            for (let index in moneyArray) {
+                if (index % 3 === 1) {
+                    currency = currency + "." + moneyArray[index];
+                } else {
+                    currency = currency + moneyArray[index];
+                }
+            }
+        } else {
+            for (let index in moneyArray) {
+                if (index % 3 === 2) {
+                    currency = currency + "." + moneyArray[index];
+                } else {
+                    currency = currency + moneyArray[index];
+                }
+            }
+        }
+
+        return currency;
+    };
+    
+    componentDidMount = async () => {};
 
 	render() {
         // Define the cart list variable to be looped
-        let cartList = [
-            {
-                "image": voucherTelkomsel,
-                "name": "Kartu Perdana Segel",
-                "price": "Rp 15.000",
-                "totalItem": 5,
-                "totalPrice": "Rp75.000"
-            },
-            {
-                "image": voucherTelkomsel,
-                "name": "Perdana Paket Data",
-                "price": "Rp 150.000",
-                "totalItem": 5,
-                "totalPrice": "Rp750.000"
-            },
-            {
-                "image": voucherTelkomsel,
-                "name": "Voucher Data",
-                "price": "Rp 150.000",
-                "totalItem": 5,
-                "totalPrice": "Rp750.000"
-            }
-        ]
+        let cartList = require("../json/cartList.json");
 
 		return (
 			<React.Fragment>
@@ -48,14 +68,14 @@ class CartList extends Component {
                                             <div className="container-fluid">
                                                 <div className="row">
                                                     <div className="col-12 col-md-3 cart-list-product-image-container">
-                                                        <img className="cart-list-product-image" src={product.image} alt="Voucher Telkomsel" />
+                                                        <img className="cart-list-product-image" src={voucherTelkomsel} alt="Voucher Telkomsel" />
                                                     </div>
                                                     <div className="col-12 col-md-4 cart-list-product-name-and-price">
                                                         <Link className="cart-list-no-underline" to={`/detail-produk`}>
                                                             <span className="cart-list-product-name">{product.name}</span>    
                                                         </Link>
                                                         <br />
-                                                        <span className="cart-list-product-price">{product.price}</span>
+                                                        <span className="cart-list-product-price">{this.convertToCurrency(product.price)}</span>
                                                     </div>
                                                     <div className="col-12 col-md-2 cart-list-product-total-item-container">
                                                         <span className="cart-list-product-total-item-title">Jumlah</span><br />
@@ -64,7 +84,7 @@ class CartList extends Component {
                                                     </div>
                                                     <div className="col-12 col-md-3 cart-list-product-total-item-container">
                                                         <span className="cart-list-product-total-item-title">Total</span><br />
-                                                        <span className="cart-list-product-total-item">{product.totalPrice}</span>
+                                                        <span className="cart-list-product-total-item">{this.convertToCurrency(product.totalPrice)}</span>
                                                         <div className="cart-list-underline-type-2"></div>
                                                     </div>
                                                 </div>
