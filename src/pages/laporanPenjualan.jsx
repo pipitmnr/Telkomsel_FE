@@ -26,6 +26,7 @@ class LaporanJual extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+	  filter_kluster:"Semua Cluster",
       dates_first: "Tanggal Awal",
       dates_last: "Tanggal Akhir",
 	  datas: data,
@@ -135,11 +136,11 @@ execute=()=>{
 
 filterCluster=(clus)=>{
 	if (clus==='Semua Cluster'){
-		store.setState({filter_kluster:clus})
-		this.setState({datas: data.filter(d=>{return d.kluster})})
+		// this.setState({filter_kluster:clus})
+		this.setState({filter_kluster:clus, datas: data.filter(d=>{return d.kluster})})
 	}else{
-		store.setState({filter_kluster:clus})
-		this.setState({datas: data.filter(d=>{return d.kluster===clus})})
+		// this.setState({filter_kluster:clus})
+		this.setState({filter_kluster:clus,datas: data.filter(d=>{return d.kluster===clus})})
 	}
    
 }
@@ -189,7 +190,7 @@ filterCluster=(clus)=>{
 						
 								<DropdownButton
 									className='d-inline-block align-center'
-									title={this.props.filter_kluster}
+									title={this.state.filter_kluster}
 									variant='danger'
 								>
 									<Dropdown.Item
@@ -351,7 +352,14 @@ filterCluster=(clus)=>{
 										<tr>
 											<td>{row.tanggal_transaksi}</td>
 											<td>{row.nomor_pesanan}</td>
-											<td><div className="rata-kiri">Rp</div><div className="rata-kanan">{row.total_penjualan.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}</div></td>
+											<td><Row>
+												<Col md="3"><div className="rata-kiri">Rp</div></Col>
+												<Col md="6">
+													<div className="rata-kanan">{row.total_penjualan.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}
+										
+											</div>
+											</Col>
+											</Row></td>
 											<td>
 											{row.status_transaksi==="Terbayar" ?
 											<Dropdown>
@@ -389,6 +397,6 @@ filterCluster=(clus)=>{
 }
 
 export default connect(
-  'filter_payment,filter_kluster',
+  'filter_payment',
   actions
 )(withRouter(LaporanJual));

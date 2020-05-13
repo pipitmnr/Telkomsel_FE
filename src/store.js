@@ -8,7 +8,6 @@ if (localStorage.getItem('cart_value') === null) {
 
 const initialState = {
   filter_payment: "Semua Status",
-  filter_kluster: "Semua Cluster",
   username: "",
   emailReset: "",
   // Prouct list related props

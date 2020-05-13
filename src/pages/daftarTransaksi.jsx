@@ -27,7 +27,7 @@ class Transactions extends React.Component {
   };
   constructor(props) {
     super(props);
-	  this.state = {list_transaksi: transaksi, direction:null, arrow:null, dummy:null, kondisi:null};
+	  this.state = {list_transaksi: transaksi, filter_kluster:"Semua Cluster",direction:null, arrow:null, dummy:null, kondisi:null};
   }
     changePayment=(stats, ids)=>{
 		transaksi.map(el=>{
@@ -40,10 +40,10 @@ class Transactions extends React.Component {
 	}
 	filterCluster=(clus)=>{
 		if (clus==='Semua Cluster'){
-			store.setState({filter_kluster:clus})
+			this.setState({filter_kluster:clus})
 			this.setState({list_transaksi: transaksi.filter(d=>{return d.kota})})
 		}else{
-			store.setState({filter_kluster:clus})
+			this.setState({filter_kluster:clus})
 			this.setState({list_transaksi: transaksi.filter(d=>{return d.kota===clus})})
 		}
        
@@ -151,7 +151,7 @@ class Transactions extends React.Component {
 											&nbsp;
 											<DropdownButton
 												className='d-inline-block align-center'
-												title={this.props.filter_kluster}
+												title={this.state.filter_kluster}
 												variant='danger'
 											>
 												<Dropdown.Item
@@ -263,7 +263,7 @@ class Transactions extends React.Component {
 }
 
 export default connect(
-  'filter_payment, filter_kluster',
+  'filter_payment',
   actions
 )(withRouter(Transactions));
 
