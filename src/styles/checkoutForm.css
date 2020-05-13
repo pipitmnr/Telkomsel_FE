@@ -28,15 +28,14 @@
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
-    width: 100%;
 }
 
 .checkout-input-type-1 {
-    width: 100%;
+    width: 260px;
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
-    padding: 3px 5px 3px 5px;
+    padding: 3px 7px 3px 7px;
     border-radius: 5px;
 }
 
@@ -47,11 +46,11 @@
 }
 
 .checkout-input-type-2 {
-    width: 132%;
+    width: 399px;
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
-    padding: 3px 5px 3px 5px;
+    padding: 3px 7px 3px 7px;
     border-radius: 5px;
 }
 
@@ -60,12 +59,20 @@
 }
 
 .checkout-input-type-3 {
-    width: 250%;
-    height: 70px;
+    width: 121px;
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
-    padding: 3px 5px 3px 5px;
+    padding: 3px 7px 3px 7px;
+    border-radius: 5px;
+}
+
+.checkout-input-type-4 {
+    width: 535px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    padding: 3px 7px 3px 7px;
     border-radius: 5px;
     resize: none;
 }

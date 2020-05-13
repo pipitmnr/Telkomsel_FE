@@ -30,16 +30,22 @@ class ModalTambahItem extends Component {
   };
 
   handleChangeHarga = async (event) => {
-    this.setState({[event.target.name]: event.target.value});
-    var value = event.target.value.toString();
-    var bilangan = value.split('.').join('');
-    console.log('cek bilangan', bilangan);
-    if (true) {
-      var reverseRibuan = bilangan.toString().split('').reverse().join(''),
-        ribuanList = reverseRibuan.match(/\d{1,3}/g);
-      var ribuan = ribuanList.join('.').split('').reverse().join('');
+    const regex = /^[a-z]+$/i;
+    if (regex.test(event.target.value) === false) {
+      if (event.target.value !== '') {
+        this.setState({[event.target.name]: event.target.value});
+        var value = event.target.value.toString();
+        var bilangan = value.split('.').join('');
+        if (true) {
+          var reverseRibuan = bilangan.toString().split('').reverse().join(''),
+            ribuanList = reverseRibuan.match(/\d{1,3}/g);
+          var ribuan = ribuanList.join('.').split('').reverse().join('');
+        }
+        this.setState({[event.target.name]: ribuan});
+      } else if (event.target.value === '') {
+        this.setState({[event.target.name]: ''});
+      }
     }
-    this.setState({[event.target.name]: ribuan});
   };
 
   handleReset = () => {
@@ -122,11 +128,12 @@ class ModalTambahItem extends Component {
                   <Form.Field inline className='field-modal'>
                     <label>Harga Produk</label>
                     <Input
+                      label='Rp'
                       className='input-modal harga-item'
                       placeholder='harga produk'
                       name='harga_produk'
                       onChange={this.handleChangeHarga}
-                      value={`Rp ${this.state.harga_produk}`}
+                      value={this.state.harga_produk}
                     />
                   </Form.Field>
                 </Form.Group>

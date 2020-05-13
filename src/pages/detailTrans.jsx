@@ -7,8 +7,7 @@ import {
 	Form,
 	FormGroup,
 	Button,
-	Dropdown,
-	DropdownButton
+	Dropdown
 } from 'react-bootstrap';
 import { connect } from 'unistore/react';
 import { actions } from '../store';
@@ -47,9 +46,13 @@ class TransactionDetail extends React.Component {
 			<React.Fragment>
 				<Container fluid className="main-container">
 					<Row>
-						<Col md='3' className='col-sidebar'>
+						<div
+							className='col-md-3 col-sidebar'
+							style={{position: 'fixed', zIndex: '10'}}
+							>
 							<Sidebar />
-						</Col>
+						</div>
+						<Col md='3'></Col>
 						<Col md='9'>
 						  <h1 className="title-page">Detail Transaksi</h1>
 							<Col md='12' className='big_detail'>

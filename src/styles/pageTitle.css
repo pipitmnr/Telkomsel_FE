@@ -1,34 +1,73 @@
 @font-face {
     font-family: "muli";
-    src : url("../fonts/Muli-Regular.ttf");
+    src: url("../fonts/Muli-Regular.ttf");
 }
-.page-title{
+
+.page-title {
     height: 93px;
-    background: linear-gradient(180deg, #D71F27 0%, rgba(237, 83, 90, 0) 100%), #D32026;;
+    background: linear-gradient(180deg, #D71F27 0%, rgba(237, 83, 90, 0) 100%), #D32026;
+    ;
 }
-.page-title-entry{
+
+.page-title-entry {
     color: white;
     font-family: "muli";
     font-weight: bold;
     font-size: 36px;
     padding-left: 165px;
 }
-.page-title-box{
+
+.page-title-box {
     width: 232px;
     height: 60px;
     background: rgba(255, 255, 255, 0.8);
     margin: auto;
 }
-.page-title-box-entry{
-    padding: 18px 0;
+
+.page-title-box-entry {
+    padding: 15px 25px;
+    display: flex;
 }
-.page-title-box-entry a{
+
+.page-title-box-entry a {
     text-decoration: none;
     color: rgb(53, 52, 52);
     font-size: 18px;
     font-family: "muli";
 }
-.page-title-box-entry a:hover{
+
+.page-title-box-entry a:hover {
     text-decoration: none;
     color: rgb(0, 0, 0);
+}
+
+.fa-stack[data-count]:after {
+    position: absolute;
+    right: -20%;
+    top: -20%;
+    content: attr(data-count);
+    font-size: 25%;
+    padding: .6em;
+    border-radius: 999px;
+    line-height: .75em;
+    color: white;
+    color: #DF0000;
+    text-align: center;
+    min-width: 10px;
+    font-weight: bold;
+    background: white;
+    border-style: solid;
+}
+
+.fa-stack {
+    width: 1em;
+    height: 1em;
+}
+
+.fa-stack-2x {
+    font-size: 30px;
+}
+
+.red-cart {
+    color: #DF0000;
 }
