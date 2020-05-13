@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {connect} from 'unistore/react';
-import {Dropdown, Table, Icon} from 'semantic-ui-react';
+import {Dropdown, Table} from 'semantic-ui-react';
 import {actions} from '../store';
 import swal from 'sweetalert';
 import '../styles/sidebar.css';
@@ -10,6 +10,7 @@ import _ from 'lodash';
 import Sidebar from '../components/sidebar';
 import TitlePage from '../components/titleAdmin';
 import ModalProduk from '../components/modalTambahProduk';
+import ModalEdit from '../components/modalEditProduk';
 import PaginationMenu from '../components/pagination';
 import Footer from '../components/footer';
 import tableData from '../json/masterProductData.json';
@@ -238,9 +239,7 @@ class DaftarProduk extends Component {
                               <Table.Cell>{dataItem.status}</Table.Cell>
                               <Table.Cell>{dataItem.user}</Table.Cell>
                               <Table.Cell className='vertical-ellipsis'>
-                                <Link to='/detail-transaksi'>
-                                  <Icon name='ellipsis vertical' />
-                                </Link>
+                                <ModalEdit dataRow={dataItem} />
                               </Table.Cell>
                               <Table.Cell></Table.Cell>
                             </Table.Row>
