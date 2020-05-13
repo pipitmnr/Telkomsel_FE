@@ -30,7 +30,9 @@ const initialState = {
   checkoutLocation: "",
   postalCode: "",
   cartValue: totalCart,
-  productInCart: productInCart
+  productInCart: productInCart,
+  shippingPrice: 10000,
+  discount: 0
 };
 
 export const store = createStore(initialState);
