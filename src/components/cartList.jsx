@@ -5,6 +5,9 @@ import { actions } from "../store";
 import "../styles/bootstrap.min.css";
 import "../styles/cartList.css";
 import voucherTelkomsel from "../images/voucherTelkomselSecondVersion.png"
+import { AiFillDelete } from "react-icons/ai";
+import { FcPlus } from "react-icons/fc";
+import { AiFillMinusCircle } from "react-icons/ai";
 
 class CartList extends Component {
     /**
@@ -68,6 +71,7 @@ class CartList extends Component {
                                             <div className="container-fluid">
                                                 <div className="row">
                                                     <div className="col-12 col-md-3 cart-list-product-image-container">
+                                                        <AiFillDelete className="cart-list-remove-icon" />
                                                         <img className="cart-list-product-image" src={voucherTelkomsel} alt="Voucher Telkomsel" />
                                                     </div>
                                                     <div className="col-12 col-md-4 cart-list-product-name-and-price">
@@ -79,13 +83,14 @@ class CartList extends Component {
                                                     </div>
                                                     <div className="col-12 col-md-2 cart-list-product-total-item-container">
                                                         <span className="cart-list-product-total-item-title">Jumlah</span><br />
-                                                        <span className="cart-list-product-total-item">{product.totalItem}</span>
+                                                        <AiFillMinusCircle className="cart-list-minus-icon" />
+                                                        <div className="cart-list-product-total-item">{product.totalItem}</div>
+                                                        <FcPlus className="cart-list-plus-icon" />
                                                         <div className="cart-list-underline"></div>
                                                     </div>
                                                     <div className="col-12 col-md-3 cart-list-product-total-item-container">
                                                         <span className="cart-list-product-total-item-title">Total</span><br />
-                                                        <span className="cart-list-product-total-item">{this.convertToCurrency(product.totalPrice)}</span>
-                                                        <div className="cart-list-underline-type-2"></div>
+                                                        <div className="cart-list-product-total-item">{this.convertToCurrency(product.totalPrice)}</div>
                                                     </div>
                                                 </div>
                                             </div>
