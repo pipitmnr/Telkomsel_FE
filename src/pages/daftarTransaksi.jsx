@@ -39,6 +39,17 @@ class Transactions extends React.Component {
 		})
 
 	}
+	filterCluster=(clus)=>{
+		if (clus==='Semua Cluster'){
+			store.setState({filter_kluster:clus})
+			this.setState({list_transaksi: transaksi.filter(d=>{return d.kota})})
+		}else{
+			store.setState({filter_kluster:clus})
+			this.setState({list_transaksi: transaksi.filter(d=>{return d.kota===clus})})
+		}
+       
+	}
+
 	sortingOrder=(key)=>{
 
 		if(this.state.direction===null|| this.state.direction==='descending'){
@@ -142,40 +153,25 @@ class Transactions extends React.Component {
 											>
 												<Dropdown.Item
 													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Kluster 1' })
+													onClick={event=>
+														this.filterCluster('Cluster A')
 													}
 												>
-													Kluster 1
+													Cluster A
 												</Dropdown.Item>
 												<Dropdown.Item
 													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Kluster 2' })
+													onClick={event=>
+														this.filterCluster('Cluster B')
 													}
 												>
-													Kluster 2
+													Cluster B
 												</Dropdown.Item>
+												
 												<Dropdown.Item
 													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Kluster 3' })
-													}
-												>
-													Kluster 3
-												</Dropdown.Item>
-												<Dropdown.Item
-													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Kluster 4' })
-													}
-												>
-													Kluster 4
-												</Dropdown.Item>
-												<Dropdown.Item
-													href=''
-													onClick={() =>
-														store.setState({ filter_kluster: 'Semua Kluster' })
+													onClick={event=>
+														this.filterCluster('Semua Cluster')
 													}
 												>
 													Semua Kluster

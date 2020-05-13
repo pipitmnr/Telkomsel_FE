@@ -3,7 +3,7 @@ import createStore from "unistore";
 
 const initialState = {
   filter_payment: "Semua Status",
-  filter_kluster: "Semua Kluster",
+  filter_kluster: "Semua Cluster",
   username: "",
   emailReset: "",
   // Prouct list related props
