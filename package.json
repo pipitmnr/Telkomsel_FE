@@ -10,7 +10,7 @@
     "bootstrap": "^4.4.1",
     "currency-formatter": "^1.5.5",
     "faker": "^4.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.25.3",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
